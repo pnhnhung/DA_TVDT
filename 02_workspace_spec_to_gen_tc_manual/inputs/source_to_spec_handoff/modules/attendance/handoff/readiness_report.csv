@@ -1,0 +1,5 @@
+Module,Item,Status,Note,Readiness Level
+attendance,Punch In/Out validation,READY,FR-ATT-001 to FR-ATT-006 confirmed,High
+attendance,Time margin (180s),READY,BR-ATT-001 confirmed,High
+attendance,Overlap protection,READY,BR-ATT-002 to BR-ATT-004 confirmed,High
+attendance,Permissions (Workflow),READY,BR-ATT-005 confirmed,High

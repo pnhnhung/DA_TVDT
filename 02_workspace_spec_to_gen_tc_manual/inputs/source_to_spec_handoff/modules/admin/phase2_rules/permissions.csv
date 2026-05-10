@@ -1,0 +1,17 @@
+role_id,module,feature,action,allowed,data_scope,enforcement_type,source_trace,status,note,Automation Agent,Automation Skill
+Admin,admin,UserManagement,create,yes,all,policy,"Api/UserAPI.php#create:267",confirmed,,@security_agent,security-audit
+Admin,admin,UserManagement,update,yes,all,policy,"Api/UserAPI.php#update:402",confirmed,,@security_agent,security-audit
+Admin,admin,UserManagement,delete,yes,all,policy,"Api/UserAPI.php#delete:462",confirmed,,@security_agent,security-audit
+Admin,admin,UserManagement,view,yes,all,policy,"Api/UserAPI.php#getAll:169",confirmed,,@security_agent,security-audit
+ESS,admin,UserManagement,create,no,,,,inferred,,@security_agent,security-audit
+ESS,admin,UserManagement,update,no,,,,inferred,,@security_agent,security-audit
+ESS,admin,UserManagement,delete,no,,,,inferred,,@security_agent,security-audit
+ESS,admin,UserManagement,view,no,,,,inferred,,@security_agent,security-audit
+Admin,admin,JobTitle,create,yes,all,policy,"Api/JobTitleAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobTitle,update,yes,all,policy,"Api/JobTitleAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobTitle,delete,yes,all,policy,"Api/JobTitleAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobTitle,view,yes,all,policy,"Api/JobTitleAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobCategory,create,yes,all,policy,"Api/JobCategoryAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobCategory,update,yes,all,policy,"Api/JobCategoryAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobCategory,delete,yes,all,policy,"Api/JobCategoryAPI.php",confirmed,,@security_agent,security-audit
+Admin,admin,JobCategory,view,yes,all,policy,"Api/JobCategoryAPI.php",confirmed,,@security_agent,security-audit

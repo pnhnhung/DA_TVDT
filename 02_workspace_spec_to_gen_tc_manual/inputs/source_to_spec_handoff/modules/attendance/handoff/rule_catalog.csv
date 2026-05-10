@@ -1,0 +1,12 @@
+Rule ID,Module,Type,Statement,Status,Confidence,Evidence,Automation Agent,Automation Skill
+FR-ATT-001,attendance,field,date: API_DATE,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#444,@ui_automation_agent,playwright-ui-test
+FR-ATT-002,attendance,field,time: H:i,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#449,@ui_automation_agent,playwright-ui-test
+FR-ATT-003,attendance,field,timezoneOffset: float,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#453,@api_automation_agent,playwright-api-test
+FR-ATT-004,attendance,field,timezoneName: string,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#457,@ui_automation_agent,playwright-ui-test
+FR-ATT-005,attendance,field,note: max:250,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#460,@ui_automation_agent,playwright-ui-test
+FR-ATT-006,attendance,field,empNumber: active employee,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#230,@api_automation_agent,playwright-api-test
+BR-ATT-001,attendance,business,Punch Time Margin of Error +/- 180s,confirmed,high,Api/MyAttendanceRecordAPI.php#82,@api_automation_agent,playwright-api-test
+BR-ATT-002,attendance,business,Punch-In Overlap Protection,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#311,@api_automation_agent,playwright-api-test
+BR-ATT-003,attendance,business,Punch-Out Sequence Requirement (must be PUNCHED IN),confirmed,high,Api/EmployeeAttendanceRecordAPI.php#634,@api_automation_agent,playwright-api-test
+BR-ATT-004,attendance,business,Punch-Out Overlap Protection,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#644,@api_automation_agent,playwright-api-test
+BR-ATT-005,attendance,business,Edit/Delete Permissions via Workflow,confirmed,high,Api/EmployeeAttendanceRecordAPI.php#538,@ui_automation_agent,playwright-ui-test

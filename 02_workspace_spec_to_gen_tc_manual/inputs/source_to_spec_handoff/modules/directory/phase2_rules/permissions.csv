@@ -1,0 +1,3 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-DIR-001,Any authenticated user,directory,GET employee directory,yes,yes,all active employees (confirmed: read-only),NotImplementedException on write,phase2_rules/business_rules.md#BR-001,confirmed,high
+PERM-DIR-002,Admin,directory,GET employee directory with all fields,yes,yes,all employees,Same as employees,Api/EmployeeDirectoryAPI.php,confirmed,high

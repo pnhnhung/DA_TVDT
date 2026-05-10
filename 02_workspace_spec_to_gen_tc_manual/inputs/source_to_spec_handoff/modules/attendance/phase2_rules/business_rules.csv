@@ -1,0 +1,6 @@
+Rule ID,Module,Feature,Statement,Source Trace,Status,Confidence,Automation Agent,Automation Skill
+BR-ATT-001,attendance,Punch In/Out,Time margin of error allowed +/- 180 seconds if user cannot change time,Api/MyAttendanceRecordAPI.php#82,confirmed,high,@api_automation_agent,playwright-api-test
+BR-ATT-002,attendance,Punch In,Prevent overlapping attendance records on Punch In,Api/EmployeeAttendanceRecordAPI.php#311,confirmed,high,@api_automation_agent,playwright-api-test
+BR-ATT-003,attendance,Punch Out,Must have a prior PUNCHED IN state to perform Punch Out,Api/EmployeeAttendanceRecordAPI.php#634,confirmed,high,@api_automation_agent,playwright-api-test
+BR-ATT-004,attendance,Punch Out,Prevent overlapping attendance records on Punch Out,Api/EmployeeAttendanceRecordAPI.php#644,confirmed,high,@api_automation_agent,playwright-api-test
+BR-ATT-005,attendance,Edit/Delete,Edit/Delete permissions enforced via WorkflowStateMachine toggles,Api/EmployeeAttendanceRecordAPI.php#538,confirmed,high,@ui_automation_agent,playwright-ui-test

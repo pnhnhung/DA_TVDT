@@ -1,0 +1,4 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-DAS-001,Any authenticated user,dashboard,View Dashboard,yes,yes,role-filtered data,,Api/ (inferred),inferred,medium
+PERM-DAS-002,Admin,dashboard,View Employee Distribution widget,yes,yes,all employees,Admin only widget,Api/ (inferred),inferred,medium
+PERM-DAS-003,ESS,dashboard,View own Time at Work widget,yes,yes,self data only,,Api/AttendanceSummaryAPI.php (inferred),inferred,medium

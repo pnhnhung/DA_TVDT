@@ -1,0 +1,6 @@
+| Gap ID | Related Rule ID | Feature | Description | Impact on Testing | Investigation Status | Action |
+|---|---|---|---|---|---|---|
+| GAP-ATT-001 | N/A | Edit Attendance (Admin) | `AttendanceEditPunchInRecordOverlapAPI` chưa được phân tích — luồng Admin sửa bản ghi bất kỳ chưa có spec. | Không test được luồng Admin chỉnh sửa trực tiếp bản ghi chấm công. | Đã điều tra — phát hiện file chưa được phân tích | Cần extract thêm từ EditPunch*API |
+| GAP-ATT-002 | N/A | Attendance Summary Report | `EmployeeAttendanceSummaryAPI` chưa có field rules và business rules cho luồng báo cáo tổng hợp. | Không test được chức năng Báo cáo Chấm công. | Đã điều tra — phát hiện file chưa được phân tích | Cần extract từ EmployeeAttendanceSummaryAPI |
+| GAP-ATT-003 | BR-001, BR-002 | Overlap API (Frontend flow) | Chưa rõ khi nào frontend gọi `AttendancePunchInRecordOverlapAPI` riêng biệt — hay backend tự kiểm tra. | Khó test flow frontend-backend khi có overlap. | Đã điều tra — cần verify thêm | Cần verify cách frontend gọi API |
+| GAP-ATT-004 | FR-004, FR-005 | Timezone validation | Danh sách timezone hợp lệ theo `TIMEZONE_NAME`/`TIMEZONE_OFFSET` chưa được xác định đầy đủ. | Không biết boundary test cho timezone. | Đã điều tra — partial coverage | Cần tra Rules::TIMEZONE_NAME implementation |

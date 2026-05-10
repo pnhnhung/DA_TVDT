@@ -1,0 +1,30 @@
+Rule ID,Module,Type,Statement,Status,Confidence,Evidence,Automation Agent,Automation Skill
+FR-REC-001,recruitment,field,"vacancy name: max 100",confirmed,high,Api/VacancyAPI.php#462,@ui_automation_agent,playwright-ui-test
+FR-REC-002,recruitment,field,"vacancy status: boolean",confirmed,high,Api/VacancyAPI.php#467,@ui_automation_agent,playwright-ui-test
+FR-REC-003,recruitment,field,"vacancy jobTitleId: active job title",confirmed,high,Api/VacancyAPI.php#471,@api_automation_agent,playwright-api-test
+FR-REC-004,recruitment,field,"vacancy isPublished: boolean",confirmed,high,Api/VacancyAPI.php#476,@ui_automation_agent,playwright-ui-test
+FR-REC-005,recruitment,field,"vacancy description: string",confirmed,high,Api/VacancyAPI.php#481,@ui_automation_agent,playwright-ui-test
+FR-REC-006,recruitment,field,"vacancy numOfPositions: int(13)",confirmed,high,Api/VacancyAPI.php#488,@ui_automation_agent,playwright-ui-test
+FR-REC-007,recruitment,field,"vacancy employeeId: active employee",confirmed,high,Api/VacancyAPI.php#494,@api_automation_agent,playwright-api-test
+FR-REC-008,recruitment,field,"candidate firstName: max 30",confirmed,high,Api/CandidateAPI.php#643,@ui_automation_agent,playwright-ui-test
+FR-REC-009,recruitment,field,"candidate middleName: max 30",confirmed,high,Api/CandidateAPI.php#649,@ui_automation_agent,playwright-ui-test
+FR-REC-010,recruitment,field,"candidate lastName: max 30",confirmed,high,Api/CandidateAPI.php#657,@ui_automation_agent,playwright-ui-test
+FR-REC-011,recruitment,field,"candidate email: email format",confirmed,high,Api/CandidateAPI.php#662,@ui_automation_agent,playwright-ui-test
+FR-REC-012,recruitment,field,"candidate contactNumber: string",confirmed,high,Api/CandidateAPI.php#667,@ui_automation_agent,playwright-ui-test
+FR-REC-013,recruitment,field,"candidate vacancyId: exists",confirmed,high,Api/CandidateAPI.php#674,@api_automation_agent,playwright-api-test
+FR-REC-014,recruitment,field,"candidate keywords: max 250",confirmed,high,Api/CandidateAPI.php#680,@ui_automation_agent,playwright-ui-test
+FR-REC-015,recruitment,field,"candidate comment: max 250",confirmed,high,Api/CandidateAPI.php#688,@ui_automation_agent,playwright-ui-test
+FR-REC-016,recruitment,field,"candidate dateOfApplication: api_date",confirmed,high,Api/CandidateAPI.php#696,@ui_automation_agent,playwright-ui-test
+FR-REC-017,recruitment,field,"candidate consentToKeepData: boolean",confirmed,high,Api/CandidateAPI.php#702,@ui_automation_agent,playwright-ui-test
+FR-REC-018,recruitment,field,"candidate_action note: string",confirmed,high,AbstractCandidateActionAPI.php#190,@ui_automation_agent,playwright-ui-test
+FR-REC-019,recruitment,field,"interview name: max 100",confirmed,high,CandidateInterviewSchedulingAPI.php#297,@ui_automation_agent,playwright-ui-test
+FR-REC-020,recruitment,field,"interview date: api_date",confirmed,high,CandidateInterviewSchedulingAPI.php#302,@ui_automation_agent,playwright-ui-test
+FR-REC-021,recruitment,field,"interview interviewerEmpNumbers: count:1-5",confirmed,high,CandidateInterviewSchedulingAPI.php#320,@api_automation_agent,playwright-api-test
+FR-REC-022,recruitment,field,"attachment: base64",confirmed,high,CandidateAttachmentAPI.php#152,@api_automation_agent,playwright-api-test
+BR-REC-001,recruitment,business,"Vacancy: Job Title must be Active",confirmed,high,Api/VacancyAPI.php#389,@api_automation_agent,playwright-api-test
+BR-REC-002,recruitment,business,"Vacancy: Hiring Manager must be Active",confirmed,high,Api/VacancyAPI.php#397,@api_automation_agent,playwright-api-test
+BR-REC-003,recruitment,business,"Candidate: Update Vacancy resets status & logs history",confirmed,high,Api/CandidateAPI.php#913,@integration_agent,cross-module-test
+BR-REC-004,recruitment,business,"Workflow: Must follow State Machine",confirmed,high,AbstractCandidateActionAPI.php#113,@api_automation_agent,playwright-api-test
+BR-REC-005,recruitment,business,"Workflow: Auto-create Employee on HIRED",confirmed,high,AbstractCandidateActionAPI.php#124,@integration_agent,cross-module-test
+BR-REC-006,recruitment,business,"Interview: Max 2 interviews per candidate/vacancy",confirmed,high,CandidateInterviewSchedulingAPI.php#175,@api_automation_agent,playwright-api-test
+BR-REC-007,recruitment,business,"Attachment: Support Replace/Delete mode",confirmed,high,CandidateAttachmentAPI.php#285,@ui_automation_agent,playwright-ui-test

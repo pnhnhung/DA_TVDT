@@ -1,0 +1,21 @@
+permission_id,role,module,action,allowed,data_scope,enforcement_type,source_trace,status,note,Automation Agent,Automation Skill
+PERM-REC-001,Admin,recruitment,GET vacancies,yes,all,policy,Api/VacancyAPI.php#getAll,confirmed,,@security_agent,security-audit
+PERM-REC-002,Admin,recruitment,POST vacancy,yes,all,policy,Api/VacancyAPI.php#create,confirmed,,@security_agent,security-audit
+PERM-REC-003,Admin,recruitment,PUT vacancy,yes,all,policy,Api/VacancyAPI.php#update,confirmed,,@security_agent,security-audit
+PERM-REC-004,Admin,recruitment,DELETE vacancy,yes,all,policy,Api/VacancyAPI.php#delete,confirmed,,@security_agent,security-audit
+PERM-REC-005,Admin,recruitment,GET candidates,yes,all,policy,Api/CandidateAPI.php#getAll,confirmed,,@security_agent,security-audit
+PERM-REC-006,Admin,recruitment,POST candidate,yes,all,policy,Api/CandidateAPI.php#create,confirmed,,@security_agent,security-audit
+PERM-REC-007,Admin,recruitment,PUT candidate,yes,all,policy,Api/CandidateAPI.php#update,confirmed,,@security_agent,security-audit
+PERM-REC-008,Admin,recruitment,DELETE candidate,yes,all,policy,Api/CandidateAPI.php#delete,confirmed,,@security_agent,security-audit
+PERM-REC-009,Admin,recruitment,POST Shortlist,yes,all,workflow,Api/CandidateShortlistingAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-010,Admin,recruitment,POST Reject,yes,all,workflow,Api/CandidateRejectionAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-011,Admin,recruitment,POST Schedule Interview,yes,all,workflow,Api/CandidateInterviewSchedulingAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-012,Admin,recruitment,POST Mark Interview Pass,yes,all,workflow,Api/CandidateMarkingInterviewPassAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-013,Admin,recruitment,POST Mark Interview Fail,yes,all,workflow,Api/CandidateMarkingInterviewFailAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-014,Admin,recruitment,POST Job Offer,yes,all,workflow,Api/CandidateJobOfferingAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-015,Admin,recruitment,POST Decline Offer,yes,all,workflow,Api/CandidateOfferDecliningAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-016,Admin,recruitment,POST Hire,yes,all,workflow,Api/CandidateHiringAPI.php,confirmed,,@security_agent,security-audit
+PERM-REC-017,HiringManager,recruitment,GET vacancies,yes,own,policy,Api/VacancyAPI.php,inferred,filtered by hiring_manager_id,@security_agent,security-audit
+PERM-REC-018,HiringManager,recruitment,GET candidates,yes,own,policy,Api/CandidateAPI.php,inferred,filtered by vacancy_id,@security_agent,security-audit
+PERM-REC-019,Public,recruitment,GET public vacancies,yes,published,policy,VacancyListViewController.php,confirmed,,@security_agent,security-audit
+PERM-REC-020,Public,recruitment,POST application,yes,any,policy,ApplicantController.php,confirmed,,@security_agent,security-audit

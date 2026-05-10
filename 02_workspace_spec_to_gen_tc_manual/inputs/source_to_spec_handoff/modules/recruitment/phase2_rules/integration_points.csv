@@ -1,0 +1,6 @@
+ID,From Module,To Module,Contract,Logic,Source Trace,Status
+INT-REC-001,Recruitment,PIM,Candidate Hiring action,Automatic Employee creation or linkage on HIRED,Api/CandidateHiringAPI.php,confirmed
+INT-REC-002,Recruitment,PIM,Hiring Manager selection,List of hiring managers from PIM Employee,Api/HiringManagerAPI.php,confirmed
+INT-REC-003,Recruitment,Admin (Job),Job Title selection,List of job titles from Admin module,entity/Vacancy.php#job_title_code,confirmed
+INT-REC-004,Recruitment,Maintenance (Purge),Purge Candidate records,Permanent deletion of candidates with no GDPR consent,Api/PurgeCandidateAPI.php,confirmed
+INT-REC-005,Recruitment,Dashboard,My Actions widget,Candidate action summary counts for dashboard,Api/EmployeeActionSummaryAPI.php,confirmed

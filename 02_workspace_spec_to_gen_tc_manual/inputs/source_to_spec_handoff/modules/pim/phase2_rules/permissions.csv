@@ -1,0 +1,4 @@
+role_id,module,feature,action,allowed,data_scope,enforcement_type,source_trace,status,note
+Admin,pim,Employee,create,yes,all,policy,"Api/EmployeeAPI.php#create:513",confirmed,"WorkflowStateMachine::EMPLOYEE_ACTION_ADD"
+Admin,pim,Employee,delete,yes,all,policy,"Api/EmployeeAPI.php#getValidationRuleForDelete:699",confirmed,"EMPLOYEE_ACTION_DELETE_ACTIVE / EMPLOYEE_ACTION_DELETE_TERMINATED"
+ESS,pim,Employee,create,no,,,,inferred,"UserRoleManager check sẽ return false nếu không có quyền"

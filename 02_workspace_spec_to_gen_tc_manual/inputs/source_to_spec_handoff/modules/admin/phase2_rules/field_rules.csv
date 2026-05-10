@@ -1,0 +1,26 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-ADM-001,admin,system_user,username,yes,string,"min:5, max:40, unique",,,Api/UserAPI.php#318,confirmed,high
+FR-ADM-002,admin,system_user,password,yes,string,max:64,,,Api/UserAPI.php#323,confirmed,high
+FR-ADM-003,admin,system_user,userRoleId,yes,integer,positive,,,Api/UserAPI.php#332,confirmed,high
+FR-ADM-004,admin,system_user,empNumber,yes,integer,positive,exists in PIM,,Api/UserAPI.php#336,confirmed,high
+FR-ADM-005,admin,system_user,status,yes,boolean,,,,,Api/UserAPI.php#340,confirmed,high
+FR-ADM-006,admin,job_title,title,yes,string,"max:100, unique",,,Api/JobTitleAPI.php#326,confirmed,high
+FR-ADM-007,admin,job_title,description,no,string,max:400,,,Api/JobTitleAPI.php#333,confirmed,high
+FR-ADM-008,admin,job_title,note,no,string,max:400,,,Api/JobTitleAPI.php#341,confirmed,high
+FR-ADM-009,admin,job_title,specification,no,base64,max_name:200,,,Api/JobTitleAPI.php#367,confirmed,high
+FR-ADM-010,admin,job_title,currentJobSpecification,no,string,keepCurrent/deleteCurrent/replaceCurrent,,,Api/JobTitleAPI.php#466,confirmed,high
+FR-ADM-011,admin,job_category,name,yes,string,"max:50, unique",,,Api/JobCategoryAPI.php#308,confirmed,high
+FR-ADM-012,admin,skill,name,yes,string,"max:120, unique",,,Api/SkillAPI.php#253,confirmed,high
+FR-ADM-013,admin,skill,description,no,string,max:400,,,Api/SkillAPI.php#261,confirmed,high
+FR-ADM-014,admin,education,name,yes,string,"max:100, unique",,,Api/EducationAPI.php#289,confirmed,high
+FR-ADM-015,admin,language,name,yes,string,"max:120, unique",,,Api/LanguageAPI.php#288,confirmed,high
+FR-ADM-016,admin,license,name,yes,string,"max:100, unique",,,Api/LicenseAPI.php#287,confirmed,high
+FR-ADM-017,admin,membership,name,yes,string,"max:100, unique",,,Api/MembershipAPI.php#286,confirmed,high
+FR-ADM-018,admin,location,name,yes,string,"max:100, unique",,,Api/LocationAPI.php#313,confirmed,high
+FR-ADM-019,admin,location,countryCode,yes,string,ISO 2 chars,,,Api/LocationAPI.php#318,confirmed,high
+FR-ADM-020,admin,organization,name,yes,string,max:100,,,Api/OrganizationAPI.php#235,confirmed,high
+FR-ADM-021,admin,subunit,name,yes,string,"max:100, unique",,,Api/SubunitAPI.php#270,confirmed,high
+FR-ADM-022,admin,pay_grade,name,yes,string,"max:100, unique",,,Api/PayGradeAPI.php#297,confirmed,high
+FR-ADM-023,admin,pay_grade_currency,currencyId,yes,string,max:3,,,Api/PayGradeCurrencyAPI.php#246,confirmed,high
+FR-ADM-024,admin,pay_grade_currency,minSalary,no,float,max:10^9,,,Api/PayGradeCurrencyAPI.php#383,confirmed,high
+FR-ADM-025,admin,pay_grade_currency,maxSalary,no,float,max:10^9,,,Api/PayGradeCurrencyAPI.php#398,confirmed,high

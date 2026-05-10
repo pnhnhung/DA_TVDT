@@ -1,0 +1,8 @@
+| Gap ID | Related Rule ID | Feature | Description | Impact on Testing | Investigation Status | Action |
+|---|---|---|---|---|---|---|
+| GAP-REC-001 | N/A | Interview Scheduling | `CandidateInterviewSchedulingAPI` chưa được extract field rules (ngày, giờ, interviewer). | Không test được luồng đặt lịch phỏng vấn. | Đã điều tra — phát hiện file chưa phân tích | Cần extract từ CandidateInterviewSchedulingAPI |
+| GAP-REC-002 | N/A | Interview Attachment | `InterviewAttachmentAPI` — upload file đính kèm phỏng vấn chưa có spec. | Không test được upload attachment phỏng vấn. | Đã điều tra — phát hiện file chưa phân tích | Cần extract từ InterviewAttachmentAPI |
+| GAP-REC-003 | N/A | Candidate Attachment (CV) | `CandidateAttachmentAPI` — upload CV/hồ sơ chưa có spec. | Không test được upload CV ứng viên. | Đã điều tra — phát hiện file chưa phân tích | Cần extract từ CandidateAttachmentAPI |
+| GAP-REC-004 | PERM-REC-017, PERM-REC-018 | Hiring Manager data scope | Chưa rõ scope permission của Hiring Manager khi xem ứng viên của vacancy mình quản lý. | Không test được security boundary của Hiring Manager. | Đã điều tra — logic phức tạp | Cần verify HiringManagerPermission |
+| GAP-REC-005 | N/A | Public Apply form | Validation form nộp đơn online (public) chưa được extract. | Không test được luồng ứng viên tự nộp đơn. | Đã điều tra — controller chưa phân tích | Cần extract từ ApplicantController |
+| GAP-REC-007 | N/A | Deprecated fields migration | `Candidate.status`, `cvFileId`, `cvTextVersion` bị @deprecated nhưng vẫn tồn tại. Chưa rõ migration đã xong chưa. | Có thể gây confusion khi test data. | Đã điều tra — conflict | Cần xác nhận với BA/Dev |

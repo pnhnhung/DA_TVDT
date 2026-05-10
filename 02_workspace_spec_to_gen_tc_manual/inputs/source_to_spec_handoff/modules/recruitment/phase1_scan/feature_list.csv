@@ -1,0 +1,9 @@
+Feature ID,Module,Name,Description,Actors,API/Controller,Status,Primary Agent
+REC-001,recruitment,Vacancy Management,Manage job vacancies,Admin/Hiring Manager,Api/VacancyAPI.php,confirmed,@ui_automation_agent
+REC-002,recruitment,Vacancy Attachments,Manage vacancy related files,Admin/Hiring Manager,Api/VacancyAttachmentAPI.php,confirmed,@api_automation_agent
+REC-003,recruitment,Candidate Management,Manage candidate profiles,Admin/Hiring Manager,Api/CandidateAPI.php,confirmed,@ui_automation_agent
+REC-004,recruitment,Candidate Attachments,Manage candidate CV/Resume,Admin/Hiring Manager,Api/CandidateAttachmentAPI.php,confirmed,@ui_automation_agent
+REC-005,recruitment,Workflow Actions,Transition candidate states,Admin/Hiring Manager,AbstractCandidateActionAPI.php,confirmed,@api_automation_agent
+REC-006,recruitment,Interview Scheduling,Schedule interviews for candidates,Admin/Hiring Manager,Api/CandidateInterviewSchedulingAPI.php,confirmed,@ui_automation_agent
+REC-007,recruitment,Hiring Integration,Automatic employee creation on Hire,Admin/Hiring Manager,Api/CandidateHiringAPI.php,confirmed,@integration_agent
+REC-008,recruitment,Public Apply,External candidate application,Public,PublicController\ApplicantController.php,confirmed,@ui_automation_agent

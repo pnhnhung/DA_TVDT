@@ -1,0 +1,16 @@
+Rule ID,Module,Entity,Field,Required,Type,Format,Constraint,Default,Dependencies,Source Trace,Status,Confidence
+FR-001,time,customer,name,yes,string,max:50,unique (ignore deleted),,,Api/CustomerAPI.php#getCommonBodyValidationRules:375,confirmed,high
+FR-002,time,customer,description,no,string,max:255,,,,Api/CustomerAPI.php#getCommonBodyValidationRules:381,confirmed,high
+FR-003,time,project,customerId,yes,integer,positive,exists in Customer,,,Api/ProjectAPI.php#getCommonBodyValidationRules:439,confirmed,high
+FR-004,time,project,name,yes,string,max:100,unique per customerId,,,Api/ProjectAPI.php#getCommonBodyValidationRules:462,confirmed,high
+FR-005,time,project,description,no,string,max:256,,,,Api/ProjectAPI.php#getCommonBodyValidationRules:454,confirmed,high
+FR-006,time,project,projectAdminsEmpNumbers,no,array,maxItems:5,,,,Api/ProjectAPI.php#getCommonBodyValidationRules:447,confirmed,high
+FR-007,time,project_activity,projectId,yes,integer,positive,,,,Api/ProjectActivityAPI.php#getCommonBodyValidationRules:408,confirmed,high
+FR-008,time,project_activity,name,yes,string,max:100,unique per projectId,,,Api/ProjectActivityAPI.php#getCommonBodyValidationRules:414,confirmed,high
+FR-009,time,timesheet,fromDate,no,date,api_date,,,Api/EmployeeTimesheetAPI.php#getValidationRuleForGetAll:230,confirmed,high
+FR-010,time,timesheet,toDate,no,date,api_date,,,Api/EmployeeTimesheetAPI.php#getValidationRuleForGetAll:236,confirmed,high
+FR-011,time,timesheet,date,yes,date,api_date,,,Api/EmployeeTimesheetAPI.php#getValidationRuleForCreate:301,confirmed,high
+FR-012,time,timesheet,action,yes,string,enum[SUBMIT|APPROVE|REJECT|RESET|MODIFY],,,Api/EmployeeTimesheetAPI.php#getValidationRuleForUpdate:456,confirmed,high
+FR-013,time,timesheet,comment,no,string,max:2000,,,Api/EmployeeTimesheetAPI.php#getValidationRuleForUpdate:463,confirmed,high
+FR-014,time,timesheet_item,entries,no,array,,,,Api/EmployeeTimesheetItemAPI.php#getValidationRuleForUpdate:442,confirmed,high
+FR-015,time,timesheet_item,deletedEntries,no,array,,,,Api/EmployeeTimesheetItemAPI.php#getValidationRuleForUpdate:449,confirmed,high

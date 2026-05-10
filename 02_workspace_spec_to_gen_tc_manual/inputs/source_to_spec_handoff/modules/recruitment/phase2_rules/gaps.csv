@@ -1,0 +1,8 @@
+Module,ID,Topic,Description,Clarification,Status,Blocker Level
+recruitment,GAP-REC-001,Interview Scheduling,Missing field rules for date/time/interviewer,Resolved via deep dive audit,RESOLVED,Low
+recruitment,GAP-REC-002,Interview Attachment,Missing rules for interview file attachments,Resolved via deep dive audit,RESOLVED,Low
+recruitment,GAP-REC-003,Candidate Attachment,Missing rules for candidate CV upload,Resolved via deep dive audit,RESOLVED,Low
+recruitment,GAP-REC-004,Hiring Manager scope,Unclear data scope for Hiring Manager role,Need to verify source permissions logic,OPEN,Medium
+recruitment,GAP-REC-005,Public Apply validation,Missing validation for anonymous apply form,Check Controller/PublicController/ApplicantController,OPEN,High
+recruitment,GAP-REC-006,CandidateHistory,Action log business rules missing,Verify from AbstractCandidateActionAPI,OPEN,Low
+recruitment,GAP-REC-007,Deprecated fields,Candidate.status etc. still in DB,Confirm old data migration status,OPEN,Low

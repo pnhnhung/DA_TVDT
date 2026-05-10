@@ -1,0 +1,7 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-BUZ-001,Any authenticated user,buzz,GET posts/shares,yes,yes,all employees,,Api/BuzzFeedAPI.php (inferred),inferred,medium
+PERM-BUZ-002,Any authenticated user,buzz,POST new post/photo/video share,yes,yes,self only,,Api/BuzzShareAPI.php (inferred),inferred,medium
+PERM-BUZ-003,Any authenticated user,buzz,POST comment on any post,yes,yes,any post,Post must be visible to user,Api/BuzzCommentAPI.php (inferred),inferred,medium
+PERM-BUZ-004,Post author only,buzz,PUT/DELETE own post,yes,yes,self posts only,BR-002 confirmed — post immutable after creation for content,business_rules.md#BR-002,confirmed,high
+PERM-BUZ-005,Comment author only,buzz,DELETE own comment,yes,yes,self comments only,,business_rules.md#BR-003,confirmed,high
+PERM-BUZ-006,Any authenticated user,buzz,POST like on post or comment,yes,yes,any content,,Api/BuzzLikeAPI.php (inferred),inferred,medium

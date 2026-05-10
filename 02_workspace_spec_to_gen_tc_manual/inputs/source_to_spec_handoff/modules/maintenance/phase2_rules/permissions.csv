@@ -1,0 +1,4 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-MNT-001,Admin only,maintenance,Purge terminated employees,yes,yes,terminated employees only,termination_id IS NOT NULL,phase2_rules/business_rules.md#BR-001,confirmed,high
+PERM-MNT-002,Admin only,maintenance,Purge candidates,yes,yes,candidates without consent,consentToKeepData = false,phase2_rules/business_rules.md#BR-002,confirmed,high
+PERM-MNT-003,Admin only,maintenance,Purge access logs,yes,yes,all logs (inferred),Admin permission,Api/ (inferred),inferred,medium

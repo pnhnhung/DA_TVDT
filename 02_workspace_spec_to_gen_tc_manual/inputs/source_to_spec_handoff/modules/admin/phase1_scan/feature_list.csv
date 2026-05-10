@@ -1,0 +1,13 @@
+Feature ID,Module,Name,Description,Actors,API/Controller,Status,Primary Agent
+FEAT-ADM-001,admin,User Management,Manage system user accounts,Admin,/api/v2/admin/users,confirmed,@ui_automation_agent
+FEAT-ADM-002,admin,Job Titles,Manage company job titles,Admin,/api/v2/admin/job-titles,confirmed,@ui_automation_agent
+FEAT-ADM-003,admin,Pay Grades,Manage pay grades and currencies,Admin,/api/v2/admin/pay-grades,confirmed,@ui_automation_agent
+FEAT-ADM-004,admin,Employment Status,Manage employment types,Admin,/api/v2/admin/employment-statuses,confirmed,@ui_automation_agent
+FEAT-ADM-005,admin,Job Categories,Manage job categories,Admin,/api/v2/admin/job-categories,confirmed,@ui_automation_agent
+FEAT-ADM-006,admin,Work Shifts,Manage work shifts and durations,Admin,/api/v2/admin/work-shifts,confirmed,@ui_automation_agent
+FEAT-ADM-007,admin,Organization Info,Manage general organization data,Admin,/api/v2/admin/organization,confirmed,@ui_automation_agent
+FEAT-ADM-008,admin,Locations,Manage office locations and countries,Admin,/api/v2/admin/locations,confirmed,@ui_automation_agent
+FEAT-ADM-009,admin,Structure,Manage organization subunit tree,Admin,/api/v2/admin/subunits,confirmed,@ui_automation_agent
+FEAT-ADM-010,admin,Qualifications,Manage skills education and licenses,Admin,/api/v2/admin/skills,confirmed,@ui_automation_agent
+FEAT-ADM-011,admin,Nationalities,Manage list of nationalities,Admin,/api/v2/admin/nationalities,confirmed,@ui_automation_agent
+FEAT-ADM-012,admin,Configuration,System settings and localization,Admin,/api/v2/admin/localization,confirmed,@ui_automation_agent

@@ -1,0 +1,12 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-TIM-001,Admin,time,GET/POST/PUT/DELETE Projects,yes,yes,all,,Api/ProjectAPI.php (inferred),inferred,medium
+PERM-TIM-002,Admin,time,GET/POST/PUT/DELETE Customers,yes,yes,all,,Api/CustomerAPI.php (inferred),inferred,medium
+PERM-TIM-003,Admin,time,GET/POST/PUT/DELETE Project Activities,yes,yes,all,,Api/ProjectActivityAPI.php (inferred),inferred,medium
+PERM-TIM-004,Admin,time,View/Manage all timesheets,yes,yes,all,,Api/TimesheetAPI.php (inferred),inferred,medium
+PERM-TIM-005,Admin,time,Approve/Reject timesheets of any employee,yes,yes,all,,Api/TimesheetActionAPI.php (inferred),inferred,medium
+PERM-TIM-006,Supervisor,time,View/Approve subordinate timesheets,yes,yes,accessible subordinates,Must be direct supervisor,Api/TimesheetAPI.php (inferred),inferred,medium
+PERM-TIM-007,Project Admin,time,View/Approve timesheets for own projects,yes,yes,project members only,Must be ProjectAdmin of that project,Api/TimesheetAPI.php (inferred),entity/ProjectAdmin.php,inferred,medium
+PERM-TIM-008,Employee (ESS),time,Create own timesheet,yes,yes,self only,Week must not have existing timesheet,Api/TimesheetAPI.php (inferred),inferred,medium
+PERM-TIM-009,Employee (ESS),time,View own timesheets,yes,yes,self only,,Api/TimesheetAPI.php (inferred),inferred,medium
+PERM-TIM-010,Employee (ESS),time,Edit own timesheet,yes,yes,self only,Timesheet must be INITIAL or REJECTED,Api/TimesheetItemAPI.php (inferred),inferred,medium
+PERM-TIM-011,Employee (ESS),time,Submit own timesheet,yes,yes,self only,Timesheet must be INITIAL,Api/TimesheetActionAPI.php (inferred),inferred,medium

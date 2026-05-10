@@ -1,0 +1,23 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-REC-001,recruitment,vacancy,name,yes,string,max:100,,,,Api/VacancyAPI.php#462,confirmed,high
+FR-REC-002,recruitment,recruitment,status,yes,boolean,,,,,Api/VacancyAPI.php#467,confirmed,high
+FR-REC-003,recruitment,vacancy,jobTitleId,yes,integer,positive,exists in JobTitle,,,Api/VacancyAPI.php#471,confirmed,high
+FR-REC-004,recruitment,vacancy,isPublished,yes,boolean,,,,,Api/VacancyAPI.php#476,confirmed,high
+FR-REC-005,recruitment,vacancy,description,no,string,,,,,Api/VacancyAPI.php#481,confirmed,high
+FR-REC-006,recruitment,vacancy,numOfPositions,no,integer,max digits:13,,,,Api/VacancyAPI.php#488,confirmed,high
+FR-REC-007,recruitment,vacancy,employeeId,yes,integer,positive,exists in Employee,,,Api/VacancyAPI.php#494,confirmed,high
+FR-REC-008,recruitment,candidate,firstName,yes,string,max:30,,,,Api/CandidateAPI.php#643,confirmed,high
+FR-REC-009,recruitment,candidate,middleName,no,string,max:30,,,,Api/CandidateAPI.php#649,confirmed,high
+FR-REC-010,recruitment,candidate,lastName,yes,string,max:30,,,,Api/CandidateAPI.php#657,confirmed,high
+FR-REC-011,recruitment,candidate,email,yes,string,email format,,,,Api/CandidateAPI.php#662,confirmed,high
+FR-REC-012,recruitment,candidate,contactNumber,no,string,phone format,,,,Api/CandidateAPI.php#667,confirmed,high
+FR-REC-013,recruitment,candidate,vacancyId,no,integer,exists in Vacancy,,,,Api/CandidateAPI.php#674,confirmed,high
+FR-REC-014,recruitment,candidate,keywords,no,string,max:250,,,,Api/CandidateAPI.php#680,confirmed,high
+FR-REC-015,recruitment,candidate,comment,no,string,max:250,,,,Api/CandidateAPI.php#688,confirmed,high
+FR-REC-016,recruitment,candidate,dateOfApplication,no,date,api_date,now(),,,Api/CandidateAPI.php#696,confirmed,high
+FR-REC-017,recruitment,candidate,consentToKeepData,no,boolean,,,,Api/CandidateAPI.php#702,confirmed,high
+FR-REC-018,recruitment,candidate_action,note,no,string,,,,,Api/AbstractCandidateActionAPI.php#190,confirmed,high
+FR-REC-019,recruitment,interview,interviewName,yes,string,max:100,,,,Api/CandidateInterviewSchedulingAPI.php#297,confirmed,high
+FR-REC-020,recruitment,interview,interviewDate,yes,date,,,,,Api/CandidateInterviewSchedulingAPI.php#302,confirmed,high
+FR-REC-021,recruitment,interview,interviewerEmpNumbers,yes,array,count:1-5,,,,Api/CandidateInterviewSchedulingAPI.php#320,confirmed,high
+FR-REC-022,recruitment,attachment,attachment,yes,base4,max_filename:200,,,,Api/CandidateAttachmentAPI.php#152,confirmed,high

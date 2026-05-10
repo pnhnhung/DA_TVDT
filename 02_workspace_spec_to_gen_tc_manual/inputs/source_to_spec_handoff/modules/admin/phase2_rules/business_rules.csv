@@ -1,0 +1,6 @@
+Rule ID,Module,Feature,Statement,Source Trace,Status,Confidence,Automation Agent,Automation Skill
+BR-ADM-001,admin,User Management,"Delete System Users: Hard delete, cannot delete current user or undeletable IDs",Api/UserAPI.php#474,confirmed,high,@api_automation_agent,playwright-api-test
+BR-ADM-002,admin,User Management,"Create System User: Username unique (not deleted), valid empNumber required",Api/UserAPI.php#267,confirmed,high,@api_automation_agent,playwright-api-test
+BR-ADM-003,admin,Job Title,"Update Job Specification: Logic Keep/Delete/Replace based on currentJobSpecification flag",Api/JobTitleAPI.php#429,confirmed,high,@ui_automation_agent,playwright-ui-test
+BR-ADM-004,admin,Structure,"Delete Subunit Protection: Cannot delete root node (ID=1)",Api/SubunitAPI.php#426,confirmed,high,@ui_automation_agent,playwright-ui-test
+BR-ADM-005,admin,Pay Grade,"Salary Range: Max Salary > Min Salary (if min > 0)",Api/PayGradeCurrencyAPI.php#440,confirmed,high,@ui_automation_agent,playwright-ui-test

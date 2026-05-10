@@ -1,0 +1,3 @@
+ID,From Module,To Module,Contract,Logic,Source Trace,Status
+INT-ADM-001,Admin,PIM,Employee linkage,System User must link to valid empNumber in PIM,Api/UserAPI.php#292,confirmed
+INT-ADM-002,Admin,Authentication,Login interaction,Username and Password authentication for system access,inferred,inferred

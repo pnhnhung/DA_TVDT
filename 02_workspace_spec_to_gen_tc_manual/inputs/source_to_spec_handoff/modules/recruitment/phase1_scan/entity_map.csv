@@ -1,0 +1,5 @@
+Module,Entity,Field,Type,Nullable,Constraint,Source Trace,Status,Automation Agent
+recruitment,Candidate,"id, firstName, middleName, lastName, email, contactNumber, comment, modeOfApplication, dateOfApplication, keywords, addedPerson, consentToKeepData",mixed,No,GDPR compliance,orangehrmRecruitmentPlugin/entity/Candidate.php#6,confirmed,@ui_automation_agent
+recruitment,Vacancy,"id, jobTitle, hiringManager, name, description, numOfPositions, status, isPublished, definedTime, updatedTime",mixed,No,"status boolean, isPublished boolean",orangehrmRecruitmentPlugin/entity/Vacancy.php#46,confirmed,@ui_automation_agent
+recruitment,CandidateVacancy,"id, candidate, vacancy, status, appliedDate",mixed,No,State Machine status,orangehrmRecruitmentPlugin/entity/CandidateVacancy.php#73,confirmed,@api_automation_agent
+recruitment,Interview,"id, candidateVacancy, candidate, interviewName, interviewDate, interviewTime, note",mixed,No,ManyToMany with Employee,orangehrmRecruitmentPlugin/entity/Interview.php#90,confirmed,@ui_automation_agent

@@ -1,0 +1,11 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-PER-001,Admin,performance,GET/POST/PUT/DELETE review cycles,yes,yes,all,,Api/PerformanceReviewAPI.php (inferred),inferred,medium
+PERM-PER-002,Admin,performance,Activate review cycle,yes,yes,all,,Api/PerformanceReviewAPI.php#activate (inferred),inferred,medium
+PERM-PER-003,Admin,performance,Complete review cycle,yes,yes,all,,Api/PerformanceReviewAPI.php#complete (inferred),inferred,medium
+PERM-PER-004,Admin,performance,GET/POST/PUT/DELETE KPIs,yes,yes,all,,Api/KpiAPI.php (inferred),inferred,medium
+PERM-PER-005,Supervisor (as Reviewer),performance,View assigned review,yes,yes,assigned reviews only,Must be in Reviewer list for the review,Api/ReviewerAPI.php (inferred),inferred,medium
+PERM-PER-006,Supervisor (as Reviewer),performance,Submit rating for review,yes,yes,assigned reviews only,Review must be ACTIVATED or IN_PROGRESS,Api/ReviewerRatingAPI.php (inferred),inferred,medium
+PERM-PER-007,Employee (as Reviewee),performance,View own review,yes,yes,self only,Review must be ACTIVATED or IN_PROGRESS,Api/PerformanceReviewAPI.php (inferred),inferred,medium
+PERM-PER-008,Employee (as Reviewee with self-review),performance,Submit self-rating,yes,yes,self only,Self-review enabled in configuration,Api/ReviewerRatingAPI.php (inferred),inferred,medium
+PERM-PER-009,Admin,performance,GET/POST/PUT/DELETE Performance Trackers,yes,yes,all,,Api/PerformanceTrackerAPI.php (inferred),inferred,medium
+PERM-PER-010,Supervisor,performance,View/Add log to Performance Tracker,yes,yes,accessible subordinates,Supervisor assigned to Tracker,Api/PerformanceTrackerLogAPI.php (inferred),inferred,medium

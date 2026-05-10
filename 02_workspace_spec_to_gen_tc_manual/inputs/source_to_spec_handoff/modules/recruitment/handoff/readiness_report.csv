@@ -1,0 +1,7 @@
+Module,Item,Status,Note,Readiness Level
+recruitment,Vacancy Management,READY,FR-001 to FR-007 confirmed,High
+recruitment,Candidate Management,READY,FR-008 to FR-018 confirmed,High
+recruitment,Interview Scheduling,READY,FR-019 to FR-021 confirmed,High
+recruitment,Attachments,READY,FR-022 confirmed,High
+recruitment,Workflow,READY,BR-003 to BR-005 confirmed,High
+recruitment,Interview & Attachment Logic,READY,BR-006 to BR-007 confirmed,High

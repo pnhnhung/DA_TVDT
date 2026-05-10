@@ -1,0 +1,3 @@
+@echo off
+echo Running Workspace Cleanup Script...
+powershell.exe -ExecutionPolicy Bypass -File "%~dp0clean.ps1"
