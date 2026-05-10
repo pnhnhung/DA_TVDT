@@ -1,0 +1,14 @@
+testcase_id,module,automation_agent,automation_skill,target_spec_file
+TC_UT_PIM_001,pim,playwright_api,api_testing,employees.spec.ts
+TC_UT_PIM_002,pim,playwright_api,api_testing,employees.spec.ts
+TC_UT_PIM_003,pim,playwright_api,api_testing,employees.spec.ts
+TC_UT_PIM_004,pim,playwright_ui,ui_testing,add_employee.spec.ts
+TC_UT_PIM_005,pim,playwright_ui,ui_testing,employee_contact.spec.ts
+TC_UT_PIM_006,pim,playwright_api,api_testing,employee_contact.spec.ts
+TC_UT_PIM_007,pim,playwright_ui,ui_testing,employee_personal.spec.ts
+TC_UT_PIM_008,pim,playwright_api,api_testing,employee_job.spec.ts
+TC_IT_PIM_001,pim,playwright_ui,ui_testing,employee_integration.spec.ts
+TC_IT_PIM_002,pim,manual_only,n/a,n/a
+TC_IT_PIM_003,pim,playwright_ui,ui_testing,employee_integration.spec.ts
+UC_PIM_001,pim,playwright_ui,ui_testing,e2e_employee_onboarding.spec.ts
+UC_PIM_002,pim,playwright_ui,ui_testing,e2e_employee_offboarding.spec.ts

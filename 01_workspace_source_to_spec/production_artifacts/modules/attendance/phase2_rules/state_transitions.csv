@@ -1,0 +1,9 @@
+Rule ID,Module,From State,To State,Action,Condition,Source Trace,Status
+ST-ATT-001,attendance,INITIAL,PUNCHED IN,Punch In,No overlap + 180s margin,Api/MyAttendanceRecordAPI.php#create,confirmed
+ST-ATT-002,attendance,PUNCHED IN,PUNCHED OUT,Punch Out,Must have punch in + no overlap,Api/MyAttendanceRecordAPI.php#update,confirmed
+ST-ATT-003,attendance,PUNCHED IN,PUNCHED IN,Edit Punch In,canUserModifyAttendance = true,Service/AttendanceService.php,confirmed
+ST-ATT-004,attendance,PUNCHED OUT,PUNCHED OUT,Edit Punch In/Out,canUserModifyAttendance = true,Service/AttendanceService.php,confirmed
+ST-ATT-005,attendance,PUNCHED IN,NA,Delete record,canUserModifyAttendance = true,Service/AttendanceService.php,confirmed
+ST-ATT-006,attendance,PUNCHED OUT,NA,Delete record,canUserModifyAttendance = true,Service/AttendanceService.php,confirmed
+ST-ATT-007,attendance,INITIAL,PUNCHED IN,Supervisor Punch In (Proxy),canSupervisorModifyAttendance = true,Service/AttendanceService.php,confirmed
+ST-ATT-008,attendance,PUNCHED IN,PUNCHED OUT,Supervisor Punch Out (Proxy),canSupervisorModifyAttendance = true,Service/AttendanceService.php,confirmed

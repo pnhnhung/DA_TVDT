@@ -1,0 +1,59 @@
+# Final Testcase Pack — module_leave
+
+## Official Testcases
+
+TC ID,Title,Level,P,Rule ID,Oracle,Expected Result
+TC_UT_LEV_01,Tạo Leave Type thành công,UT,P2,R_LEV_01,STRONG,Toast + row
+TC_UT_LEV_02,Thêm Leave Entitlement,UT,P1,R_LEV_02,STRONG,Balance updated
+TC_UT_LEV_03,ESS xin nghỉ hợp lệ,UT,P1,R_LEV_03,STRONG,Status=PENDING
+TC_UT_LEV_04,ESS vượt số dư,UT,P1,R_LEV_04,STRONG,"Error ""Insufficient Balance""; no record"
+TC_UT_LEV_05,Xin nghỉ thiếu trường,UT,P1,R_LEV_05,STRONG,"Error ""Required"""
+TC_UT_LEV_06,Supervisor thấy Approve/Reject,UT,P1,R_LEV_06,STRONG,Both buttons visible
+TC_UT_LEV_07,Cancel button (ESS trên PENDING),UT,P1,R_LEV_07,STRONG,Cancel button visible
+TC_UT_LEV_08,Leave Type name = 50 ký tự (max),UT,P1,R_LEV_08,ACCEPTABLE,Toast saved
+TC_UT_LEV_09,Leave Type name = 51 ký tự (max+1),UT,P1,R_LEV_08,ACCEPTABLE,Length ≤ 50 OR error
+TC_UT_LEV_10,Leave Type trùng tên,UT,P1,R_LEV_09,STRONG,"Error ""Already exists"""
+TC_IT_LEV_01,Entitlement → balance trên Apply form,IT,P1,BR_LEV_01,STRONG,Balance = entitlement value
+TC_IT_LEV_02,Supervisor Approve → ESS APPROVED,IT,P1,BR_LEV_02,STRONG,Status=APPROVED on E1's My Leave
+
+## Suggested
+"- TC_IT_LEV_03: Race condition Approve vs Cancel — state machine conflict, server behavior unconfirmed"
+
+## Blocked
+- TC_IT_LEV_04 (GAP-PIM-04): Leave pending khi Employee bị Terminate
+
+## Coverage Matrix Summary
+Rule,TC IDs,Status
+R_LEV_01,LEV_01,FULL
+R_LEV_02,LEV_02,FULL
+R_LEV_03-05,LEV_03-05,FULL
+R_LEV_06-07,LEV_06-07,FULL
+R_LEV_08-09,LEV_08-10,FULL
+BR_LEV_01-02,IT_LEV_01-02,FULL
+GAP-PIM-04,—,BLOCKED_BY_SPEC_GAP
+
+## Oracle Review Summary
+- STRONG: 10 | ACCEPTABLE: 2 (boundary max) | Weak: 0 | Missing: 0
+- **Oracle Gate: ✅ PASS**
+
+## Automation Readiness
+- Yes: 12 | Partial: 1 (IT_LEV_03 MultiSession) | No: 0
+
+## Exploratory Charters
+1. **Overlapping Leave**: E1 apply 2 Leave requests cho cùng ngày → system cho phép không?
+"2. **Cancel APPROVED leave**: Sau khi Approve, ESS Cancel → behavior?"
+3. **Leave year boundary**: Leave ngày 31/12 → 01/01 năm sau → entitlement tính năm nào?
+4. **Multiple leave types same day**: Annual + Sick cùng 1 ngày → allowed?
+
+---
+
+# Final Handoff Decision
+
+**Decision: READY_FOR_AUTOMATION_PREP**
+
+**Reason:** Oracle PASS; 12/13 `Yes`; GAP-PIM-04 BLOCKED (không ảnh hưởng 12 cases).
+
+**Next action:**
+"- Build `Page_Leave_Type`, `Page_Leave_Entitlement`, `Page_Leave_Apply`, `Page_Leave_List`"
+- IT_LEV_02: Cần 2 roles (E1 + S1) — dùng 2 login flows sequential
+- IT_LEV_03: MultiSession sau

@@ -1,0 +1,9 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,claim,request,claimEventId,yes,integer,positive,,,,Api/EmployeeClaimRequestAPI.php#getCommonParamRuleCollection:167,confirmed,high
+FR-002,claim,request,currencyId,yes,string,exists in Currency,,,,Api/EmployeeClaimRequestAPI.php#getCommonParamRuleCollection:171,confirmed,high
+FR-003,claim,request,remarks,no,string,max:1000,,,,Api/EmployeeClaimRequestAPI.php#getCommonParamRuleCollection:177,confirmed,high
+FR-004,claim,request,empNumber,yes,integer,positive,accessible emp number,,,Api/EmployeeClaimRequestAPI.php#getValidationRuleForCreate:153,confirmed,high
+FR-005,claim,expense,expenseTypeId,yes,integer,positive,exists in ExpenseType,,,Api/ClaimExpenseAPI.php#getValidationRuleForCreate:264,confirmed,high
+FR-006,claim,expense,amount,yes,float,between:0-9999999999.99,regex: /^\d+(\.\d{1,2})?$/,,,Api/ClaimExpenseAPI.php#getValidationRuleForCreate:268,confirmed,high
+FR-007,claim,expense,date,yes,date,api_date,,,,Api/ClaimExpenseAPI.php#getValidationRuleForCreate:273,confirmed,high
+FR-008,claim,expense,note,no,string,max:1000,,,,Api/ClaimExpenseAPI.php#getValidationRuleForCreate:278,confirmed,high

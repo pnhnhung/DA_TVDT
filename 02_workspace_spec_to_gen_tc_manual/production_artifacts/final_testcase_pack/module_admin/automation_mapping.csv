@@ -1,0 +1,16 @@
+testcase_id,module,automation_agent,automation_skill,target_spec_file
+TC_UT_ADM_001,admin,playwright_api,api_testing,users.spec.ts
+TC_UT_ADM_002,admin,playwright_api,api_testing,users.spec.ts
+TC_UT_ADM_003,admin,playwright_ui,ui_testing,users.spec.ts
+TC_UT_ADM_004,admin,playwright_api,api_testing,users.spec.ts
+TC_UT_ADM_005,admin,playwright_ui,ui_testing,users.spec.ts
+TC_UT_ADM_006,admin,playwright_api,api_testing,job_titles.spec.ts
+TC_UT_ADM_007,admin,playwright_api,api_testing,job_titles.spec.ts
+TC_UT_ADM_008,admin,playwright_api,api_testing,structure.spec.ts
+TC_UT_ADM_009,admin,playwright_ui,ui_testing,pay_grades.spec.ts
+TC_UT_ADM_010,admin,playwright_ui,ui_testing,job_titles.spec.ts
+TC_IT_ADM_001,admin,playwright_api,api_testing,users_integration.spec.ts
+TC_IT_ADM_002,admin,playwright_ui,ui_testing,job_titles_integration.spec.ts
+TC_IT_ADM_003,admin,playwright_ui,ui_testing,users_integration.spec.ts
+UC_ADM_001,admin,playwright_ui,ui_testing,e2e_admin_setup.spec.ts
+UC_ADM_002,admin,playwright_ui,ui_testing,e2e_admin_setup.spec.ts

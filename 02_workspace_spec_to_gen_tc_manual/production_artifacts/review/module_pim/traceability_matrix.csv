@@ -1,0 +1,14 @@
+rule_id,testcase_id,module,status
+BR-002,TC_UT_PIM_001,pim,mapped
+BR-001,TC_UT_PIM_002,pim,mapped
+BR-001,TC_UT_PIM_003,pim,mapped
+FR-001,TC_UT_PIM_004,pim,mapped
+BR-004,TC_UT_PIM_005,pim,mapped
+BR-004,TC_UT_PIM_006,pim,mapped
+FR-005,TC_UT_PIM_007,pim,mapped
+BR-005,TC_UT_PIM_008,pim,mapped
+BR-001,TC_IT_PIM_001,pim,mapped
+BR-005,TC_IT_PIM_002,pim,mapped
+BR-002,TC_IT_PIM_003,pim,mapped
+BR-001,UC_PIM_001,pim,mapped
+BR-002,UC_PIM_002,pim,mapped

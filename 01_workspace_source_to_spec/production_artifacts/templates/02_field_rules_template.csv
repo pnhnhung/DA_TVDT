@@ -1,0 +1,2 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+<FR-MOD-XXX>,<module_name>,<entity_name>,<field_name>,yes/no,<data_type>,<validation_rules>,<default_val>,<cross_field_rules>,<path#symbol:line>,confirmed|inferred,high|medium|low

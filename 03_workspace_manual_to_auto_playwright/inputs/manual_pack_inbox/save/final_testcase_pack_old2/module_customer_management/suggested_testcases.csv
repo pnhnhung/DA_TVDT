@@ -1,0 +1,21 @@
+# Suggested Testcases — Customer Management
+> Class: SUGGESTED | Workflow: 09 | Date: 2026-05-02
+
+TC ID,Title,Lý do SUGGESTED,Rule,Risk
+IT-CUST-015,2 Customer cùng register với cùng email,Concurrency — inferred,BR_CUST_001,High
+IT-CUST-016,Admin lock Customer giữa session thanh toán,Mid-session lock inferred,BR_CUST_001,Medium
+UC-CUST-007,Lock Customer đang trong 3DS2 flow,Inferred edge case,BR_CUST_003,Medium
+
+# Blocked Testcases — Customer Management
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+IT-CUST-005-exact,BR_CUST_002,Exact card limit number,Max cards = bao nhiêu?,Cao — test data không thể chuẩn bị
+IT-CUST-008-exact,BR_CUST_005,OTP throttle threshold,Số lần / khoảng thời gian throttle?,Cao — test data không thể chuẩn bị
+IT-CUST-011-flow,BR_CUST_006,Email change flow: OTP hay password confirm?,User cần xác thực gì khi đổi email?,Trung bình
+
+# Testcase Generation Gaps — Customer Management
+
+Gap ID,Testcase,Mô tả,Loại,Đề xuất
+G-CUST-01,IT-CUST-005-exact,Card limit chưa confirm,Thiếu,Dev confirm max card từ config
+G-CUST-02,IT-CUST-008-exact,OTP throttle config,Thiếu,Dev confirm rate limit
+G-CUST-03,IT-CUST-011-flow,Email change xác thực method,Sơ sài,Confirm flow với Dev

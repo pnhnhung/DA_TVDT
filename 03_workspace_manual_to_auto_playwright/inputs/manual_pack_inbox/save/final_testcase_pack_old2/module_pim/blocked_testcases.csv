@@ -1,0 +1,5 @@
+# Blocked Testcases — module_pim
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+GAP_PIM_01_TEST,R_PIM_02,Image validation detail,Giới hạn thực tế là 1MB? Support format gì?,Low
+GAP_PIM_02_TEST,BR_PIM_04,Circular Report-to,Cây sơ đồ có bị kẹt nếu gán vòng tròn?,Medium

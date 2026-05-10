@@ -1,0 +1,2 @@
+Module,Item,Status,Note,Readiness Level
+<module_name>,<Feature/Component>,READY|PARTIAL_READY|NOT_READY,<Notes>,High|Medium|Low

@@ -1,0 +1,5 @@
+# Testcase Generation Gaps — module_time
+
+| ID | Issue | Impact | Recommend |
+|---|---|---|---|
+| GAP_TIM_01 | Không rõ Race condition logic | Chưa biết delete chạy nền thế nào | Dùng manual test trước |

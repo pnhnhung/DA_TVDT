@@ -1,0 +1,29 @@
+# Testcase Coverage Matrix — Customer Management
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+| Coverage status | Count |
+|---|---:|
+| FULL | 3 |
+| PARTIAL | 3 |
+| NOT_COVERED | 0 |
+| BLOCKED_BY_SPEC_GAP | 0 |
+
+## Matrix
+
+| Rule ID | Rule Statement | Test level | Covered Testcase IDs | Coverage status | Missing cases | Recommendation |
+|---|---|---|---|---|---|---|
+| BR_CUST_001 | Điều kiện đăng ký qua App (kiểm tra Affiliate) | IT, Mixed | IT-CUST-001, IT-CUST-002, UC-CUST-001 | **FULL** | — | Valid/invalid affiliate, observable CMS |
+| BR_CUST_002 | Giới hạn số thẻ liên kết | IT, Mixed | IT-CUST-004, IT-CUST-005, UT-CUST-005, UC-CUST-003 | **PARTIAL** | Exact card limit chưa confirm → boundary test data placeholder | Confirm limit số thẻ với Dev |
+| BR_CUST_003 | Đăng ký bằng thẻ qua GMO (3DS2) | IT, Mixed | IT-CUST-003, UC-CUST-002 | **FULL** | — | 3DS2 success + fail observable |
+| BR_CUST_004 | Thêm thẻ (kiểm tra memberId) | IT, Mixed | IT-CUST-006, IT-CUST-004, UC-CUST-003 | **PARTIAL** | Thiếu case: memberId đã tồn tại vs tạo mới rõ ràng | Bổ sung case first card creates memberId |
+| BR_CUST_005 | Giới hạn gửi lại OTP SMS (Throttle) | IT, Mixed | IT-CUST-007, IT-CUST-008, IT-CUST-009, UT-CUST-002, UC-CUST-006 | **PARTIAL** | Throttle ngưỡng chưa confirm → test data placeholder | Confirm throttle config |
+| BR_CUST_006 | Thay đổi Email không được trùng | IT, Mixed | IT-CUST-010, IT-CUST-011, UT-CUST-003, UC-CUST-004 | **FULL** | — | Duplicate + valid change observable |
+
+## Critical Gaps
+
+| Rule ID | Gap | Impact | Required action |
+|---|---|---|---|
+| BR_CUST_002 | Card limit number chưa confirm | Trung bình | Dev confirm max cards trước IT-CUST-005 |
+| BR_CUST_005 | OTP throttle threshold chưa confirm | Trung bình | Dev confirm rate limit config |

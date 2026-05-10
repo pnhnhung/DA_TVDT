@@ -1,0 +1,14 @@
+# Testcase Coverage Matrix — module_admin_job
+
+| Rule ID | Rule Statement | Test Level | Covered TC IDs | Coverage Status | Missing Cases | Notes |
+|---|---|---|---|---|---|---|
+| R_JOB_01 | Job Title CRUD | UT | TC_UT_JOB_TITLE_xx | FULL | — | — |
+| R_JOB_02 | Delete Job Title | UT | TC_UT_JOB_TITLE_06 | PARTIAL | Delete restricted missing | — |
+| R_JOB_04 | Employment Status CRUD | UT | TC_UT_JOB_EMP_xx | FULL | — | — |
+| R_JOB_05 | Job Category CRUD | UT | TC_UT_JOB_CAT_xx | FULL | — | — |
+| R_JOB_06 | Pay Grade CRUD | UT | TC_UT_JOB_PAY_01..04 | FULL | — | — |
+| R_JOB_07 | Assign Currency | UT | TC_UT_JOB_PAY_05, 07 | FULL | — | — |
+| R_JOB_08 | Currency Min/Max | UT | TC_UT_JOB_PAY_06 | FULL | — | — |
+| BR_JOB_06 | Work Shift CRUD | UT | TC_UT_JOB_SHIFT_xx | FULL | — | — |
+| PERM_JOB_01 | ESS no access | UT | TC_UT_JOB_PERM_01 | FULL | — | — |
+| BR_JOB_01..05 | Race conditions | IT | — | BLOCKED_BY_SPEC_GAP | — | SUGGESTED |

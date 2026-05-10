@@ -1,0 +1,15 @@
+# Official Testcases — module_leave
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_LEV_TYPE_01,Tạo Leave Type thành công,UT,P2,R_LEV_01,STRONG,Toast saved; record appears,Admin logged in,"Name=""Annual Leave"""
+TC_UT_LEV_TYPE_02,Tạo Leave Type trùng tên,UT,P1,R_LEV_01,STRONG,"Error ""Already exists""",Admin logged in,Duplicate Name
+TC_UT_LEV_TYPE_05,Cập nhật Leave Type,UT,P2,R_LEV_01,STRONG,Toast saved,Admin logged in,Edit Name
+TC_UT_LEV_TYPE_06,Xóa Leave Type,UT,P2,R_LEV_01,STRONG,Toast deleted,Admin logged in,Delete Type
+TC_UT_LEV_ENT_01,Thêm Leave Entitlement,UT,P1,R_LEV_05,STRONG,Balance increased,Admin logged in,"Employee, Leave Type, Days"
+TC_UT_LEV_APP_01,Xin nghỉ phép hợp lệ,UT,P1,R_LEV_03,STRONG,Application PENDING,ESS logged in,"From Date, To Date"
+TC_UT_LEV_APP_02,Xin phép thất bại (Vượt số dư),UT,P1,BR_LEV_01,STRONG,"Error ""Insufficient Balance""",ESS logged in,Over balance
+TC_UT_LEV_APP_04,Cancel đơn xin nghỉ,UT,P1,BR_LEV_04,STRONG,Application CANCELLED,ESS logged in,Existing application
+TC_UT_LEV_APP_05,Supervisor duyệt đơn,UT,P1,PERM_LEV_02,STRONG,Application APPROVED,Supervisor logged in,Existing application
+TC_UT_LEV_APP_06,Supervisor từ chối đơn,UT,P1,PERM_LEV_02,STRONG,Application REJECTED,Supervisor logged in,Existing application
+TC_IT_LEV_01,Quản lý xem Leave List,IT,P1,R_LEV_07,STRONG,Data displayed correctly,Admin logged in,Search filter
+TC_IT_LEV_04,Chấm dứt hợp đồng (DB Oracle),IT,P1,GAP-PIM-04,STRONG,DB Leave requests maintain original state,"User with Leave, Terminated",DB query

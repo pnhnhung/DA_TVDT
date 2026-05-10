@@ -1,0 +1,27 @@
+# Handoff Summary — module_pim
+
+## Decision
+
+**`READY_FOR_AUTOMATION_PREP`**
+
+## Counts
+
+| Type | Count |
+|---|---:|
+| Official testcase | 9 |
+| Suggested testcase | 3 |
+| Exploratory charter | 3 |
+| Blocked testcase | 2 |
+
+## Open gaps
+- **GAP_PIM_01**: Image upload boundaries.
+- **GAP_PIM_02**: Circular supervisor logic.
+*(Note: GAP-PIM-04 đã được resolve qua Workspace 1 source code analysis).*
+
+## Risks
+- Upload file (TC_UT_PIM_03) cần xử lý OS-level file dialog hoặc dùng input file type=file ẩn (tùy thuộc vào framework). Cần set up file fixture trong repo.
+
+## Recommended next action
+1. Tạo thư mục `test_data/images` trong workspace 03 để lưu trữ file ảnh mẫu.
+2. Khởi tạo `Page_PIM` với các tab (Personal, Contact, Job, Report-to).
+3. Viết auto test cho toàn bộ 9 official testcases.

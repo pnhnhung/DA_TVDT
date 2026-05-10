@@ -1,0 +1,3 @@
+interaction_id,testcase_id,module_flow,source_module,target_module,roles,data_object,state_before,state_after,coverage_type,observable_oracle,trace,status,priority,gap_or_note
+IT_AUTH_001,TC_IT_AUTH_001,authentication -> core,authentication,core,N/A,Session,Unauthenticated,Authenticated,State transition,Redirect to HomePagePath,BR-001,confirmed,P1,
+IT_AUTH_002,TC_IT_AUTH_002,authentication -> pim,authentication,pim,N/A,Session,Authenticated,Authenticated,API integration,API returns 200 OK,BR-001,confirmed,P1,

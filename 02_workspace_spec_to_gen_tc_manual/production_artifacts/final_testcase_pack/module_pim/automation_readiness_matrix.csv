@@ -1,0 +1,14 @@
+testcase_id,module,level,priority,automation_candidate,automation_status,blocker_reason,recommended_tool
+TC_UT_PIM_001,pim,UT,P1,Yes,READY,,Playwright API
+TC_UT_PIM_002,pim,UT,P1,Yes,READY,,Playwright API
+TC_UT_PIM_003,pim,UT,P1,Yes,READY,,Playwright API
+TC_UT_PIM_004,pim,UT,P2,Yes,READY,,Playwright UI
+TC_UT_PIM_005,pim,UT,P1,Yes,READY,,Playwright UI
+TC_UT_PIM_006,pim,UT,P1,Yes,READY,,Playwright API
+TC_UT_PIM_007,pim,UT,P2,Yes,READY,,Playwright UI
+TC_UT_PIM_008,pim,UT,P1,Yes,READY,,Playwright API
+TC_IT_PIM_001,pim,IT,P1,Yes,READY,,Playwright UI
+TC_IT_PIM_002,pim,IT,P2,No,BLOCKED,"QA xác nhận bỏ qua automation cho event này do không có observable oracle qua API/UI.",Manual Only
+TC_IT_PIM_003,pim,IT,P1,Yes,READY,,Playwright UI
+UC_PIM_001,pim,USERCASE,P1,Yes,READY,,Playwright UI
+UC_PIM_002,pim,USERCASE,P1,Yes,READY,,Playwright UI

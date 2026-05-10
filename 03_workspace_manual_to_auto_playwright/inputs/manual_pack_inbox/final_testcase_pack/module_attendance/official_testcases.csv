@@ -1,0 +1,17 @@
+# Official Testcases — module_attendance
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_ATT_01,Punch In hợp lệ,UT,P1,R_ATT_01,STRONG,Toast saved; record appears,ESS User logged in,Current time
+TC_UT_ATT_02,Punch Out hợp lệ,UT,P1,R_ATT_02,STRONG,Toast saved; duration calculated,ESS User punched in,Current time
+TC_UT_ATT_03,Punch In với ghi chú,UT,P2,R_ATT_01,STRONG,Note saved in record,ESS User logged in,"Note=""Traffic jam"""
+TC_UT_ATT_04,Edit Punch In/Out,UT,P2,R_ATT_03,STRONG,Record updated with new time,Admin logged in,Existing punch record
+TC_UT_ATT_05,Xóa Punch record,UT,P2,R_ATT_04,STRONG,Toast deleted; row absent,Admin logged in,Existing punch record
+TC_UT_ATT_06,ESS không thể edit/delete,UT,P1,PERM_ATT_01,STRONG,Edit/Delete icon disabled,ESS User logged in,Own punch record
+TC_UT_ATT_07,Kiểm tra Duration khác Timezone (DB Oracle),UT,P1,R_ATT_05,STRONG,Duration trong DB chính xác theo giờ tuyệt đối,"Admin(UTC+7), Emp(UTC)","Punch In 8:00 (UTC), Out 17:00 (UTC)"
+TC_IT_ATT_01,Tương tác Leave & Attendance,IT,P1,BR_ATT_01,STRONG,Báo cáo tích hợp hiện cả phép và giờ làm,Emp có approved leave + punch records,View Monthly Report
+TC_UT_ATT_08,Chặn Double Punch In,UT,P1,BR_ATT_01,STRONG,Nút Punch In bị ẩn hoặc báo lỗi,ESS User đang ở trạng thái Punched In,Cố tình mở form Punch In
+TC_UT_ATT_09,Chặn Punch Out khi chưa Punch In,UT,P1,BR_ATT_02,STRONG,Nút Punch Out bị ẩn hoặc báo lỗi,ESS User chưa có record Punch In trong ngày,Cố tình mở form Punch Out
+TC_UT_ATT_10,Admin xem lịch sử điểm danh toàn công ty,UT,P1,PERM_ATT_02,STRONG,Hiển thị dữ liệu của tất cả phòng ban,Admin logged in,Vào menu Attendance Records
+TC_UT_ATT_11,Supervisor xem lịch sử điểm danh của lính trực thuộc,UT,P1,PERM_ATT_02,STRONG,Chỉ hiển thị dữ liệu của lính trực tiếp quản lý,Supervisor logged in,Vào menu Attendance Records
+TC_IT_ATT_02,Ngoại lệ: Quên Punch Out ngày hôm trước,IT,P2,BR_ATT_01,STRONG,Hệ thống ép nhập giờ Punch Out cho ngày cũ trước khi cho Punch In ngày mới,ESS User quên Punch Out ngày hôm qua,"Đăng nhập ngày hôm nay, bấm Punch In"
+UC-ATT-001,Luồng 1 ngày chuẩn cộng dồn Duration,USERCASE,P1,BR_ATT_03,STRONG,Duration tổng = (PunchOut_1 - PunchIn_1) + (PunchOut_2 - PunchIn_2),ESS User logged in,"Sáng In 8h Out 12h, Chiều In 13h Out 17h"

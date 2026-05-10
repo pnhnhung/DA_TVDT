@@ -1,0 +1,6 @@
+# Suggested Testcases — module_admin_user_management
+
+| TC ID | Title | Level | Reason | Rule ID | Expected Result |
+|---|---|---|---|---|---|
+| TC_IT_USR_03 | Race condition khi Admin 1 đổi quyền Admin 2 lúc Admin 2 đang lưu data | IT | Unconfirmed behavior | BR_USR_02 | Data save rejected do Admin 2 bị mất quyền giữa chừng |
+| TC_UT_USR_09 | Username dài tối đa | UT | Chưa confirm độ dài | R_USR_05 | Cho phép tạo thành công nếu đúng độ dài max |

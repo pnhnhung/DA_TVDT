@@ -1,0 +1,19 @@
+# Official Testcases — module_admin_organization
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_ORG_01,Lưu General Information thành công,UT,P2,R_ORG_01,STRONG,Toast saved; data persists,Admin logged in,"Tên công ty, Số lượng nhân viên"
+TC_UT_ORG_02,Lưu General Info thiếu trường bắt buộc,UT,P2,R_ORG_01,STRONG,"Error ""Required""",Admin logged in,Organization Name = rỗng
+TC_UT_ORG_03,Tạo Location thành công,UT,P1,R_ORG_02,STRONG,Toast saved; Location visible in list,Admin logged in,"Name=""Hanoi HQ"", Country=""Vietnam"""
+TC_UT_ORG_04,Tạo Location thiếu Country,UT,P2,R_ORG_02,STRONG,"Error ""Required""",Admin logged in,"Name=""Hanoi HQ"", Country=empty"
+TC_UT_ORG_05,Xóa Location thành công,UT,P2,R_ORG_03,STRONG,Toast deleted; row absent,"Admin logged in, Location exists",Delete Location
+TC_UT_ORG_06,Tạo Structure Unit,UT,P1,R_ORG_04,STRONG,Toast saved; Unit appears in tree,Admin logged in,"Unit ID=""IT"", Name=""IT Dept"""
+TC_UT_ORG_06B,Cập nhật (Edit) Structure Unit,UT,P2,R_ORG_04,STRONG,Toast saved,Admin logged in,"Edit ""IT Dept"""
+TC_UT_ORG_06C,Xóa Structure Unit,UT,P1,R_ORG_04,STRONG,Toast deleted; node absent,Admin logged in,"Delete ""IT Dept"""
+TC_UT_ORG_07,Kiểm tra quyền ESS,UT,P1,PERM_ORG_01,ACCEPTABLE,Menu absent OR Access Denied,ESS User logged in,N/A
+TC_IT_ORG_01,Location trong form tạo Employee,IT,P1,R_ORG_05,STRONG,Location xuất hiện trong dropdown Work Location ở PIM,Admin logged in,Navigate to PIM -> Add Emp
+TC_UT_ORG_08,Tạo Location: Country Code không hợp lệ,UT,P2,BR_ORG_02,STRONG,Hệ thống báo lỗi Country Code không hợp lệ,Admin logged in,"Name=Office, Country=XYZ"
+TC_UT_ORG_09,Tạo Subunit (Node con) dưới một Node cha,UT,P1,BR_ORG_04,STRONG,Toast saved; Subunit xuất hiện nằm dưới node cha trong tree,Admin logged in,"Chọn Parent = IT Dept, tạo Software Dept"
+TC_IT_ORG_02,Xóa Location ĐANG CÓ nhân viên,IT,P1,BR_ORG_03,STRONG,Hệ thống chặn không cho xóa hoặc hiển thị lỗi In Use,Nhân viên đang được gán tại Location A,Click Delete Location A
+TC_IT_ORG_03,Tên công ty đồng bộ sang báo cáo/giao diện,IT,P2,BR_ORG_01,STRONG,Tên công ty hiển thị đúng trên file PDF/Excel export ra,Admin đã cấu hình tên Công Ty mới,Export 1 báo cáo bất kỳ
+TC_IT_ORG_04,Xóa Subunit (Parent node) đang có chứa node con,IT,P1,BR_ORG_04,STRONG,Hệ thống chặn việc xóa và báo lỗi còn node con,Tạo node Cha và node Con,Click Delete node Cha
+UC-ORG-001,Thiết lập sơ đồ tổ chức toàn diện cho công ty,USERCASE,P1,BR_ORG_01;BR_ORG_02;BR_ORG_04,STRONG,Các thông tin hiển thị đúng trên sơ đồ cây và dropdown,Admin logged in,Nhập General Info -> Tạo 2 Locations -> Tạo cây phòng ban

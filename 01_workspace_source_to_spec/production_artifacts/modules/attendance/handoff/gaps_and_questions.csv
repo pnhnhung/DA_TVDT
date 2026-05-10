@@ -1,0 +1,5 @@
+Module,ID,Topic,Description,Clarification,Status,Blocker Level
+attendance,GAP-ATT-001,Edit Attendance (Admin),Missing rules for Admin editing employee records,Check AttendanceEditPunchInRecordOverlapAPI.php,OPEN,Medium
+attendance,GAP-ATT-002,Summary Report,Missing validation for summary report filters,Check EmployeeAttendanceSummaryAPI.php,OPEN,Low
+attendance,GAP-ATT-003,Overlap API,How frontend calls overlap check before save,Verify if it is pre-check or double-check,OPEN,Medium
+attendance,GAP-ATT-004,Timezone validation,Logic for TIMEZONE_OFFSET/NAME validation,Check Rules::TIMEZONE_NAME implementation,OPEN,Low

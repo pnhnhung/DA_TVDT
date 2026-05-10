@@ -1,0 +1,7 @@
+# Suggested Testcases — module_admin_configuration
+
+| TC ID | Title | Level | Reason | Rule ID | Expected Result |
+|---|---|---|---|---|---|
+| TC_UT_CFG_01 | Test Email config success | UT | External dependency (SMTP) | R_CFG_04 | Success indicator visible |
+| TC_UT_CFG_02 | Test Email config fail | UT | External dependency (SMTP) | R_CFG_04 | Error message visible |
+| TC_IT_CFG_03 | Race condition disable module khi user đang xài | IT | Unconfirmed behavior | BR_CFG_02 | Request rejected or 403 error |

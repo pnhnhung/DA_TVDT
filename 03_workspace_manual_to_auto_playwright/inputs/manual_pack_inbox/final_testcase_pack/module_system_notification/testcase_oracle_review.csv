@@ -1,0 +1,9 @@
+# Testcase Oracle Review: System Notification
+
+Testcase ID,Current oracle,Oracle quality,Issue,Required improvement,Status
+IT-SYS-003,"Mock Omise chỉ nhận mảng chứa ID của Customer Service A, không có ID Service B. Trả về thành công.",STRONG,None,None,PASS
+IT-SYS-005,"Mock Omise chỉ nhận mảng chứa 1 ID thuộc Service A, loại bỏ ID Service B.",STRONG,None,None,PASS
+IT-SYS-008,"Báo lỗi validation ""Thời gian lên lịch phải ở tương lai"". Job không được tạo.",STRONG,None,None,PASS
+IT-SYS-011,API trả lỗi 422 `validation.subdomain_required` hoặc 403 Forbidden. Notification không được tạo.,STRONG,None,None,PASS
+IT-SYS-014,"Trạng thái Push chuyển thành FAILED, CMS báo lỗi kết nối Gateway.",STRONG,None,None,PASS
+UC-SYS-004,Customer có giao dịch mới thấy Static Notification.,ACCEPTABLE,"Rule `FilterAppNumberService` trên code, IT cần check cụ thể API call DB.",None,PASS

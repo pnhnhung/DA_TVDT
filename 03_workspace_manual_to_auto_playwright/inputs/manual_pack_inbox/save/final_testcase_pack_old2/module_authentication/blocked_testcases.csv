@@ -1,0 +1,8 @@
+# Blocked Testcases — Authentication
+> Workflow: 09 | Date: 2026-05-02
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+IT-AUTH-005b (boundary N-1 sai),AUTH-RULE-02,Exact lockout threshold (bao nhiêu lần?),Hệ thống lock sau 5 lần hay khác?,Cao — test data sai → case pass/fail sai
+IT-AUTH-008b (unlock timer exact),AUTH-RULE-02,`blockedTo` duration (phút?),Bao lâu thì tài khoản tự mở khóa?,Trung bình — wait time không đúng
+IT-AUTH-015b (OTP expired path),AUTH-RULE-04,OTP TTL (giây/phút?),OTP hết hạn sau bao lâu?,Trung bình — timing test không thể run
+IT-AUTH-012b (password tạm TTL),AUTH-RULE-03,Password tạm expire time,Expire sau bao lâu?,Trung bình

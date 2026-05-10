@@ -1,0 +1,6 @@
+# Suggested Testcases — module_admin_qualification
+
+| TC ID | Title | Level | Reason | Rule ID | Expected Result |
+|---|---|---|---|---|---|
+| TC_IT_QUAL_02 | Race condition khi Admin xóa Skill lúc User đang thêm Skill | IT | Unconfirmed behavior | BR_QUAL_01 | Request bị từ chối do Skill không tồn tại |
+| TC_UT_QUAL_08 | Tạo Name max-length | UT | Giá trị max-length chưa confirm | R_QUAL_08 | Lưu thành công nếu <= max length |

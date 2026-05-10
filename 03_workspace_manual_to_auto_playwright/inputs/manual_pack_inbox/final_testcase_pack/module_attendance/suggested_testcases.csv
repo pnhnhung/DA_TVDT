@@ -1,0 +1,5 @@
+# Suggested Testcases — module_attendance
+
+TC ID,Title,Level,Reason,Rule ID,Expected Result
+TC_UT_ATT_08,Punch Out vượt qua nửa đêm (Cross-day),UT,Không rõ logic tách ca,R_ATT_02,Ghi nhận 1 record hoặc tách 2 records
+TC_IT_ATT_02,Tự động đổi trạng thái Punch nếu Admin đổi múi giờ Server,IT,Tác động hệ thống chưa rõ,BR_ATT_02,Records giữ nguyên absolute time

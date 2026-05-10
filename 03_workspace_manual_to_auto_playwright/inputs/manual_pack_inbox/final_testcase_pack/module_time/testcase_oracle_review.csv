@@ -1,0 +1,12 @@
+# Testcase Oracle Review — module_time
+
+Testcase ID,Current Oracle,Oracle Quality,Issue,Required Improvement,Status
+TC_UT_TIM_01,Timesheet saved; status SUBMITTED,STRONG,—,—,PASS
+TC_UT_TIM_02,"Validation error ""Should be less than 24""",STRONG,—,—,PASS
+TC_UT_TIM_03,"Error ""Invalid format""",STRONG,—,—,PASS
+TC_UT_TIM_04,Status changes to APPROVED,STRONG,—,—,PASS
+TC_UT_TIM_05,Status changes to REJECTED,STRONG,—,—,PASS
+TC_UT_TIM_06,Edit disabled OR Validation error on save,STRONG,—,—,PASS
+TC_UT_TIM_07,Toast saved; Project appears in list,STRONG,—,—,PASS
+TC_IT_TIM_01,Project name appears in Timesheet dropdown,STRONG,—,—,PASS
+TC_IT_TIM_02,Delete restricted; Error message visible,STRONG,—,—,PASS

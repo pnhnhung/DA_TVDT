@@ -1,0 +1,7 @@
+# Testcase Oracle Review
+
+Testcase ID,Current oracle,Oracle quality,Issue,Required improvement,Status
+IT-SHOP-001,403 Forbidden nếu sai IP,STRONG,,,PASS
+IT-SHOP-008,"Mock GMO trả 200, DB update",STRONG,,,PASS
+IT-SHOP-029,Cross-tenant block 403,STRONG,,,PASS
+UC-SHOP-001,Upload CSV thành công,ACCEPTABLE,,Phụ thuộc file template,PASS

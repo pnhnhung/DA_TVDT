@@ -1,0 +1,6 @@
+# Testcase Generation Gaps — module_performance
+
+| ID | Issue | Impact | Recommend |
+|---|---|---|---|
+| GAP-PRF-01 | Workflow email không rõ ràng | Khó verify notify | Clarify với team BA |
+| GAP-PRF-02 | Handling terminated reviewer | Edge case system error | Thêm logic transfer review |

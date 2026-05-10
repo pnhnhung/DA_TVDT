@@ -1,0 +1,15 @@
+# Automation Readiness Matrix — module_admin_configuration
+
+| Testcase ID | Automation readiness | Blocker | Required data | Required locator/API/helper | Notes |
+|---|---|---|---|---|---|
+| TC_UT_CFG_01 | READY | None | SMTP Details | `Page_EmailConfig` | P1 |
+| TC_UT_CFG_02 | MANUAL_ONLY | None | None | `Page_EmailConfig` | UT cơ bản |
+| TC_UT_CFG_03 | READY | None | Invalid SMTP | `Page_EmailConfig` | P1 |
+| TC_UT_CFG_04 | MANUAL_ONLY | None | None | `Page_Localization` | UT cơ bản |
+| TC_UT_CFG_04B | MANUAL_ONLY | None | None | `Page_Localization` | UT cơ bản |
+| TC_UT_CFG_05 | READY | None | None | `Page_EmailSubs` | P2 nhưng là core UI |
+| TC_UT_CFG_05B | MANUAL_ONLY | None | Sub exist | `Page_EmailSubs` | UT cơ bản |
+| TC_UT_CFG_05C | READY | None | Sub exist | `Page_EmailSubs` | Delete |
+| TC_UT_CFG_06 | MANUAL_ONLY | None | Admin | `Page_EmailConfig` | Đã test gián tiếp |
+| TC_UT_CFG_07 | READY | None | ESS | `LoginPage` | Security |
+| TC_IT_CFG_01 | NEED_MAILHOG | GAP-MAIL | SMTP setup | `MailHogHelper` | IT mail integration |

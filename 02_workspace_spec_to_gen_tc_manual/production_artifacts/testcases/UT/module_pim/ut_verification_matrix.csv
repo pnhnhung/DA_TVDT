@@ -1,0 +1,9 @@
+rule_id,testcase_id,module,screen_or_endpoint,field_or_action,verification_type,value_partition,boundary_type,expected_result,trace,status,priority,gap_or_note
+BR-002,TC_UT_PIM_001,pim,/api/v2/pim/employees,action,business_rule,invalid,N/A,Request is rejected. Record is not deleted.,BR-002,confirmed,P1,
+BR-001,TC_UT_PIM_002,pim,/api/v2/pim/employees,employeeId,validation,invalid,N/A,Request is rejected with unique validation error.,BR-001,confirmed,P1,
+BR-001,TC_UT_PIM_003,pim,/api/v2/pim/employees,action,happy_path,valid,N/A,Employee is created successfully.,BR-001,confirmed,P1,
+FR-001,TC_UT_PIM_004,pim,/api/v2/pim/employees,firstName,validation,invalid,max+1,Request is rejected with length validation error.,FR-001,confirmed,P2,
+BR-004,TC_UT_PIM_005,pim,/api/v2/pim/employee/{empNumber}/contact-details,workEmail_otherEmail,business_rule,invalid,N/A,Request is rejected with "Work Email and Other Email Cannot Be The Same".,BR-004,confirmed,P1,
+BR-004,TC_UT_PIM_006,pim,/api/v2/pim/employee/{empNumber}/contact-details,workEmail,validation,invalid,N/A,Request is rejected with unique email validation error.,BR-004,confirmed,P1,
+FR-005,TC_UT_PIM_007,pim,/api/v2/pim/employees,empPicture,validation,valid,N/A,Employee is created successfully and picture is uploaded.,FR-005,confirmed,P2,
+BR-005,TC_UT_PIM_008,pim,/api/v2/pim/employees/{empNumber}/job-details,jobTitleId,validation,invalid,N/A,Request is rejected. Foreign key validation fails.,BR-005,confirmed,P1,

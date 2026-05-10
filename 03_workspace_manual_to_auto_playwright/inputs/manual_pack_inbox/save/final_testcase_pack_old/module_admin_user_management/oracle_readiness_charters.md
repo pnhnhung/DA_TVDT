@@ -1,0 +1,54 @@
+# Testcase Oracle Review — module_admin_user_management
+
+| TC ID | Oracle | Quality | Issue | Improvement | Status |
+|---|---|---|---|---|---|
+| TC_UT_USR_01 | Toast saved; user in list | STRONG | — | — | PASS |
+| TC_UT_USR_02 | Error "Required" | STRONG | — | — | PASS |
+| TC_UT_USR_03 | Error "Already exists" | STRONG | — | — | PASS |
+| TC_UT_USR_04 | Validation error visible | ACCEPTABLE | Exact password strength message not confirmed | Confirm message text | PASS |
+| TC_UT_USR_05 | Error "Passwords do not match" | STRONG | — | — | PASS |
+| TC_UT_USR_06 | Status badge = Disabled | STRONG | — | — | PASS |
+| TC_UT_USR_07 | Role column = ESS | STRONG | — | — | PASS |
+| TC_UT_USR_08 | Menu absent OR Access Denied | ACCEPTABLE | Exact redirect behavior | Confirm once manually | PASS |
+| TC_IT_USR_01 | Login error; no dashboard | STRONG | — | — | PASS |
+| TC_IT_USR_02 | Admin menu absent after re-login | STRONG | — | — | PASS |
+
+**Oracle Gate: ✅ PASS — 0 WEAK, 0 MISSING**
+
+---
+
+# Automation Readiness Matrix — module_admin_user_management
+
+| TC ID | Candidate | Layer | Key Component | Blocker |
+|---|---|---|---|---|
+| TC_UT_USR_01 | Yes | UI | Page_UserManagement | Cần linked Employee |
+| TC_UT_USR_02 | Yes | UI | Page_UserManagement | — |
+| TC_UT_USR_03 | Yes | UI | Page_UserManagement | ensure_user() |
+| TC_UT_USR_04 | Yes | UI | Page_UserManagement | — |
+| TC_UT_USR_05 | Yes | UI | Page_UserManagement | — |
+| TC_UT_USR_06 | Yes | UI | Page_UserManagement | ensure_user() active |
+| TC_UT_USR_07 | Yes | UI | Page_UserManagement | ensure_user() as Admin |
+| TC_UT_USR_08 | Yes | UI | Page_UserManagement + ESS | ESS account |
+| TC_IT_USR_01 | Yes | UI | Page_UserManagement + LoginPage | Target user credentials |
+| TC_IT_USR_02 | Yes | UI | Page_UserManagement + LoginPage | Target user credentials |
+| TC_IT_USR_03 | Partial | UI-MultiSession | MultiSessionContext | Cần MultiSession WS03 |
+
+---
+
+# Exploratory Charters — module_admin_user_management
+
+## Charter 1: Concurrent admin sessions
+**Mục tiêu:** 2 Admin sessions cùng edit cùng 1 user → last-write-wins behavior?
+**Risk:** Race condition trên critical security entity.
+
+## Charter 2: Admin xóa chính mình
+**Mục tiêu:** Admin A đang logged-in tự xóa account của mình.
+**Risk:** System in broken state — no admin remains.
+
+## Charter 3: Password reset flow
+**Mục tiêu:** Reset password cho user đang logged-in → session bị invalidate ngay không?
+**Risk:** Session fixation vulnerability.
+
+## Charter 4: Special chars trong Username
+**Mục tiêu:** Username với `'`, `"`, `<>`, `@`, space.
+**Risk:** SQL injection hoặc XSS trong username field.

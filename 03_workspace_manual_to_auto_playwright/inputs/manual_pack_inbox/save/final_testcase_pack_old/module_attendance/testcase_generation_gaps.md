@@ -1,0 +1,5 @@
+# Testcase Generation Gaps — module_attendance
+
+| ID | Issue | Impact | Recommend |
+|---|---|---|---|
+| GAP_ATT_01 | Chưa rõ behavior khi Punch Out xuyên ngày (nửa đêm) | Thiếu test case làm ca đêm | Xin PO confirm cách ghi nhận record |

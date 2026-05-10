@@ -1,0 +1,3 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,maintenance,employee,empNumber,yes,integer,exists in Employee,,,,Api/PurgeEmployeeAPI.php#getValidationRuleForDelete:99,confirmed,high
+FR-002,maintenance,candidate,vacancyId,yes,integer,exists in Vacancy,,,,Api/PurgeCandidateAPI.php#getValidationRuleForGetAll:183,confirmed,high

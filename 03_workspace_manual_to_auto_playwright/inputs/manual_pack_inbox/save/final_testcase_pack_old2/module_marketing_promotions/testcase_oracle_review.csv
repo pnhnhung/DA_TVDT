@@ -1,0 +1,9 @@
+# Testcase Oracle Review: Marketing & Promotions
+
+Testcase ID,Current oracle,Oracle quality,Issue,Required improvement,Status
+IT-MKT-002,Lỗi 403 Forbidden.,STRONG,None,None,PASS
+IT-MKT-004,"Trả về thông báo lỗi ""Coupon này đã hết lượt sử dụng"". `remainingUsage` không đổi.",STRONG,None,None,PASS
+IT-MKT-006,Chỉ 1 request thành công (`remainingUsage` = 0). Request còn lại báo lỗi. Không xuống âm.,STRONG,None,None,PASS
+IT-MKT-010,Record `isRead = true` được cập nhật trong DB. Badge biến mất trên UI.,STRONG,None,None,PASS
+IT-MKT-014,"Màn hình lịch sử trả về status 200 OK, vẫn thấy record, App không crash.",STRONG,None,None,PASS
+UC-MKT-001,Cờ `enableCouponSetting` tắt -> Customer không thấy Menu Coupon.,STRONG,None,None,PASS

@@ -1,0 +1,21 @@
+# Suggested Testcases — Media & UI
+> Class: SUGGESTED | Workflow: 09 | Date: 2026-05-02
+
+TC ID,Title,Lý do SUGGESTED,Rule,Risk
+IT-MED-007,Xóa TopCategory → cascade xóa TopItem,Cascade behavior inferred,BR_MED_005,Medium
+IT-MED-012,Like Coupon đã expired,Valid state rule inferred,BR_MED_003,Low
+IT-MED-014,2 user cùng Like 1 item,Race condition count inferred,BR_MED_003,Medium
+
+# Blocked Testcases — Media & UI
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+IT-MED-002,BR_MED_002,Giới hạn dung lượng ảnh (MB),Max size = bao nhiêu MB?,Trung bình — test data placeholder
+IT-MED-003,BR_MED_002,Định dạng ảnh cho phép (mimes),"Cho phép JPG, PNG, WebP?",Trung bình — test data placeholder
+IT-MED-013,BR_MED_004,Xóa Shop → Favorite cascade,Xóa Shop thì Favorite bị hard hay soft delete?,Thấp
+
+# Testcase Generation Gaps — Media & UI
+
+Gap ID,Testcase,Mô tả,Loại,Đề xuất
+G-MED-01,IT-MED-002/003,Ràng buộc upload chưa cụ thể,Thiếu thông tin,Confirm limits từ file validation request của Dev
+G-MED-02,IT-MED-007,TopCategory delete cascade,Sơ sài,Confirm xem hệ thống chặn xóa hay tự xóa TopItem con
+G-MED-03,IT-MED-013,Shop delete cascade Favorite,Sơ sài,Confirm soft delete hay hard delete

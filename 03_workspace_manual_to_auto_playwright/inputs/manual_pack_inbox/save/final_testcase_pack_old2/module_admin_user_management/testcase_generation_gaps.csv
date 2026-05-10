@@ -1,0 +1,5 @@
+# Testcase Generation Gaps — module_admin_user_management
+
+ID,Issue,Impact,Recommend
+GAP-USR-01,Username max-length chưa confirm,Thiếu test case cho boundary max length,Confirm DB schema
+GAP-USR-02,Admin tự xóa chính mình,Thiếu case check admin bị block tự xóa,Xác nhận behavior với PO

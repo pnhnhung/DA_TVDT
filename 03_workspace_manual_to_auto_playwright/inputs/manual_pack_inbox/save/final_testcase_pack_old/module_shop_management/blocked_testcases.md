@@ -1,0 +1,4 @@
+# Blocked Testcases
+
+| Blocked TC ID | Related Rule ID | Missing information | Question | Impact |
+|---|---|---|---|---|

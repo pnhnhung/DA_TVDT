@@ -1,0 +1,7 @@
+# Blocked Testcases — Contract Management
+> Workflow: 09 | Date: 2026-05-02
+
+| Blocked TC ID | Related Rule ID | Missing information | Question | Impact |
+|---|---|---|---|---|
+| IT-CONT-010-content | BR_CONT_015 | Email subject và nội dung template chưa confirm | Email gửi có subject gì? Body gồm những trường nào? | Trung bình — chỉ verify "email received", không verify content |
+| IT-CONT-007-enum | BR_CONT_007 | ReceiptStatus values chưa enumerate | Có bao nhiêu ReceiptStatus? Map ra TransactionStatus nào? | Trung bình — thiếu boundary per status |

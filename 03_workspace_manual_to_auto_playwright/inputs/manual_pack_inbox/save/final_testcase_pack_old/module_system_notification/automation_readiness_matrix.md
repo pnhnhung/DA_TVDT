@@ -1,0 +1,12 @@
+# Automation Readiness Matrix — System Notification
+> Workflow: 09 | Date: 2026-05-02
+
+| Testcase ID | Automation readiness | Blocker | Required data | Required locator/helper | Notes |
+|---|---|---|---|---|---|
+| UT-SYS-001 | READY | — | DB: enableOmise=0 | `CMSNotifPage.assertCreateHidden()` | — |
+| IT-SYS-001 | NEED_LOCATOR | Mock Omise | Mock Omise 200 | `CMSNotifPage.sendPush()`, Mock log assert | — |
+| IT-SYS-002 | NEED_LOCATOR | Mock Omise | Mock Omise 500 | Mock log assert, Job state FAILED | — |
+| IT-SYS-005 | NEED_LOCATOR | 2 Service Seeder | 2 Tenants | Tenant A send → Mock assert list A | — |
+| IT-SYS-007 | READY | — | Past date | `CMSNotifPage.fillScheduled(past)`, `.error` | — |
+| IT-SYS-008 | READY | — | Future date push | `CMSNotifPage.cancelPush()`, Job state check | — |
+| IT-SYS-011 | NEED_TEST_DATA | Filter logic confirm | Shop assigned users | Wait confirm filter logic | — |

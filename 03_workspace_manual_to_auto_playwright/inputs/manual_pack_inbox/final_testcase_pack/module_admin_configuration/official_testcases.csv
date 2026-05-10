@@ -1,0 +1,27 @@
+# Official Testcases — module_admin_configuration
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_CFG_01,Lưu SMTP Configuration thành công,UT,P1,BR_CFG_01,STRONG,Toast saved; Test OK,Admin logged in,"Host, Port, Mail Sent As"
+TC_UT_CFG_02,Lưu SMTP thiếu thông tin bắt buộc,UT,P1,BR_CFG_01,STRONG,"Error ""Required""",Admin logged in,Missing Mail Sent As
+TC_UT_CFG_03,Test Connection SMTP thất bại,UT,P1,BR_CFG_01,STRONG,"Error ""Failed""",Admin logged in,Wrong credentials
+TC_UT_CFG_04,Cập nhật Localization Date Format,UT,P2,BR_CFG_03,STRONG,Toast saved,Admin logged in,Date Format = DD-MM-YYYY
+TC_UT_CFG_04B,Cập nhật Localization Language,UT,P2,BR_CFG_03,STRONG,Toast saved,Admin logged in,Language = Vietnamese
+TC_UT_CFG_05,Thêm Subscriber thành công,UT,P2,BR_CFG_04,STRONG,Toast saved,Admin logged in,"Event = Leave Application, Name, Email"
+TC_UT_CFG_05B,Sửa Subscriber,UT,P2,BR_CFG_04,STRONG,Toast saved,Admin logged in,Edit Name
+TC_UT_CFG_05C,Xóa Subscriber,UT,P2,BR_CFG_04,STRONG,Toast deleted,Admin logged in,Delete Subscriber
+TC_UT_CFG_06,Truy cập màn hình Admin,UT,P1,PERM_CFG_01,STRONG,Load form success,Admin logged in,N/A
+TC_UT_CFG_07,Kiểm tra quyền (Non-Admin),UT,P1,PERM_CFG_01,ACCEPTABLE,Redirect / Error 403,ESS User logged in,Mở URL trực tiếp
+TC_IT_CFG_01,Nhận email theo SMTP,IT,P1,BR_CFG_01,STRONG,Nhận email,"SMTP OK, Fire notification",Email thực tế
+TC_IT_CFG_02,Bật module và kiểm tra hiển thị menu,IT,P1,BR_CFG_02,STRONG,Menu của module được bật xuất hiện trên thanh điều hướng,Admin logged in,Tên module (ví dụ: Leave)
+TC_IT_CFG_03,Tắt module và kiểm tra ẩn menu,IT,P1,BR_CFG_02,STRONG,Menu của module bị tắt không còn hiển thị trên thanh điều hướng,Admin logged in,Tên module đang bật
+TC_IT_CFG_04,Đổi ngôn ngữ và kiểm tra hiển thị toàn cục,IT,P2,BR_CFG_03,STRONG,Giao diện tại màn hình Dashboard hiển thị ngôn ngữ mới,Admin logged in,Language = Spanish
+TC_IT_CFG_05,Đổi định dạng ngày và kiểm tra hiển thị (PIM),IT,P2,BR_CFG_03,STRONG,Định dạng ngày tại danh sách nhân viên thay đổi tương ứng,Admin logged in,Date Format = YYYY/MM/DD
+TC_IT_CFG_06,Vô hiệu hóa module khi user đang sử dụng,IT,P2,BR_CFG_02,STRONG,User bị văng ra trang báo lỗi 403 hoặc menu biến mất khi F5,ESS user đang ở trong module Leave,Admin tắt module Leave
+TC_IT_CFG_07,Date Format đồng bộ vào file Export,IT,P2,BR_CFG_03,STRONG,Định dạng ngày trong file CSV/Excel export ra khớp với cấu hình hệ thống,Admin logged in,Date Format = YYYY-MM-DD
+TC_IT_CFG_08,Gửi email Quên mật khẩu thất bại do cấu hình SMTP sai,IT,P1,BR_CFG_01,STRONG,Hệ thống hiển thị thông báo lỗi gửi email không thành công,"SMTP cấu hình sai (sai port, sai host)",Màn hình Forgot Password
+TC_IT_CFG_09,Gửi email thông báo cho Subscriber khi có Event,IT,P1,BR_CFG_04,STRONG,Subscriber nhận được email với nội dung tương ứng,Event Leave Application có cấu hình Subscriber,Employee submit Leave
+TC_UT_CFG_08,Subscribe trùng email cho cùng 1 Event,UT,P2,BR_CFG_04,STRONG,"Hệ thống báo lỗi ""Already exists"" / không cho lưu",Admin logged in,"Email đang có trong Event Leave, đăng ký lại Leave"
+TC_UT_CFG_09,Subscribe cùng 1 email cho 2 Event khác nhau,UT,P2,BR_CFG_04,STRONG,Lưu thành công cho cả 2 Event,Admin logged in,Dùng email admin@test.com cho Event Leave và Performance
+TC_UT_CFG_10,ESS truy cập trực tiếp API lưu cấu hình (Bypass UI),UT,P1,PERM_CFG_01,STRONG,API trả về 403 Forbidden,ESS logged in,Dùng Postman gọi API POST /config
+UC-CFG-001,Thiết lập cấu hình hệ thống cơ bản,USERCASE,P1,BR_CFG_01;BR_CFG_02;BR_CFG_03,STRONG,Hệ thống lưu cấu hình thành công và áp dụng ngay,Admin logged in,"Ngôn ngữ, Định dạng ngày, Module, SMTP"
+UC-CFG-002,Thiết lập hệ thống bị gián đoạn do lỗi SMTP,USERCASE,P2,BR_CFG_01,STRONG,Quá trình cấu hình mail bị chặn,Admin logged in,Cấu hình SMTP sai thông tin

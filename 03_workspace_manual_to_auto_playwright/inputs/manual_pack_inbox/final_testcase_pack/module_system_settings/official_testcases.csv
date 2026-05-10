@@ -1,0 +1,22 @@
+# Official Testcases — System Settings
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+## BR_SET_001 / BR_SET_002 — Async Export CSV
+
+TC ID,Title,Rule,Oracle
+UT-SET-001,Click Export → API trả Job ID 200,BR_SET_001,STRONG
+IT-SET-001,Polling success job → trả link download,BR_SET_002,STRONG
+IT-SET-003,Download file CSV → check HTTP 200,BR_SET_001,STRONG
+IT-SET-004,Trigger nhiều lần liên tiếp → tạo nhiều Jobs độc lập,BR_SET_001,STRONG
+IT-SET-005b,Polling failed job → trả status FAILED/error msg,BR_SET_002,STRONG
+
+## BR_SET_003 — Data Scoping
+
+TC ID,Title,Rule,Oracle
+IT-SET-008,Tenant isolation: Admin Service A xuất CSV chỉ có data A,BR_SET_003,STRONG
+IT-SET-009,Role isolation: CLIENT chỉ xuất CSV data của Shop mình,BR_SET_003,STRONG
+IT-SET-010,Admin Service B không xuất được bằng API của Service A,BR_SET_003,STRONG
+UT-SET-006,Export CSV chứa Unicode (Tiếng Việt) -> File không lỗi font,BR_SET_001,STRONG
+UT-SET-007,Export khi không có dữ liệu -> File rỗng có header hoặc thông báo No data,BR_SET_001,STRONG
+UT-SET-008,User không có quyền Export -> Nút ẩn / API trả 403,PERM-SET-01,STRONG
+IT-SET-011,Export khối lượng dữ liệu khổng lồ -> Xử lý ngầm an toàn không Crash/OOM,BR_SET_001,ACCEPTABLE

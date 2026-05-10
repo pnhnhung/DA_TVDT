@@ -1,0 +1,16 @@
+testcase_id,module,level,priority,automation_candidate,automation_status,blocker_reason,recommended_tool
+TC_UT_ADM_001,admin,UT,P1,Yes,READY,,Playwright API
+TC_UT_ADM_002,admin,UT,P1,Yes,READY,,Playwright API
+TC_UT_ADM_003,admin,UT,P1,Yes,READY,,Playwright UI
+TC_UT_ADM_004,admin,UT,P1,Yes,READY,,Playwright API
+TC_UT_ADM_005,admin,UT,P2,Yes,READY,,Playwright UI
+TC_UT_ADM_006,admin,UT,P2,Yes,READY,,Playwright API
+TC_UT_ADM_007,admin,UT,P2,Yes,READY,,Playwright API
+TC_UT_ADM_008,admin,UT,P1,Yes,READY,,Playwright API
+TC_UT_ADM_009,admin,UT,P1,Yes,READY,,Playwright UI
+TC_UT_ADM_010,admin,UT,P1,Yes,READY,,Playwright UI
+TC_IT_ADM_001,admin,IT,P1,Yes,READY,,Playwright API
+TC_IT_ADM_002,admin,IT,P1,Yes,READY,,Playwright UI
+TC_IT_ADM_003,admin,IT,P1,Yes,READY,,Playwright UI
+UC_ADM_001,admin,USERCASE,P1,Yes,READY,,Playwright UI
+UC_ADM_002,admin,USERCASE,P1,Yes,READY,,Playwright UI

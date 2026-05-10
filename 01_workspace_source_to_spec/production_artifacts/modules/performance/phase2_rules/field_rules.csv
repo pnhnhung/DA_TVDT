@@ -1,0 +1,13 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,performance,kpi,title,yes,string,max:100,,,,Api/KpiAPI.php#getCommonBodyValidationRules:289,confirmed,high
+FR-002,performance,kpi,jobTitleId,yes,integer,positive,exists in JobTitle,,,Api/KpiAPI.php#getCommonBodyValidationRules:294,confirmed,high
+FR-003,performance,kpi,minRating,yes,integer,between:0-100,,,,Api/KpiAPI.php#getCommonBodyValidationRules:299,confirmed,high
+FR-004,performance,kpi,maxRating,yes,integer,between:0-100,,,,Api/KpiAPI.php#getCommonBodyValidationRules:304,confirmed,high
+FR-005,performance,kpi,isDefault,no,boolean,,,,,Api/KpiAPI.php#getCommonBodyValidationRules:309,confirmed,high
+FR-006,performance,review,empNumber,yes,integer,accessible emp number,,,,Api/PerformanceReviewAPI.php#getCommonValidationRules:349,confirmed,high
+FR-007,performance,review,reviewerEmpNumber,yes,integer,accessible emp number,,,,Api/PerformanceReviewAPI.php#getCommonValidationRules:353,confirmed,high
+FR-008,performance,review,startDate,yes,date,api_date,,,,Api/PerformanceReviewAPI.php#getCommonValidationRules:357,confirmed,high
+FR-009,performance,review,endDate,yes,date,api_date,,,,Api/PerformanceReviewAPI.php#getCommonValidationRules:361,confirmed,high
+FR-010,performance,review,dueDate,yes,date,api_date,,,,Api/PerformanceReviewAPI.php#getCommonValidationRules:365,confirmed,high
+FR-011,performance,review,activate,no,boolean,,,,,Api/PerformanceReviewAPI.php#getCommonValidationRules:370,confirmed,high
+FR-012,performance,evaluation,complete,yes,boolean,,,,,Api/EmployeeEvaluationAPI.php#getValidationRuleForUpdate:351,confirmed,high

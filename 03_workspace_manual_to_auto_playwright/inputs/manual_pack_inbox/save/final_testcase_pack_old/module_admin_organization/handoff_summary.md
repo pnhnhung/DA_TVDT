@@ -1,0 +1,25 @@
+# Handoff Summary — module_admin_organization
+
+## Decision
+
+**`READY_FOR_AUTOMATION_PREP`**
+
+## Counts
+
+| Type | Count |
+|---|---:|
+| Official testcase | 8 |
+| Suggested testcase | 3 |
+| Exploratory charter | 3 |
+| Blocked testcase | 1 |
+
+## Open gaps
+- Behavior khi xóa Location đang gán cho Employee chưa được xác định.
+
+## Risks
+- Thao tác test Structure Tree (UI Tree structure) ở TC_UT_ORG_06 thường gây flaky do DOM của tree phức tạp. Cần locator vững chắc cho Drag & Drop hoặc Expand/Collapse.
+
+## Recommended next action
+1. Khởi tạo `Page_Organization`.
+2. Tạo hàm `ensure_location_exists` dùng chung.
+3. Code auto cho 8 official testcases.

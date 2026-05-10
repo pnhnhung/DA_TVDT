@@ -1,0 +1,6 @@
+rule_id,module,feature_or_field,required_coverage,actual_coverage,coverage_status,missing_paths,priority,gap_or_note
+BR-001,admin,user.delete,FULL,FULL,FULL,None,P1,
+BR-002,admin,user.create,FULL,FULL,FULL,None,P1,
+BR-003,admin,job.specification,FULL,FULL,FULL,None,P1,
+BR-004,admin,subunit.delete,FULL,FULL,FULL,None,P1,
+BR-005,admin,paygrade.salary,FULL,FULL,FULL,None,P1,

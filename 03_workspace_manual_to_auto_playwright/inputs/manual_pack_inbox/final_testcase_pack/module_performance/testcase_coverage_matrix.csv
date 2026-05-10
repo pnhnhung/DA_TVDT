@@ -1,0 +1,9 @@
+# Testcase Coverage Matrix — module_performance
+
+Rule ID,Rule Statement,Test Level,Covered TC IDs,Coverage Status,Missing Cases,Notes
+R_PRF_01,KPI CRUD,UT,TC_UT_PRF_KPI_xx,FULL,—,—
+BR_PRF_01,KPI Min/Max Logic,UT,TC_UT_PRF_KPI_03,FULL,—,—
+R_PRF_05,Review CRUD,UT,TC_UT_PRF_REV_xx,FULL,—,—
+BR_PRF_04,Rating Evaluation,UT,TC_UT_PRF_EVAL_xx,FULL,—,—
+PERM_PRF_02,ESS Permission,UT,TC_UT_PRF_PERM_01,FULL,—,—
+R_PRF_06,Employee Review Workflow,IT,TC_IT_PRF_01,FULL,—,—

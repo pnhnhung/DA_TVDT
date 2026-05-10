@@ -1,0 +1,37 @@
+# Handoff Summary — System Notification
+> Workflow: 09 | Date: 2026-05-02
+
+## Decision
+
+**READY_FOR_AUTOMATION_PREP**
+
+## Counts
+
+| Type | Count |
+|---|---:|
+| Official testcase | 17 |
+| Suggested testcase | 2 |
+| Exploratory charter | 3 |
+| Blocked testcase | 0 |
+
+## Open gaps
+
+| Gap | Impact |
+|---|---|
+| FilterAppNumberService mechanism chưa fully confirm | Trung bình — IT-SYS-011 oracle ở ACCEPTABLE |
+| Partial Omise failure behavior (3/5 success) | Thấp — edge case chưa có TC |
+| Scheduler check interval | Thấp — IT-SYS-006 timing |
+
+## Risks
+
+- **Mock Omise dependency**: Tất cả Push cases (14/17 TC Mixed) cần Mock Omise (port 9095). Không có Mock → không thể implement.
+- **Scheduler timing**: IT-SYS-006 phụ thuộc scheduler interval. Nếu interval dài → test chậm.
+- **Tenant isolation**: Cần 2 service seeder độc lập để verify push count per-tenant.
+
+## Recommended next action
+
+1. **Ngay**: Setup Mock Omise (port 9095) với 2 mode: success + fail_500.
+2. **Sprint 1 (không cần Mock)**: UT-SYS-001 (flag disabled), IT-SYS-007 (scheduledAt past) — READY.
+3. **Sprint 2 (Mock ready)**: IT-SYS-003~005 (push allFlag, ids, cross-tenant).
+4. **Sprint 2**: IT-SYS-014 (Omise 500 → FAILED status).
+5. Confirm FilterAppNumberService mechanism trước IT-SYS-011.

@@ -1,0 +1,12 @@
+# Automation Readiness Matrix — Marketing & Promotions
+> Workflow: 09 | Date: 2026-05-02
+
+| Testcase ID | Automation readiness | Blocker | Required data | Required locator/helper | Notes |
+|---|---|---|---|---|---|
+| IT-MKT-001 | READY | — | DB: enableCoupon=1 | `CMSHomePage.assertCouponVisible()` | — |
+| IT-MKT-002 | READY | — | DB: enableCoupon=0 | Go URL direct → `assert403()` | — |
+| IT-MKT-008 | READY | — | DB: enableNotif=0 | `CMSHomePage.assertNotifHidden()` | — |
+| IT-MKT-011 | NEED_LOCATOR | CMS Template Form | DB: enableOmise=1 | `CMSTemplatePage.fillOmiseUrl()` | — |
+| IT-MKT-015 | READY | — | Invalid date range | `CMSTemplatePage.fillDates()`, `.error-date` | — |
+| IT-MKT-004 | NEED_LOCATOR | App Coupon Flow | Coupon active | `AppCouponPage.use()`, CMS count assert | Wait confirm flow |
+| IT-MKT-013 | READY | — | Coupon used=5 | Update limit=3 → `assertError()` | Wait confirm logic |

@@ -1,0 +1,2 @@
+Rule ID,Module,Feature,Statement,Source Trace,Status,Confidence,Automation Agent,Automation Skill
+<BR-MOD-XXX>,<module_name>,<Feature Name>,"<Business Rule Description>",<path#symbol:line>,confirmed|inferred,high|medium|low,<@agent_name>,<skill_name>

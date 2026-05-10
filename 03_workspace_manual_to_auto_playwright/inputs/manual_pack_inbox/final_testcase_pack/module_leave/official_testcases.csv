@@ -1,0 +1,22 @@
+# Official Testcases — module_leave
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_LEV_TYPE_01,Tạo Leave Type thành công,UT,P2,R_LEV_01,STRONG,Toast saved; record appears,Admin logged in,"Name=""Annual Leave"""
+TC_UT_LEV_TYPE_02,Tạo Leave Type trùng tên,UT,P1,R_LEV_01,STRONG,"Error ""Already exists""",Admin logged in,Duplicate Name
+TC_UT_LEV_TYPE_05,Cập nhật Leave Type,UT,P2,R_LEV_01,STRONG,Toast saved,Admin logged in,Edit Name
+TC_UT_LEV_TYPE_06,Xóa Leave Type,UT,P2,R_LEV_01,STRONG,Toast deleted,Admin logged in,Delete Type
+TC_UT_LEV_ENT_01,Thêm Leave Entitlement,UT,P1,R_LEV_05,STRONG,Balance increased,Admin logged in,"Employee, Leave Type, Days"
+TC_UT_LEV_APP_01,Xin nghỉ phép hợp lệ,UT,P1,R_LEV_03,STRONG,Application PENDING,ESS logged in,"From Date, To Date"
+TC_UT_LEV_APP_02,Xin phép thất bại (Vượt số dư),UT,P1,BR_LEV_01,STRONG,"Error ""Insufficient Balance""",ESS logged in,Over balance
+TC_UT_LEV_APP_04,Cancel đơn xin nghỉ,UT,P1,BR_LEV_04,STRONG,Application CANCELLED,ESS logged in,Existing application
+TC_UT_LEV_APP_05,Supervisor duyệt đơn,UT,P1,PERM_LEV_02,STRONG,Application APPROVED,Supervisor logged in,Existing application
+TC_UT_LEV_APP_06,Supervisor từ chối đơn,UT,P1,PERM_LEV_02,STRONG,Application REJECTED,Supervisor logged in,Existing application
+TC_IT_LEV_01,Quản lý xem Leave List,IT,P1,R_LEV_07,STRONG,Data displayed correctly,Admin logged in,Search filter
+TC_IT_LEV_04,Chấm dứt hợp đồng (DB Oracle),IT,P1,GAP-PIM-04,STRONG,DB Leave requests maintain original state,"User with Leave, Terminated",DB query
+TC_UT_LEV_APP_07,ESS không thể xin nghỉ hộ nhân viên khác,UT,P1,PERM_LEV_03,STRONG,Trường chọn tên nhân viên bị khóa cứng (Read-only) với tên của chính mình,ESS logged in,Vào form Apply Leave
+TC_UT_LEV_APP_08,Supervisor chỉ thấy đơn của cấp dưới,UT,P1,PERM_LEV_02,STRONG,Danh sách Leave List chỉ hiển thị các đơn của nhân viên trực thuộc,Supervisor logged in,Vào màn hình Leave List
+TC_UT_LEV_APP_09,Xin nghỉ trùng ngày với đơn phép hiện có,UT,P1,BR_LEV_01,STRONG,"Hệ thống báo lỗi ""Overlapping records found""",ESS logged in,"Apply ngày 15/10 (đã xin nghỉ từ trước)"
+TC_IT_LEV_02,Approve đơn phép -> Trừ đúng Balance,IT,P1,BR_LEV_02,STRONG,Balance của nhân viên giảm đúng bằng số ngày đã xin,Supervisor approve đơn,"Check My Leave Entitlement sau khi được duyệt"
+TC_IT_LEV_03,Reject/Cancel đơn phép -> Hoàn trả Balance,IT,P1,BR_LEV_03,STRONG,Balance của nhân viên không bị trừ / được trả lại đúng số ngày,Supervisor reject hoặc ESS cancel đơn,"Check My Leave Entitlement sau khi Reject/Cancel"
+UC-LEV-001,Luồng nghỉ phép thành công,USERCASE,P1,BR_LEV_01;BR_LEV_02,STRONG,Luồng hoạt động trơn tru; số dư bị trừ chuẩn xác,"Balance đủ, Supervisor duyệt","Apply -> Pending -> Approve -> Taken"
+UC-LEV-002,Luồng hủy đơn,USERCASE,P2,BR_LEV_04,STRONG,Đơn bị hủy và không trừ phép,"Balance đủ, ESS tự hủy","Apply -> Pending -> Cancel -> Verify Balance"

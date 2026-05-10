@@ -1,0 +1,18 @@
+# Official Testcases — module_time
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_TIM_01,Employee nhập Timesheet hợp lệ,UT,P1,R_TIM_01,STRONG,Timesheet saved; status SUBMITTED,ESS User logged in,8 hours/day
+TC_UT_TIM_02,Nhập Timesheet quá 24h/ngày,UT,P1,R_TIM_02,STRONG,"Validation error ""Should be less than 24""",ESS User logged in,25 hours
+TC_UT_TIM_03,Nhập ký tự không hợp lệ,UT,P2,R_TIM_03,STRONG,"Error ""Invalid format""",ESS User logged in,"""abc"""
+TC_UT_TIM_04,Supervisor duyệt Timesheet,UT,P1,R_TIM_04,STRONG,Status changes to APPROVED,Supervisor logged in,SUBMITTED timesheet
+TC_UT_TIM_05,Supervisor reject Timesheet,UT,P1,R_TIM_04,STRONG,Status changes to REJECTED,Supervisor logged in,SUBMITTED timesheet
+TC_UT_TIM_06,Employee sửa Timesheet đã duyệt,UT,P1,R_TIM_05,STRONG,Edit disabled OR Validation error,ESS User logged in,APPROVED timesheet
+TC_UT_TIM_07,Admin tạo Customer/Project,UT,P2,R_TIM_06,STRONG,Toast saved; Project in list,Admin logged in,"Cust=""ACME"", Proj=""ERP"""
+TC_IT_TIM_01,Project name map vào Timesheet,IT,P1,R_TIM_07,STRONG,"""ERP"" appears in Project dropdown",ESS User logged in,Valid Project exists
+TC_IT_TIM_02,Xóa Project khi đang có Timesheet,IT,P1,BR_TIM_01,STRONG,Xóa bị chặn OR Cảnh báo dữ liệu,Admin logged in,Project có timesheet data
+TC_UT_TIM_08,Tạo Customer bị trùng tên,UT,P1,BR_TIM_02,STRONG,"Hệ thống báo lỗi ""Already exists""",Admin logged in,Nhập Customer Name đã tồn tại
+TC_UT_TIM_09,Tạo Project bị trùng tên trong cùng Customer,UT,P1,BR_TIM_01,STRONG,"Hệ thống báo lỗi ""Already exists""",Admin logged in,Nhập Project Name đã tồn tại cho cùng một Customer
+TC_UT_TIM_10,Supervisor chỉ nhìn thấy Timesheet của nhân sự cấp dưới,UT,P1,PERM_TIM_03,STRONG,Danh sách Timesheet chờ duyệt chỉ hiển thị lính trực thuộc,Supervisor logged in,Truy cập Timesheet List
+TC_UT_TIM_11,ESS bị chặn truy cập quản lý Project/Customer,UT,P1,PERM_TIM_01,STRONG,Menu Project/Customer bị ẩn hoặc báo lỗi 403,ESS User logged in,Cố gắng truy cập URL cấu hình Project
+TC_IT_TIM_03,Không thể xóa Customer đang có Project gắn liền,IT,P1,BR_TIM_02,STRONG,Xóa bị chặn và cảnh báo In Use,Admin logged in,Customer đã có chứa Project bên trong
+UC-TIM-001,Luồng Timesheet (Setup Project -> Submit -> Approve),USERCASE,P1,BR_TIM_03;BR_TIM_04,STRONG,Workflow thành công xuyên suốt các role,"Dữ liệu sạch, Admin/ESS/Supervisor sẵn sàng","Tạo Proj -> Gán Emp -> Emp Submit -> Sup Approve"

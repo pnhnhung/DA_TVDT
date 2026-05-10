@@ -1,0 +1,11 @@
+# Testcase Oracle Review — module_attendance
+
+Testcase ID,Current Oracle,Oracle Quality,Issue,Required Improvement,Status
+TC_UT_ATT_01,Toast saved; record appears,STRONG,—,—,PASS
+TC_UT_ATT_02,Toast saved; duration calculated,STRONG,—,—,PASS
+TC_UT_ATT_03,Note saved in record,STRONG,—,—,PASS
+TC_UT_ATT_04,Record updated with new time,STRONG,—,—,PASS
+TC_UT_ATT_05,Toast deleted; row absent,STRONG,—,—,PASS
+TC_UT_ATT_06,Edit/Delete icon disabled for ESS,STRONG,—,—,PASS
+TC_UT_ATT_07,Query DB trực tiếp thông qua DBHelper để tính toán Duration và Timezone,STRONG,Đã nâng cấp từ ACCEPTABLE bằng DBHelper,Đã áp dụng DB-backed Oracle,PASS
+TC_IT_ATT_01,Báo cáo tích hợp hiển thị cả 2 dữ liệu,STRONG,—,—,PASS

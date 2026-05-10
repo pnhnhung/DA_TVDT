@@ -1,0 +1,5 @@
+# Testcase Generation Gaps — module_admin_organization
+
+| ID | Issue | Impact | Recommend |
+|---|---|---|---|
+| GAP-ORG-01 | Delete location restriction behavior | Thiếu testcase xóa location khi có employee đang gán | Xác nhận từ PO / Code |

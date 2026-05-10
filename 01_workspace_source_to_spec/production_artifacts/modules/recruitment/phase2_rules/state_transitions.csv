@@ -1,0 +1,10 @@
+Rule ID,Module,From State,To State,Action,Condition,Source Trace,Status
+ST-REC-001,recruitment,APPLICATION INITIATED,SHORTLISTED,Shortlist,Workflow check,Api/CandidateShortlistingAPI.php,confirmed
+ST-REC-002,recruitment,Any,REJECTED,Reject,Workflow check,Api/CandidateRejectionAPI.php,confirmed
+ST-REC-003,recruitment,SHORTLISTED,INTERVIEW SCHEDULED,Schedule Interview,Workflow check,Api/CandidateInterviewSchedulingAPI.php,confirmed
+ST-REC-004,recruitment,INTERVIEW SCHEDULED,INTERVIEW PASSED,Mark Interview Pass,Workflow check,Api/CandidateMarkingInterviewPassAPI.php,confirmed
+ST-REC-005,recruitment,INTERVIEW SCHEDULED,INTERVIEW FAILED,Mark Interview Fail,Workflow check,Api/CandidateMarkingInterviewFailAPI.php,confirmed
+ST-REC-006,recruitment,INTERVIEW PASSED,JOB OFFERED,Job Offer,Workflow check,Api/CandidateJobOfferingAPI.php,confirmed
+ST-REC-007,recruitment,JOB OFFERED,OFFER DECLINED,Decline Offer,Workflow check,Api/CandidateOfferDecliningAPI.php,confirmed
+ST-REC-008,recruitment,JOB OFFERED,HIRED,Hire,Workflow check,Api/CandidateHiringAPI.php,confirmed
+ST-REC-009,recruitment,N/A,APPLICATION INITIATED,Add Candidate,Manual entry or online apply,Api/CandidateAPI.php,confirmed

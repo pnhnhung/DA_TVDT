@@ -1,0 +1,2 @@
+ID,From Module,To Module,Contract,Logic,Source Trace,Status
+<INT-MOD-XXX>,<source_module>,<target_module>,<contract_trigger>,<logic_description>,<path#symbol:line>,confirmed|inferred

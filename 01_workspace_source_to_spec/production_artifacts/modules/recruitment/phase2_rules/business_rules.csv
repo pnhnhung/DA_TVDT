@@ -1,0 +1,8 @@
+Rule ID,Module,Feature,Statement,Source Trace,Status,Confidence,Automation Agent,Automation Skill
+BR-REC-001,recruitment,Vacancy,Job Title must be Active when creating/editing vacancy,Api/VacancyAPI.php#389,confirmed,high,@api_automation_agent,playwright-api-test
+BR-REC-002,recruitment,Vacancy,Hiring Manager must be Active employee,Api/VacancyAPI.php#397,confirmed,high,@api_automation_agent,playwright-api-test
+BR-REC-003,recruitment,Candidate,Update Vacancy resets status and logs history entry,Api/CandidateAPI.php#913,confirmed,high,@integration_agent,cross-module-test
+BR-REC-004,recruitment,Workflow,Must follow State Machine (getAllowedActions logic),AbstractCandidateActionAPI.php#113,confirmed,high,@api_automation_agent,playwright-api-test
+BR-REC-005,recruitment,Workflow,Automatic Employee creation on transition to HIRED status,AbstractCandidateActionAPI.php#124,confirmed,high,@integration_agent,cross-module-test
+BR-REC-006,recruitment,Interview,Maximum 2 interviews allowed per candidate per vacancy,CandidateInterviewSchedulingAPI.php#175,confirmed,high,@api_automation_agent,playwright-api-test
+BR-REC-007,recruitment,Attachment,Support Replace/Delete modes for attachments,CandidateAttachmentAPI.php#285,confirmed,high,@ui_automation_agent,playwright-ui-test

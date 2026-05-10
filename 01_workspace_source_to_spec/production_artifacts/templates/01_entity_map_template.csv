@@ -1,0 +1,2 @@
+Module,Entity,Field,Type,Nullable,Constraint,Source Trace,Status,Automation Agent
+<module_name>,<EntityName>,"<field1, field2>",<data_type>,Yes/No,<Constraints>,<path#symbol:line>,confirmed|inferred,<@agent_name>

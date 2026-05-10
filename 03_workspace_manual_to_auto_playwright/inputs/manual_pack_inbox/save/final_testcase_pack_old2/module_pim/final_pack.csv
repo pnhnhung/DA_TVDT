@@ -1,0 +1,64 @@
+# Final Testcase Pack — module_pim
+
+## Official Testcases
+
+TC ID,Title,Level,P,Rule ID,Oracle,Precondition,Expected Result
+TC_UT_PIM_01,Thêm Employee thành công,UT,P1,R_PIM_01,STRONG,Admin logged in,Toast saved; emp_number not empty; redirect Personal Details
+TC_UT_PIM_02,Employee thiếu First/Last Name,UT,P1,R_PIM_02,STRONG,Admin logged in,"Error ""Required"" on both fields"
+TC_UT_PIM_03,First Name = 30 ký tự (max),UT,P1,R_PIM_03,ACCEPTABLE,Admin logged in,Toast saved
+TC_UT_PIM_04,First Name = 31 ký tự (max+1),UT,P1,R_PIM_03,ACCEPTABLE,Admin logged in,Length ≤ 30 OR error
+TC_UT_PIM_05,Update Job Details,UT,P1,R_PIM_04,STRONG,E1 + Job Title exist,Toast saved; Job tab shows correct data
+TC_UT_PIM_06,Gán Supervisor (Report-to),UT,P1,R_PIM_05,STRONG,E1 + S1 exist,S1 visible in Supervisors list
+TC_UT_PIM_07,Thêm Emergency Contact,UT,P2,R_PIM_06,STRONG,E1 exists,Toast + contact row
+TC_UT_PIM_08,Dependent thiếu Name,UT,P2,R_PIM_07,STRONG,E1 exists,"Error ""Required"""
+TC_UT_PIM_09,Supervisor Data Scope,UT,P1,PERM_PIM_01,STRONG,S1 supervisor of E1 only,List shows only S1's subordinates
+TC_UT_PIM_10,ESS không thấy Employee List,UT,P1,PERM_PIM_02,ACCEPTABLE,Logged in as ESS,PIM Employee List absent OR My Info only
+TC_IT_PIM_01,Terminate → Disable user account,IT,P1,BR_PIM_01,STRONG,E_Term với linked user,Login rejected after Terminate
+TC_IT_PIM_02,ReportTo → Leave approval routing,IT,P1,BR_PIM_02,STRONG,E1 supervisor=S1; Leave entitlement,S1 sees E1's Leave in Pending
+
+## Suggested Testcases
+- TC_IT_PIM_03: Race condition Terminate lúc apply Leave — server behavior unconfirmed
+
+## Blocked Testcases
+- TC_IT_PIM_04 (GAP-PIM-04): Leave pending behavior khi Employee bị Terminate — spec chưa confirm
+
+## Coverage Matrix Summary
+
+Rule ID,TC IDs,Status
+R_PIM_01-02,"PIM_01, PIM_02",FULL
+R_PIM_03,"PIM_03, PIM_04",PARTIAL (max confirm)
+R_PIM_04,PIM_05,FULL
+R_PIM_05,PIM_06,FULL
+R_PIM_06-07,"PIM_07, PIM_08",PARTIAL (boundary missing)
+PERM_PIM_01-02,"PIM_09, PIM_10",FULL
+BR_PIM_01,IT_PIM_01,FULL
+BR_PIM_02,IT_PIM_02,FULL
+GAP-PIM-04,—,BLOCKED_BY_SPEC_GAP
+
+## Oracle Review Summary
+- STRONG: 9 cases | ACCEPTABLE: 3 cases | WEAK: 0 | MISSING: 0
+- **Oracle Gate: ✅ PASS**
+
+## Automation Readiness
+- Yes: 12 | Partial: 1 (IT_PIM_03 MultiSession) | No: 0
+
+## Exploratory Charters
+1. **Employee number uniqueness**: Nhập manual emp_number trùng nhau từ 2 sessions.
+2. **Terminate → Re-activate**: Có thể un-terminate không? Behavior của related data?
+"3. **Supervisor chain loop**: A là supervisor của B, B là supervisor của A → allowed?"
+4. **Bulk import employees**: Test CSV import với invalid rows.
+
+---
+
+# Final Handoff Decision
+
+**Decision: READY_FOR_AUTOMATION_PREP**
+
+**Reason:** Oracle PASS; 12/13 `Yes`; PIM là module trung tâm — cần build nhiều Page Objects nhất.
+
+"**Open gaps:** GAP-PIM-04 (Leave on Terminate) — BLOCKED, không ảnh hưởng 12 cases còn lại."
+
+**Next action:**
+"- Build: `Page_PIM_AddEmployee`, `Page_PIM_JobTab`, `Page_PIM_ReportTo`, `Page_PIM_EmergencyContact`"
+- IT_PIM_02: Phụ thuộc module_leave pages
+- IT_PIM_01: Cần target user credentials

@@ -1,0 +1,6 @@
+# Blocked Testcases — module_admin_configuration
+
+| Blocked TC ID | Related Rule ID | Missing information | Question | Impact |
+|---|---|---|---|---|
+| GAP_CFG_03_TEST | R_CFG_03 | Re-enable module state restore | Module bị disable rồi enable lại thì data cũ còn không? | High (Integration) |
+| BR_CFG_02_TEST | BR_CFG_02 | Race condition disable | Đang xài module thì bị Admin tắt | Medium |

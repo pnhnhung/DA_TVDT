@@ -1,0 +1,31 @@
+role_id,module,feature,action,allowed,data_scope,enforcement_type,source_trace,status,note
+Admin,leave,LeaveType,create,yes,all,policy,"Api/LeaveTypeAPI.php",confirmed,
+Admin,leave,LeaveType,update,yes,all,policy,"Api/LeaveTypeAPI.php",confirmed,
+Admin,leave,LeaveType,delete,yes,all,policy,"Api/LeaveTypeAPI.php",confirmed,
+Admin,leave,LeaveType,view,yes,all,policy,"Api/LeaveTypeAPI.php",confirmed,
+ESS,leave,LeaveType,create,no,,,,inferred,
+ESS,leave,LeaveType,update,no,,,,inferred,
+ESS,leave,LeaveType,delete,no,,,,inferred,
+ESS,leave,LeaveType,view,yes,all,policy,"Api/EligibleLeaveTypeAPI.php",inferred, "ESS có API riêng để view Eligible Leave Types"
+Admin,leave,Holiday,create,yes,all,policy,"Api/HolidayAPI.php",confirmed,
+Admin,admin,Holiday,update,yes,all,policy,"Api/HolidayAPI.php",confirmed,
+Admin,admin,Holiday,delete,yes,all,policy,"Api/HolidayAPI.php",confirmed,
+Admin,admin,Holiday,view,yes,all,policy,"Api/HolidayAPI.php",confirmed,
+Admin,leave,LeaveEntitlement,create,yes,all,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Admin,leave,LeaveEntitlement,update,yes,all,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Admin,leave,LeaveEntitlement,delete,yes,all,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Admin,leave,LeaveEntitlement,view,yes,all,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Supervisor,leave,LeaveEntitlement,create,yes,subordinates,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Supervisor,leave,LeaveEntitlement,update,yes,subordinates,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Supervisor,leave,LeaveEntitlement,delete,yes,subordinates,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Supervisor,leave,LeaveEntitlement,view,yes,subordinates,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+ESS,leave,LeaveEntitlement,view,yes,self,policy,"Api/LeaveEntitlementAPI.php",confirmed,
+Admin,leave,EmployeeLeaveRequest,create,yes,all,policy,"Api/EmployeeLeaveRequestAPI.php",confirmed,"Assign Leave"
+Admin,leave,EmployeeLeaveRequest,update,yes,all,policy,"Api/EmployeeLeaveRequestAPI.php",confirmed,"Approve/Reject"
+Admin,leave,EmployeeLeaveRequest,view,yes,all,policy,"Api/EmployeeLeaveRequestAPI.php",confirmed,"Leave List"
+Supervisor,leave,EmployeeLeaveRequest,create,yes,subordinates,policy,"Api/EmployeeLeaveRequestAPI.php",confirmed,"Assign Leave"
+Supervisor,leave,EmployeeLeaveRequest,update,yes,subordinates,policy,"Api/EmployeeLeaveRequestAPI.php",confirmed,"Approve/Reject"
+Supervisor,leave,EmployeeLeaveRequest,view,yes,subordinates,policy,"Api/EmployeeLeaveRequestAPI.php",confirmed,"Leave List"
+ESS,leave,MyLeaveRequest,create,yes,self,policy,"Api/MyLeaveRequestAPI.php",confirmed,"Apply Leave"
+ESS,leave,MyLeaveRequest,update,yes,self,policy,"Api/MyLeaveRequestAPI.php",confirmed,"Cancel Leave"
+ESS,leave,MyLeaveRequest,view,yes,self,policy,"Api/MyLeaveRequestAPI.php",confirmed,"My Leave"

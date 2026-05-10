@@ -1,0 +1,6 @@
+# Exploratory Charters — module_admin_nationalities
+
+1. **Case-insensitive Duplicate:** Tạo "Vietnam" rồi tạo "VIETNAM" → system có cho phép không? (Thường DB collation quyết định).
+2. **Special Characters:** Tên Nationality có chứa emoji hoặc ký tự đặc biệt (VD: `Côte d'Ivoire`).
+3. **XSS Injection:** Nhập `<script>alert(1)</script>` vào Name field.
+4. **Pagination State:** Xóa item ở trang cuối khi trang đó chỉ có 1 item → system redirect về trang trước hay báo lỗi rỗng?

@@ -1,0 +1,8 @@
+# Testcase Generation Gaps — Contract Management
+> Workflow: 09 | Date: 2026-05-02
+
+Gap ID,Testcase affected,Mô tả,Loại,Đề xuất
+G-CONT-01,IT-CONT-010-content,Email template/subject chưa confirm,Thiếu thông tin,Dev confirm email template
+G-CONT-02,IT-CONT-007-enum,ReceiptStatus enum values chưa đầy đủ,Thiếu thông tin,Dev cung cấp ReceiptStatus→TransactionStatus mapping
+G-CONT-03,IT-CONT-007b,Fee fallback path chưa có testcase,Sơ sài,Bổ sung case khi Contract không có fee
+G-CONT-04,IT-CONT-016b,Async job failure path,Sơ sài,Bổ sung failed batch job observable case

@@ -1,0 +1,5 @@
+# Exploratory Charters — module_admin_organization
+
+"1. **Tree depth limit:** Tạo Organization Structure Unit với độ sâu (depth) cực kỳ lớn (ví dụ: Unit 1 là cha Unit 2, Unit 2 là cha Unit 3... tới Unit 100). Xem UI render cây có bị vỡ layout không."
+"2. **Organization Email Validation:** Thử nhập email format lạ (`admin@com`, `admin.org`) vào phần General Information."
+3. **Empty Structure:** Xóa root node của Organization Structure xem hệ thống xử lý thế nào.

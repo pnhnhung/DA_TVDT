@@ -1,0 +1,10 @@
+testcase_id,module,level,expected_result,oracle_strength,issue_type,suggestion
+TC_UT_AUTH_001,authentication,UT,Request is rejected with `AuthenticationException::invalidCsrfToken()`. User is not authenticated.,STRONG,None,
+TC_UT_AUTH_002,authentication,UT,Request is rejected with `AuthenticationException::invalidCsrfToken()`. User is not authenticated.,STRONG,None,
+TC_UT_AUTH_003,authentication,UT,Request is rejected. System redirects back to login page with error message. User is not authenticated.,ACCEPTABLE,Message unclear,Check UI for exact error message text
+TC_UT_AUTH_004,authentication,UT,System authenticates user successfully. Session is created and user is redirected to HomePagePath.,STRONG,None,
+TC_UT_AUTH_005,authentication,UT,API returns validation errors for policy violations. Max strength score returned is `BETTER`.,STRONG,None,
+TC_IT_AUTH_001,authentication,IT,System authenticates user and successfully redirects to the dashboard or configured HomePagePath.,ACCEPTABLE,None,
+TC_IT_AUTH_002,authentication,IT,API returns 200 OK and employee count confirming the session is valid and persists.,STRONG,None,
+UC_AUTH_001,authentication,USERCASE,User is successfully authenticated and redirected to the Admin Dashboard.,ACCEPTABLE,None,
+UC_AUTH_002,authentication,USERCASE,User is successfully authenticated and redirected to the My Info page.,ACCEPTABLE,None,

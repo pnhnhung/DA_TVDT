@@ -1,0 +1,2 @@
+Rule ID,Module,From State,To State,Action,Condition,Source Trace,Status
+<ST-MOD-XXX>,<module_name>,<CurrentState>,<TargetState>,<Trigger/Action>,<Conditions/Guard>,<path#symbol:line>,confirmed|inferred

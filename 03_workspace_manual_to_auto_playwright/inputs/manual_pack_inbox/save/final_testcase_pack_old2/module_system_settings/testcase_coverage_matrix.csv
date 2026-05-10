@@ -1,0 +1,23 @@
+# Testcase Coverage Matrix — System Settings
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+Coverage status,Count
+FULL,2
+PARTIAL,1
+NOT_COVERED,0
+BLOCKED_BY_SPEC_GAP,0
+
+## Matrix
+
+Rule ID,Rule Statement,Test level,Covered Testcase IDs,Coverage status,Missing cases,Recommendation
+BR_SET_001,Cơ chế Export bất đồng bộ (Async),"IT, Mixed","IT-SET-001, IT-SET-002, IT-SET-003, IT-SET-004, IT-SET-007, UT-SET-001/003/004, UC-SET-001/005",**FULL**,—,Trigger + status + file download + idempotency
+BR_SET_002,Polling Trạng thái Export,"IT, Mixed","IT-SET-005, IT-SET-006, UC-SET-004",**PARTIAL**,Thiếu: Polling cho failed job và partial failure,Bổ sung failed job polling case
+BR_SET_003,Phạm vi dữ liệu Thống kê (Data Scoping),"IT, UI","IT-SET-008, IT-SET-009, IT-SET-010, IT-SET-011, IT-SET-012/013, UT-SET-002, UC-SET-002/003",**FULL**,—,2-service isolation + permission full coverage
+
+## Critical Gaps
+
+Rule ID,Gap,Impact,Required action
+BR_SET_002,Failed job polling behavior chưa rõ,Thấp,Confirm Queue error handling với Dev
+BR_SET_001,CSV encoding chưa confirm (UTF-8 BOM vs Shift-JIS),Trung bình,Confirm trước IT-SET-018

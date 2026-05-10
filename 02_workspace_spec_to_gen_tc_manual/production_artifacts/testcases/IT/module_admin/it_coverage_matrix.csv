@@ -1,0 +1,4 @@
+interaction_id,testcase_id,module_flow,source_module,target_module,roles,data_object,state_before,state_after,coverage_type,observable_oracle,trace,status,priority,gap_or_note
+IT_ADM_001,TC_IT_ADM_001,admin -> pim,admin,pim,Admin,User/Employee,N/A,User not created,Data propagation,Request rejected,BR-002,confirmed,P1,
+IT_ADM_002,TC_IT_ADM_002,admin -> pim,admin,pim,Admin,Job Title,N/A,Available in PIM,Data propagation,Title appears in PIM list,FR-ADM-006,confirmed,P1,
+IT_ADM_003,TC_IT_ADM_003,admin -> authentication,admin,authentication,"Admin, ESS",User Status,Enabled,Disabled,State transition,Login rejected,BR-002,confirmed,P1,

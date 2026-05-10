@@ -1,0 +1,11 @@
+# Automation Readiness Matrix — module_attendance
+
+Testcase ID,Automation readiness,Blocker,Required data,Required locator/API/helper,Notes
+TC_UT_ATT_01,READY,None,ESS User,`Page_Attendance`,—
+TC_UT_ATT_02,READY,None,ESS User punched in,`Page_Attendance`,Setup bằng API punch in trước
+TC_UT_ATT_03,READY,None,ESS User,`Page_Attendance`,—
+TC_UT_ATT_04,READY,None,Admin + Punch record,`Page_Attendance`,—
+TC_UT_ATT_05,READY,None,Admin + Punch record,`Page_Attendance`,—
+TC_UT_ATT_06,READY,None,ESS User,`Page_Attendance`,—
+TC_UT_ATT_07,READY,None,2 users diff timezone,"`DBHelper`, `MultiSessionContext`",Dùng DB Oracle thay vì UI text
+TC_IT_ATT_01,READY,None,Leave + Punch data,`Page_Report`,—

@@ -1,0 +1,6 @@
+# Manual Gap Report: Shop Management
+
+| Gap ID | Testcase / UC Ref | Mô tả vấn đề | Mức độ | Đề xuất xử lý |
+|---|---|---|---|---|
+| GAP-SHOP-01 | IT-SHOP-021, UC-SHOP-004 | Định dạng chính xác của file CSV template import/export chưa được confirm. | Medium | Dev cần cung cấp template CSV mẫu để QA thiết kế file test data chính xác trước khi automation. |
+| GAP-SHOP-02 | UC-SHOP-003 | Mock Server cho quá trình test EC Connection GMO chưa được định nghĩa spec endpoint giả lập. | High | Yêu cầu QA setup Mock Gateway (Stub) trả về 200 OK và 401 Unauthorized cho GMO API. |

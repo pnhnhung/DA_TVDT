@@ -1,0 +1,5 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,directory,employee,empNumber,no,integer,exists in Employee,,,,Api/EmployeeDirectoryAPI.php#getValidationRuleForGetAll:274,confirmed,high
+FR-002,directory,employee,nameOrId,no,string,max:100,,,,Api/EmployeeDirectoryAPI.php#getValidationRuleForGetAll:281,confirmed,high
+FR-003,directory,employee,jobTitleId,no,integer,positive,,,,Api/EmployeeDirectoryAPI.php#getValidationRuleForGetAll:287,confirmed,high
+FR-004,directory,employee,locationId,no,integer,positive,,,,Api/EmployeeDirectoryAPI.php#getValidationRuleForGetAll:293,confirmed,high

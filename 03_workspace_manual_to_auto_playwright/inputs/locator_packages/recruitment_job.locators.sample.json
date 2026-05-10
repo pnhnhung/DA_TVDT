@@ -1,0 +1,51 @@
+{
+  "module": "Recruitment / Job Vacancy",
+  "screen": "Vacancies",
+  "status": "draft_for_review",
+  "locators": [
+    {
+      "key": "recruitmentMenu",
+      "strategy": "role",
+      "role": "link",
+      "name": "Recruitment",
+      "exact": true,
+      "confidence": "medium",
+      "evidence": "Manual observation or Playwright codegen required"
+    },
+    {
+      "key": "vacanciesTab",
+      "strategy": "role",
+      "role": "link",
+      "name": "Vacancies",
+      "exact": true,
+      "confidence": "medium",
+      "evidence": "Manual observation or Playwright codegen required"
+    },
+    {
+      "key": "addButton",
+      "strategy": "role",
+      "role": "button",
+      "name": "Add",
+      "exact": true,
+      "confidence": "medium",
+      "evidence": "Manual observation or Playwright codegen required"
+    },
+    {
+      "key": "vacancyNameInput",
+      "strategy": "label",
+      "label": "Vacancy Name",
+      "exact": true,
+      "confidence": "low",
+      "evidence": "Needs confirmation in AUT"
+    },
+    {
+      "key": "saveButton",
+      "strategy": "role",
+      "role": "button",
+      "name": "Save",
+      "exact": true,
+      "confidence": "medium",
+      "evidence": "Manual observation or Playwright codegen required"
+    }
+  ]
+}

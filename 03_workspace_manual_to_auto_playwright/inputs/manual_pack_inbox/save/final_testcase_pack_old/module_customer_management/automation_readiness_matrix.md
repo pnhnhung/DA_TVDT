@@ -1,0 +1,21 @@
+# Automation Readiness Matrix — Customer Management
+> Workflow: 09 | Date: 2026-05-02
+
+| Testcase ID | Automation readiness | Blocker | Required data | Required locator/helper | Notes |
+|---|---|---|---|---|---|
+| IT-CUST-001 | NEED_LOCATOR | CMS Customer list DOM | Affiliate ID 901 in DB | `CMSCustomerPage.assertVisible(email)` | — |
+| IT-CUST-002 | NEED_LOCATOR | App registration error DOM | Invalid affiliate ID | `AppRegisterPage.assertError()` | — |
+| IT-CUST-003 | NEED_LOCATOR | App + GMO 3DS2 webview | Mock GMO 3DS2 | `App3DS2Page.complete()` | Mock GMO required |
+| IT-CUST-004 | NEED_LOCATOR | App card list DOM | Mock GMO | `AppCardListPage.assertCardCount(n+1)` | — |
+| IT-CUST-005 | NEED_TEST_DATA | Card limit not confirmed | N+1 cards | `AppAddCardPage.assertLimitError()` | Confirm N first |
+| IT-CUST-006 | NEED_LOCATOR | App + GMO delete | Mock GMO | `AppCardPage.deleteCard()` | — |
+| IT-CUST-007 | NEED_LOCATOR | SMS mock / test phone | SMS gateway | `AppOTPPage.resend()`, assert sent | — |
+| IT-CUST-008 | NEED_TEST_DATA | Throttle threshold not confirmed | N+1 resends | `AppOTPPage.assertThrottleError()` | Confirm N first |
+| IT-CUST-009 | NEED_LOCATOR | App OTP screen | Wrong OTP | `AppOTPPage.submit(wrongCode)` | — |
+| IT-CUST-010 | READY | — | DB: existing email | `CMSCustomerPage.changeEmail(dup)` | — |
+| IT-CUST-011 | NEED_LOCATOR | Mailhog + email flow | Mailhog setup | `MailhogHelper.assertReceived(email)` | — |
+| IT-CUST-012 | READY | — | 2-service seeder | `CMSServiceA.assertNoServiceBCustomer()` | — |
+| IT-CUST-013 | NEED_LOCATOR | App forced logout DOM | DB: active session | `CMSCustomerPage.lock()`, App assert 401 | — |
+| IT-CUST-014 | NEED_LOCATOR | App login after unlock | Same | `CMSCustomerPage.unlock()`, App login | — |
+| IT-CUST-015 | BLOCKED | Concurrency setup | 2 threads | Race condition tooling | Partial |
+| IT-CUST-016 | BLOCKED | Mid-flow timing | App session | Race condition tooling | Partial |

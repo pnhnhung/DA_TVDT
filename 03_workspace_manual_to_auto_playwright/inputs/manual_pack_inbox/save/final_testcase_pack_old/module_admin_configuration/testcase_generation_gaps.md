@@ -1,0 +1,6 @@
+# Testcase Generation Gaps — module_admin_configuration
+
+| ID | Issue | Impact | Recommend |
+|---|---|---|---|
+| GAP-CFG-03 | Module re-enable behavior | Data lost or restored? | Confirm system behavior |
+| BR_CFG_02 | Race condition disable | Session handling unknown | Confirm system behavior |

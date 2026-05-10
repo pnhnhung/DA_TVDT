@@ -1,0 +1,7 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-ATT-001,attendance,attendance_record,date,yes,date,api_date,,,Api/EmployeeAttendanceRecordAPI.php#444,confirmed,high
+FR-ATT-002,attendance,attendance_record,time,yes,time,H:i,,,Api/EmployeeAttendanceRecordAPI.php#449,confirmed,high
+FR-ATT-003,attendance,attendance_record,timezoneOffset,yes,float,,,,Api/EmployeeAttendanceRecordAPI.php#453,confirmed,high
+FR-ATT-004,attendance,attendance_record,timezoneName,yes,string,,,,Api/EmployeeAttendanceRecordAPI.php#457,confirmed,high
+FR-ATT-005,attendance,attendance_record,note,no,string,max:250,,,Api/EmployeeAttendanceRecordAPI.php#460,confirmed,high
+FR-ATT-006,attendance,attendance_record,empNumber,yes,integer,positive,exists in Employee,,Api/EmployeeAttendanceRecordAPI.php#230,confirmed,high

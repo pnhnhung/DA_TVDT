@@ -1,0 +1,5 @@
+# Exploratory Charters — module_admin_user_management
+
+1. **Self-Delete:** Thử lấy tài khoản Admin tự xóa chính mình xem hệ thống có cản lại không.
+"2. **Special Characters in Username:** Thử tạo user có username chứa `@`, `!`, khoảng trắng để test filter."
+3. **Password injection:** Nhập password có độ dài hàng nghìn ký tự.

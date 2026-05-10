@@ -1,0 +1,24 @@
+# Handoff Summary — module_leave
+
+## Decision
+
+**`READY_FOR_AUTOMATION_PREP`**
+
+## Counts
+
+| Type | Count |
+|---|---:|
+| Official testcase | 12 |
+| Suggested testcase | 2 |
+| Exploratory charter | 2 |
+| Blocked testcase | 1 |
+
+## Open gaps
+- **GAP-LEV-01**: Cần clarify thời gian hết hạn phép năm cũ sang năm mới.
+
+## Risks
+- Quy trình duyệt phép (Apply -> Approve) yêu cầu test data phức tạp (nhân viên, quản lý, số dư phép). Cần dùng `DBHelper` hoặc API setup data ở `conftest.py` thay vì dùng UI chạy từ đầu tới cuối.
+
+## Recommended next action
+1. Khởi tạo `Page_LeaveApply`, `Page_LeaveList`.
+2. Tạo fixture `ensure_leave_entitlement` cho nhân viên để test Apply.

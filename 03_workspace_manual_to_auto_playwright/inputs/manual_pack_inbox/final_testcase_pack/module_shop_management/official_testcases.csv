@@ -1,0 +1,53 @@
+# Official Testcases — Shop Management
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+"Tất cả testcase dưới đây đáp ứng: có Rule ID, oracle STRONG/ACCEPTABLE, precondition & test data rõ ràng."
+
+## BR_SHOP_001 / BR_SHOP_002 — Unique Validation
+
+TC ID,Title,Rule,Oracle
+UT-SHOP-001,Tên shop trùng cùng Service → inline error,BR_SHOP_001,STRONG
+UT-SHOP-002,shopCode trùng cùng Service → inline error,BR_SHOP_002,STRONG
+IT-SHOP-010,Tạo shop trùng tên cùng Service → 422 rejected,BR_SHOP_001,STRONG
+IT-SHOP-011,Tạo shop trùng tên khác Service → 200 created,BR_SHOP_001,STRONG
+IT-SHOP-012,Tạo shop trùng code cùng Service → 422 rejected,BR_SHOP_002,STRONG
+IT-SHOP-013,Tạo shop trùng code khác Service → 200 created,BR_SHOP_002,STRONG
+
+## BR_SHOP_004 / BR_SHOP_005 — Role Permission
+
+TC ID,Title,Rule,Oracle
+IT-SHOP-007,MASTER/CLIENT thấy EC Setting,BR_SHOP_004,STRONG
+IT-SHOP-008,GROUP không thấy EC Setting,BR_SHOP_004,STRONG
+IT-SHOP-009,GROUP submit EC Setting qua API → 403,BR_SHOP_004,STRONG
+IT-SHOP-001,GROUP xem IP Whitelist → ẩn nút Edit,BR_SHOP_005,STRONG
+IT-SHOP-002,GROUP update IP Whitelist API → 403,BR_SHOP_005,STRONG
+
+## BR_SHOP_006 — Company Update
+
+TC ID,Title,Rule,Oracle
+UT-SHOP-005,Form disable companyId cho GROUP,BR_SHOP_006,STRONG
+IT-SHOP-014,GROUP update companyId API → ignored/403,BR_SHOP_006,STRONG
+
+## BR_SHOP_007 — Lat/Lng Validation
+
+TC ID,Title,Rule,Oracle
+IT-SHOP-015,Chỉ nhập Latitude → lỗi cross-field,BR_SHOP_007,STRONG
+IT-SHOP-016,Chỉ nhập Longitude → lỗi cross-field,BR_SHOP_007,STRONG
+IT-SHOP-017,Nhập cả Lat/Lng hợp lệ → lưu thành công,BR_SHOP_007,STRONG
+
+## BR_SHOP_008 — Batch Update
+
+TC ID,Title,Rule,Oracle
+IT-SHOP-024,Batch OpenFlag hợp lệ → các shop updated,BR_SHOP_008,STRONG
+IT-SHOP-025,Batch ShowApp hợp lệ → các shop updated,BR_SHOP_008,STRONG
+UC-SHOP-005,Full flow batch update,BR_SHOP_008,ACCEPTABLE
+
+## BR_SHOP_010 — Tag Validation
+
+TC ID,Title,Rule,Oracle
+IT-SHOP-029,Gán Tag thuộc Service khác → rejected,BR_SHOP_010,STRONG
+IT-SHOP-030,Gán Tag hợp lệ → lưu thành công,BR_SHOP_010,STRONG
+UC-SHOP-007,Full flow tag management,BR_SHOP_010,ACCEPTABLE
+IT-SHOP-031,Xóa Shop đang có Contract/Transaction -> Bị chặn Hard Delete (Báo lỗi In Use),BR_SHOP_DEL,STRONG
+IT-SHOP-032,Batch Update gồm các ID hợp lệ và không hợp lệ -> Ghi nhận lỗi từng ID không rollback toàn bộ,BR_SHOP_008,STRONG
+UC-SHOP-008,E2E Setup Shop (Tạo -> Cấu hình -> Gán Tag -> Bật App -> Verify),BR_SHOP_E2E,ACCEPTABLE

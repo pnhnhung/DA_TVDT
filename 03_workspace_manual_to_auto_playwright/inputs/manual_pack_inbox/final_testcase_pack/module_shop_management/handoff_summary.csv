@@ -1,0 +1,34 @@
+# Handoff Summary — Shop Management
+> Workflow: 09 | Date: 2026-05-02
+
+## Decision
+
+**READY_FOR_AUTOMATION_PREP**
+
+## Counts
+
+Type,Count
+Official testcase,22
+Suggested testcase,3
+Exploratory charter,3
+Blocked testcase,4
+
+## Open gaps
+
+Gap,Impact
+CSV template header chưa có,**Cao** — IT-SHOP-020~023 (4 TC) blocked hoàn toàn
+salesType enum chưa confirm,Trung bình — IT-SHOP-005/006 dùng placeholder
+Partial batch failure path,Thấp — thiếu 1 negative case
+
+## Risks
+
+- **CSV Import blocker**: 4 TC bị block hoàn toàn cho đến khi có CSV template. Đây là dependency cứng.
+- **GMO Mock**: EC Setting validation cần Mock GMO để verify behavior.
+
+## Recommended next action
+
+1. **Ngay**: Dev cung cấp CSV template (header) → unblock 4 TC.
+2. **Ngay**: Dev confirm salesType enum list.
+3. **Sprint 1**: IT-SHOP-001~017 (role permission + unique validation — READY/NEED_LOCATOR).
+4. **Sprint 2 (sau CSV template)**: IT-SHOP-020~023.
+"5. **Sprint 2**: IT-SHOP-024~030 (batch update, tag)."

@@ -1,0 +1,65 @@
+# Final Testcase Pack — module_performance
+
+## Official Testcases
+
+| TC ID | Title | Level | P | Rule ID | Oracle | Expected Result |
+|---|---|---|---|---|---|---|
+| TC_UT_PRF_01 | Tạo KPI thành công | UT | P2 | R_PRF_01 | STRONG | Toast + row |
+| TC_UT_PRF_02 | KPI Min > Max | UT | P2 | R_PRF_02 | ACCEPTABLE | Error: Min không được > Max (exact msg TBD) |
+| TC_UT_PRF_03 | KPI thiếu trường | UT | P2 | R_PRF_03 | STRONG | Error "Required" |
+| TC_UT_PRF_04 | Tạo Review Cycle thành công | UT | P1 | R_PRF_04 | ACCEPTABLE | Cycle in list; reviewer auto-assigned (exact auto-assign TBD) |
+| TC_UT_PRF_05 | Reviewer đánh giá điểm hợp lệ | UT | P1 | R_PRF_05 | STRONG | Rating saved |
+| TC_UT_PRF_06 | Reviewer đánh giá ngoài Min/Max | UT | P1 | R_PRF_06 | STRONG | Error "Should be between X and Y" |
+| TC_UT_PRF_07 | Reviewer nhập chữ vào Rating | UT | P1 | R_PRF_07 | ACCEPTABLE | Error OR input rejected (block vs validate TBD) |
+| TC_UT_PRF_08 | ESS xem đánh giá cá nhân | UT | P1 | PERM_PRF_01 | STRONG | Review row visible in My Reviews |
+| TC_UT_PRF_09 | KPI min_rating sai format | UT | P1 | R_PRF_02 | STRONG | Error: phải là số thực |
+| TC_UT_PRF_10 | KPI trùng tên | UT | P1 | R_PRF_04 | STRONG | Error "Already exists" |
+| TC_IT_PRF_01 | KPI mapping → Job Title | IT | P1 | BR_PRF_01 | ACCEPTABLE | KPI pre-suggested in Review (exact behavior TBD) |
+| TC_IT_PRF_02 | Reviewer auto-populate từ ReportTo | IT | P1 | BR_PRF_02 | STRONG | Reviewer = S1 khi tạo Review cho E1 |
+
+## Suggested
+- TC_IT_PRF_03: Race condition đổi KPI max lúc Reviewer submit — server validation timing unconfirmed
+
+## Blocked
+- TC_IT_PRF_04 (GAP-PRF-01): Auto-complete Review cycle trigger — behavior unconfirmed
+
+## Coverage Matrix Summary
+| Rule | TC IDs | Status |
+|---|---|---|
+| R_PRF_01-03 | PRF_01-03, 09, 10 | FULL |
+| R_PRF_04 | PRF_04 | PARTIAL (auto-assign confirm) |
+| R_PRF_05-07 | PRF_05-07 | FULL |
+| PERM_PRF_01 | PRF_08 | FULL |
+| BR_PRF_01 | IT_PRF_01 | PARTIAL (KPI suggestion behavior) |
+| BR_PRF_02 | IT_PRF_02 | FULL |
+| GAP-PRF-01 | — | BLOCKED_BY_SPEC_GAP |
+
+## Oracle Review Summary
+- STRONG: 8 | ACCEPTABLE: 4 (auto-assign, input behavior) | Weak: 0 | Missing: 0
+- **Oracle Gate: ✅ PASS**
+
+## Automation Readiness
+- Yes: 12 | Partial: 1 (IT_PRF_03 MultiSession) | No: 0
+
+## Exploratory Charters
+1. **Review cycle date overlap**: 2 review cycles cho cùng Employee trong cùng period → allowed?
+2. **KPI deleted sau khi đã dùng trong Review**: Behavior của completed reviews khi KPI bị xóa?
+3. **Reviewer self-review**: Reviewer = Employee (circular) → allowed?
+4. **Rating = decimal**: Nhập 4.5 vào KPI min=1 max=5 → accepted hay rejected?
+
+---
+
+# Final Handoff Decision
+
+**Decision: READY_FOR_AUTOMATION_PREP**
+
+**Reason:** Oracle PASS; 12/13 `Yes`; GAP-PRF-01 BLOCKED.
+
+**Open gaps:**
+- Auto-assign reviewer behavior (ACCEPTABLE, không block)
+- KPI auto-suggest exact behavior (ACCEPTABLE)
+
+**Next action:**
+- Build `Page_Performance_KPI`, `Page_Performance_Review`, `Page_Performance_Evaluate`, `Page_Performance_MyReviews`
+- IT_PRF_02: Phụ thuộc PIM ReportTo — cần data fixture
+- IT_PRF_03: MultiSession sau

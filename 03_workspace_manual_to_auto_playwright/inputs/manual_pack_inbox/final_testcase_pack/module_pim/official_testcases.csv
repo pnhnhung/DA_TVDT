@@ -1,0 +1,22 @@
+# Official Testcases — module_pim
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_PIM_01,Thêm Employee thành công,UT,P1,R_PIM_01,STRONG,Employee xuất hiện trong list,Admin logged in,"First, Last name"
+TC_UT_PIM_02,Thêm thiếu Name,UT,P2,R_PIM_01,STRONG,"Error ""Required""",Admin logged in,First name = empty
+TC_UT_PIM_03,Thêm với ảnh hợp lệ,UT,P2,R_PIM_02,STRONG,Profile picture upload success,Admin logged in,Valid image (<1MB)
+TC_UT_PIM_04,Thêm kèm User account,UT,P1,R_PIM_03,STRONG,"Account created, có thể đăng nhập",Admin logged in,Toggle create details
+TC_UT_PIM_05,Cập nhật Personal Details,UT,P2,R_PIM_04,STRONG,"Data saved (Nationality, Marital Status)","Admin logged in, Emp exists",Edit Details
+TC_UT_PIM_06,Employee tự xem thông tin (ESS),UT,P1,PERM_PIM_01,STRONG,My Info hiển thị đúng data của chính mình,ESS User logged in,My Info
+TC_IT_PIM_01,Terminate Employee chặn Login,IT,P1,BR_PIM_01,STRONG,"Đăng nhập bị chặn ""Account disabled""",Emp exists & có User account,Terminate Emp
+TC_IT_PIM_02,Kích hoạt lại (Reactivate) Emp,IT,P1,BR_PIM_02,STRONG,Login thành công trở lại,Terminated Emp,Reactivate Emp
+TC_IT_PIM_03,Job/Salary thay đổi ghi Log,IT,P2,BR_PIM_03,STRONG,Lịch sử update hiện trong tab Job,Emp exists,Change Job Title
+TC_UT_PIM_07,Kiểm tra Employee Number tự động tăng,UT,P2,BR_PIM_01,STRONG,Emp Number của người thứ 2 lớn hơn người thứ 1,Admin logged in,Tạo liên tiếp 2 Employee không nhập Emp Number
+TC_UT_PIM_08,Supervisor xem danh sách nhân viên cấp dưới,UT,P1,PERM_PIM_02,STRONG,Danh sách Employee List chỉ hiện nhân viên trực thuộc quyền quản lý,Supervisor đăng nhập,Vào màn hình Employee List
+TC_UT_PIM_09,Chặn ESS và Supervisor thực hiện Terminate,UT,P1,PERM_PIM_04,STRONG,Nút Terminate Employment bị ẩn hoặc báo lỗi 403,Supervisor đăng nhập,Truy cập hồ sơ nhân viên cấp dưới
+TC_UT_PIM_10,Cập nhật Contact Details thành công,UT,P2,R_PIM_04,STRONG,Toast saved và dữ liệu hiển thị đúng,Admin logged in,Edit Contact Details (Address, Phone)
+TC_UT_PIM_11,Cập nhật Dependents thành công,UT,P2,R_PIM_04,STRONG,Row Dependent xuất hiện trong bảng,Admin logged in,Add Dependent (Name, Relationship)
+TC_UT_PIM_12,Cập nhật Immigration (Visa/Passport) thành công,UT,P2,R_PIM_04,STRONG,Row Immigration xuất hiện trong bảng,Admin logged in,Add Passport (Number, Issued Date)
+TC_IT_PIM_04,Gán Supervisor kích hoạt chuỗi duyệt phép,IT,P1,BR_PIM_04,STRONG,Đơn Leave xuất hiện ở màn hình Pending Approval của Supervisor,Gán Supervisor S1 cho Emp E1,"E1 tạo đơn Leave, S1 đăng nhập kiểm tra"
+TC_IT_PIM_05,Giới hạn quyền sửa thông tin lương của Supervisor,IT,P1,PERM_PIM_02,STRONG,Tab Salary bị ẩn hoặc Read-only đối với Supervisor,Supervisor đăng nhập,Truy cập hồ sơ của nhân viên cấp dưới
+UC-PIM-001,Onboarding hoàn chỉnh 1 nhân sự mới,USERCASE,P1,BR_PIM_01;BR_PIM_04,STRONG,Employee có đủ thông tin có thể làm việc và điểm danh,Admin logged in,Nhập Personal -> Job -> Salary -> Report To
+UC-PIM-002,Offboarding và đóng băng tài khoản,USERCASE,P1,BR_PIM_02,STRONG,Nhân sự không còn đăng nhập được và bị loại khỏi danh sách Active,Employee đang hoạt động,Thực hiện Terminate -> Check trạng thái tài khoản

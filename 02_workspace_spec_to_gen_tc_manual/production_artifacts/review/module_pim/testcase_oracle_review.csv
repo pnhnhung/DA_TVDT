@@ -1,0 +1,14 @@
+testcase_id,module,level,expected_result,oracle_strength,issue_type,suggestion
+TC_UT_PIM_001,pim,UT,Request is rejected. Record is not deleted.,STRONG,None,
+TC_UT_PIM_002,pim,UT,Request is rejected with unique validation error.,ACCEPTABLE,Message unclear,Check exact unique error message
+TC_UT_PIM_003,pim,UT,Employee is created successfully.,STRONG,None,
+TC_UT_PIM_004,pim,UT,Request is rejected with length validation error.,ACCEPTABLE,Message unclear,Check exact length error message
+TC_UT_PIM_005,pim,UT,Request is rejected with "Work Email and Other Email Cannot Be The Same".,STRONG,None,
+TC_UT_PIM_006,pim,UT,Request is rejected with unique email validation error.,ACCEPTABLE,Message unclear,Check exact unique email error message
+TC_UT_PIM_007,pim,UT,Employee is created successfully and picture is uploaded.,STRONG,None,
+TC_UT_PIM_008,pim,UT,Request is rejected. Foreign key validation fails.,STRONG,None,
+TC_IT_PIM_001,pim,IT,Employee is created and Leave/Time profiles are successfully initialized via event propagation.,ACCEPTABLE,Verification unclear,Cần chỉ định rõ API Leave nào để check
+TC_IT_PIM_002,pim,IT,The `JoinedDateChangedEvent` is dispatched and successfully processed by listening modules.,WEAK,Verification unclear,Không thể check dispatch qua UI. Cần query log hoặc database.
+TC_IT_PIM_003,pim,IT,Employee is deleted and event triggers downstream cleanup.,ACCEPTABLE,Verification unclear,Cần check System User status qua API
+UC_PIM_001,pim,USERCASE,Employee is created and all profile tabs are correctly populated and saved.,ACCEPTABLE,None,
+UC_PIM_002,pim,USERCASE,Employee status is changed to Terminated and the termination details are recorded.,ACCEPTABLE,None,

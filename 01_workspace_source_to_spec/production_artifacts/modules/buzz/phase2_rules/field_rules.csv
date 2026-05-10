@@ -1,0 +1,10 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,buzz,post,type,yes,string,"in: ['text', 'photo', 'video']",,,,Api/BuzzPostAPI.php#getValidationRuleForCreate:201,confirmed,high
+FR-002,buzz,post,text,no,string,max:65530,,,,Api/BuzzPostAPI.php#getTextValidationRuleForOtherPost:356,confirmed,high
+FR-003,buzz,post,link,no,string,BuzzVideoLinkValidationRule,,,,Api/BuzzPostAPI.php#getVideoValidationRule:343,confirmed,high
+FR-004,buzz,post,photos,no,array,max 5 items,,,,Api/BuzzPostAPI.php#setBuzzPhotos:268,confirmed,high
+FR-005,buzz,post,deletedPhotos,no,array,max 5 items,[],,,Api/BuzzPostAPI.php#update:573,confirmed,high
+FR-006,buzz,share,shareId,yes,integer,positive,,,,Api/BuzzShareAPI.php#getValidationRuleForCreate:138,confirmed,high
+FR-007,buzz,share,text,no,string,max:65530,,,,Api/BuzzShareAPI.php#getValidationRuleForCreate:143,confirmed,high
+FR-008,buzz,comment,shareId,yes,integer,positive,,,,Api/BuzzCommentAPI.php#getValidationRuleForCreate:325,confirmed,high
+FR-009,buzz,comment,text,yes,string,max:65530,,,,Api/BuzzCommentAPI.php#getValidationRuleForCreate:329,confirmed,high

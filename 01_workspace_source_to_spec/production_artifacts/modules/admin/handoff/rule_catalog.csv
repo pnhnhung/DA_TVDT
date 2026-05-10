@@ -1,0 +1,31 @@
+Rule ID,Module,Type,Statement,Status,Confidence,Evidence,Automation Agent,Automation Skill
+FR-ADM-001,admin,field,"username: min 5, max 40, unique, required",confirmed,high,Api/UserAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-002,admin,field,"password: max 64, required",confirmed,high,Api/UserAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-003,admin,field,"userRoleId: required, int",confirmed,high,Api/UserAPI.php,@api_automation_agent,playwright-api-test
+FR-ADM-004,admin,field,"empNumber: required, int",confirmed,high,Api/UserAPI.php,@api_automation_agent,playwright-api-test
+FR-ADM-005,admin,field,"status: required, boolean",confirmed,high,Api/UserAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-006,admin,field,"title: max 100, unique, required",confirmed,high,Api/JobTitleAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-007,admin,field,"description: max 400",confirmed,high,Api/JobTitleAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-008,admin,field,"note: max 400",confirmed,high,Api/JobTitleAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-009,admin,field,"specification: base64, max name 200",confirmed,high,Api/JobTitleAPI.php,@api_automation_agent,playwright-api-test
+FR-ADM-010,admin,field,"currentJobSpecification: keepCurrent/deleteCurrent/replaceCurrent",confirmed,high,Api/JobTitleAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-011,admin,field,"name: max 50, unique, required",confirmed,high,Api/JobCategoryAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-012,admin,field,"name: max 120, unique, required",confirmed,high,Api/SkillAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-013,admin,field,"description: max 400",confirmed,high,Api/SkillAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-014,admin,field,"name: max 100, unique, required",confirmed,high,Api/EducationAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-015,admin,field,"name: max 120, unique, required",confirmed,high,Api/LanguageAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-016,admin,field,"name: max 100, unique, required",confirmed,high,Api/LicenseAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-017,admin,field,"name: max 100, unique, required",confirmed,high,Api/MembershipAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-018,admin,field,"name: max 100, unique, required",confirmed,high,Api/LocationAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-019,admin,field,"countryCode: required, ISO code",confirmed,high,Api/LocationAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-020,admin,field,"name: max 100, required",confirmed,high,Api/OrganizationAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-021,admin,field,"name: max 100, unique, required",confirmed,high,Api/SubunitAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-022,admin,field,"name: max 100, unique, required",confirmed,high,Api/PayGradeAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-023,admin,field,"currencyId: required, max 3",confirmed,high,Api/PayGradeCurrencyAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-024,admin,field,"minSalary: max 10^9, decimal 0-2",confirmed,high,Api/PayGradeCurrencyAPI.php,@ui_automation_agent,playwright-ui-test
+FR-ADM-025,admin,field,"maxSalary: max 10^9, decimal 0-2",confirmed,high,Api/PayGradeCurrencyAPI.php,@ui_automation_agent,playwright-ui-test
+BR-ADM-001,admin,business,"Delete System Users: Hard delete, cannot login, cannot delete current user",confirmed,high,Api/UserAPI.php#474,@api_automation_agent,playwright-api-test
+BR-ADM-002,admin,business,"Create System User: Username unique, valid empNumber",confirmed,high,Api/UserAPI.php#267,@api_automation_agent,playwright-api-test
+BR-ADM-003,admin,business,"Update Job Specification: Logic Keep/Delete/Replace",confirmed,high,Api/JobTitleAPI.php#429,@ui_automation_agent,playwright-ui-test
+BR-ADM-004,admin,business,"Delete Subunit Protection: Cannot delete root node (ID=1)",confirmed,high,Api/SubunitAPI.php#426,@ui_automation_agent,playwright-ui-test
+BR-ADM-005,admin,business,"Pay Grade Salary Range: Max Salary > Min Salary",confirmed,high,Api/PayGradeCurrencyAPI.php#440,@ui_automation_agent,playwright-ui-test

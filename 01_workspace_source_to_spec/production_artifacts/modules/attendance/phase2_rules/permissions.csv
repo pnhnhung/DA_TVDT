@@ -1,0 +1,18 @@
+permission_id,role,module,action,allowed,data_scope,enforcement_type,source_trace,status,note,Automation Agent,Automation Skill
+PERM-ATT-001,Admin,attendance,GET configs,yes,all,policy,Api/AttendanceConfigurationAPI.php#getOne,confirmed,,@security_agent,security-audit
+PERM-ATT-002,Admin,attendance,PUT configs,yes,all,policy,Api/AttendanceConfigurationAPI.php#update,confirmed,,@security_agent,security-audit
+PERM-ATT-003,Admin,attendance,GET employee records,yes,all,policy,Api/EmployeeAttendanceRecordAPI.php#getAll:237,confirmed,,@security_agent,security-audit
+PERM-ATT-004,Admin,attendance,POST Punch In (Proxy),yes,all,workflow,Api/EmployeeAttendanceRecordAPI.php#create:297,confirmed,,@security_agent,security-audit
+PERM-ATT-005,Admin,attendance,PUT Punch Out (Proxy),yes,all,workflow,Api/EmployeeAttendanceRecordAPI.php#update:626,confirmed,,@security_agent,security-audit
+PERM-ATT-006,Admin,attendance,DELETE employee records,yes,all,policy,Api/EmployeeAttendanceRecordAPI.php#537,confirmed,,@security_agent,security-audit
+PERM-ATT-007,ESS,attendance,GET own records,yes,self,policy,Api/EmployeeAttendanceRecordAPI.php#getAll:239,confirmed,,@security_agent,security-audit
+PERM-ATT-008,ESS,attendance,POST Punch In,yes,self,workflow,Api/EmployeeAttendanceRecordAPI.php#create:297,confirmed,,@security_agent,security-audit
+PERM-ATT-009,ESS,attendance,PUT Punch Out,yes,self,workflow,Api/EmployeeAttendanceRecordAPI.php#update:626,confirmed,,@security_agent,security-audit
+PERM-ATT-010,ESS,attendance,DELETE own records,yes,self,workflow,Api/EmployeeAttendanceRecordAPI.php#532,confirmed,,@security_agent,security-audit
+PERM-ATT-011,Supervisor,attendance,GET subordinate records,yes,accessible,policy,Api/EmployeeAttendanceRecordAPI.php#getAll:237,confirmed,,@security_agent,security-audit
+PERM-ATT-012,Supervisor,attendance,POST subordinate Punch In,yes,accessible,workflow,Api/EmployeeAttendanceRecordAPI.php#create:297,confirmed,,@security_agent,security-audit
+PERM-ATT-013,Supervisor,attendance,PUT subordinate Punch Out,yes,accessible,workflow,Api/EmployeeAttendanceRecordAPI.php#update:626,confirmed,,@security_agent,security-audit
+PERM-ATT-014,Supervisor,attendance,DELETE subordinate records,yes,accessible,workflow,Api/EmployeeAttendanceRecordAPI.php#538,confirmed,,@security_agent,security-audit
+PERM-ATT-015,ESS,attendance,GET self punch status,yes,self,policy,Api/MyAttendanceRecordAPI.php,confirmed,,@security_agent,security-audit
+PERM-ATT-016,ESS,attendance,POST self Punch In,yes,self,workflow,Api/MyAttendanceRecordAPI.php,confirmed,,@security_agent,security-audit
+PERM-ATT-017,ESS,attendance,PUT self Punch Out,yes,self,workflow,Api/MyAttendanceRecordAPI.php,confirmed,,@security_agent,security-audit

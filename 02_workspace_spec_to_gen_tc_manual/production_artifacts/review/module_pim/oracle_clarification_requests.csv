@@ -1,0 +1,4 @@
+request_id,testcase_id,module,current_weak_oracle,missing_info,suggested_options,qa_response
+REQ-PIM-001,TC_UT_PIM_002,pim,"Request is rejected with unique validation error.",Cần biết exact message khi trùng employeeId,"Option A: ID already exists, Option B: ID is taken",Pending
+REQ-PIM-002,TC_IT_PIM_001,pim,"Leave/Time profiles are successfully initialized",Cần biết API/Table nào để check xem profile Leave đã được tạo,"Cung cấp Endpoint GET Leave Entitlements",Pending
+REQ-PIM-003,TC_IT_PIM_002,pim,"JoinedDateChangedEvent is dispatched",Không có observable oracle qua UI/API,"Option A: Check event log table, Option B: Bỏ qua test tự động cho case này",Pending

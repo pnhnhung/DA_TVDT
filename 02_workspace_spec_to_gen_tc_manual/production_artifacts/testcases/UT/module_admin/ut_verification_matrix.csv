@@ -1,0 +1,11 @@
+rule_id,testcase_id,module,screen_or_endpoint,field_or_action,verification_type,value_partition,boundary_type,expected_result,trace,status,priority,gap_or_note
+BR-001,TC_UT_ADM_001,admin,/api/v2/admin/users,action,business_rule,invalid,N/A,Request is rejected. User is not deleted.,BR-001,confirmed,P1,
+BR-001,TC_UT_ADM_002,admin,/api/v2/admin/users,action,business_rule,invalid,N/A,Request is rejected. Default admin is not deleted.,BR-001,confirmed,P1,
+BR-002,TC_UT_ADM_003,admin,/api/v2/admin/users,username,validation,invalid,N/A,Request is rejected with unique validation error.,FR-ADM-001,confirmed,P1,
+BR-002,TC_UT_ADM_004,admin,/api/v2/admin/users,action,happy_path,valid,N/A,System user is created successfully.,BR-002,confirmed,P1,
+FR-ADM-001,TC_UT_ADM_005,admin,/api/v2/admin/users,username,validation,invalid,min-1,Request is rejected with length validation error.,FR-ADM-001,confirmed,P2,
+BR-003,TC_UT_ADM_006,admin,/api/v2/admin/job-titles/{id},currentJobSpecification,business_rule,valid,N/A,Job specification is replaced successfully.,BR-003,confirmed,P1,
+BR-003,TC_UT_ADM_007,admin,/api/v2/admin/job-titles/{id},currentJobSpecification,business_rule,valid,N/A,Job specification is deleted successfully.,BR-003,confirmed,P1,
+BR-004,TC_UT_ADM_008,admin,/api/v2/admin/subunits/{id},action,business_rule,invalid,N/A,Request is rejected. Root node cannot be deleted.,BR-004,confirmed,P1,
+BR-005,TC_UT_ADM_009,admin,/api/v2/admin/pay-grades/{id}/currencies,maxSalary,validation,invalid,N/A,Request is rejected. Error Min < Max is shown.,BR-005,confirmed,P1,
+FR-ADM-006,TC_UT_ADM_010,admin,/api/v2/admin/job-titles,title,validation,invalid,N/A,Request is rejected with unique validation error.,FR-ADM-006,confirmed,P1,

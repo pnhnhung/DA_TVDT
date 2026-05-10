@@ -1,0 +1,4 @@
+# Blocked Testcases — module_leave
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+GAP_LEV_01_TEST,R_LEV_06,Logic bảo lưu phép,Phép năm ngoái được dồn sang tối đa bao nhiêu ngày?,Medium

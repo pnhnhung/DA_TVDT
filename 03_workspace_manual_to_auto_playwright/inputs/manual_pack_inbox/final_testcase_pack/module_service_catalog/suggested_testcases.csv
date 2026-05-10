@@ -1,0 +1,11 @@
+# Suggested Testcases — Service Catalog
+> Class: SUGGESTED | Workflow: 09 | Date: 2026-05-02
+
+TC ID,Title,Lý do SUGGESTED,Rule,Risk
+IT-SERV-016,Toggle flag concurrent by 2 Admins,Concurrency,BR_SERV_003,Low
+IT-SERV-017,Menu name trùng trong cùng Shop,Inferred unique rule,BR_SERV_005,Medium
+
+# Testcase Generation Gaps — Service Catalog
+
+Gap ID,Testcase,Mô tả,Loại,Đề xuất
+G-SERV-01,IT-SERV-017,Unique menu name per shop?,Sơ sài,Confirm xem menu name có cần unique trong 1 shop không

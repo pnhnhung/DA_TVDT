@@ -1,0 +1,28 @@
+# Official Testcases — System Notification
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+## BR_SYS_001 / BR_SYS_002 — Push Omise & Filters
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| UT-SYS-001 | Omise flag OFF → ẩn UI tạo Notification | BR_SYS_001 | STRONG |
+| IT-SYS-001 | Push hợp lệ qua Omise → Mock nhận request, Job SUCCESS | BR_SYS_001 | STRONG |
+| IT-SYS-002 | Omise báo lỗi (500) → Job ghi nhận FAILED | BR_SYS_001 | STRONG |
+| IT-SYS-003 | allFlag=true → Mock nhận ds Customer toàn hệ thống | BR_SYS_002 | STRONG |
+| IT-SYS-004 | filter ids → Mock nhận chính xác ds id được chọn | BR_SYS_002 | STRONG |
+| IT-SYS-005 | Filter không vượt quá giới hạn Service/Tenant | BR_SYS_002 | STRONG |
+
+## BR_SYS_003 — Scheduled Delivery
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-SYS-006 | scheduledAt tương lai → Job ở trạng thái WAITING | BR_SYS_003 | STRONG |
+| IT-SYS-007 | scheduledAt quá khứ → lỗi validation ngay tại form | BR_SYS_003 | STRONG |
+| IT-SYS-008 | Hủy lịch trước giờ gửi → Job CANCELED | BR_SYS_003 | STRONG |
+
+## BR_SYS_004 — Tenant Isolation
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-SYS-009 | Service A gửi Push → Customer Service B không nhận | BR_SYS_004 | STRONG |
+| IT-SYS-010 | MASTER gửi Push global → mọi Service đều nhận | BR_SYS_004 | STRONG |

@@ -1,0 +1,16 @@
+testcase_id,module,level,expected_result,oracle_strength,issue_type,suggestion
+TC_UT_ADM_001,admin,UT,Request is rejected. Current user is not deleted.,STRONG,None,
+TC_UT_ADM_002,admin,UT,Request is rejected. Default admin is not deleted.,STRONG,None,
+TC_UT_ADM_003,admin,UT,Request is rejected with unique validation error.,ACCEPTABLE,Message unclear,Check exact unique error message
+TC_UT_ADM_004,admin,UT,System user is created successfully.,STRONG,None,
+TC_UT_ADM_005,admin,UT,Request is rejected with length validation error.,ACCEPTABLE,Message unclear,Check exact length error message
+TC_UT_ADM_006,admin,UT,Job specification is replaced successfully.,STRONG,None,
+TC_UT_ADM_007,admin,UT,Job specification is deleted successfully.,STRONG,None,
+TC_UT_ADM_008,admin,UT,Request is rejected. Root node cannot be deleted.,STRONG,None,
+TC_UT_ADM_009,admin,UT,Request is rejected. Error Min < Max is shown.,STRONG,None,
+TC_UT_ADM_010,admin,UT,Request is rejected with unique validation error.,ACCEPTABLE,Message unclear,Check exact unique error message
+TC_IT_ADM_001,admin,IT,Request is rejected. User is not created due to invalid employee reference.,STRONG,None,
+TC_IT_ADM_002,admin,IT,The newly created Job Title appears in the PIM selection list.,STRONG,None,
+TC_IT_ADM_003,admin,IT,Login is rejected with an account disabled message.,ACCEPTABLE,Message unclear,Check exact disabled error message
+UC_ADM_001,admin,USERCASE,Subunit and Job Title are created and visible in their respective lists.,ACCEPTABLE,None,
+UC_ADM_002,admin,USERCASE,User is successfully created, searchable, and their role is updated.,ACCEPTABLE,None,

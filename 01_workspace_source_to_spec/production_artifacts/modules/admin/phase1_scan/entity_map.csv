@@ -1,0 +1,17 @@
+Module,Entity,Field,Type,Nullable,Constraint,Source Trace,Status,Automation Agent
+admin,SystemUser,"id, user_role_id, emp_number, user_name, status, deleted",mixed,No,"user_name unique, emp_number must exist",routes.yaml#37,inferred,@api_automation_agent
+admin,JobTitle,"id, job_title, job_description, note, is_deleted",mixed,No,job_title unique,orangehrmAdminPlugin/entity/JobTitle.php#31,confirmed,@ui_automation_agent
+admin,PayGrade,"id, name",mixed,No,name unique,orangehrmAdminPlugin/entity/PayGrade.php#29,confirmed,@ui_automation_agent
+admin,PayGradeCurrency,"pay_grade_id, currency_id, min_salary, max_salary",mixed,No,"min < max, composite PK",orangehrmAdminPlugin/entity/PayGradeCurrency.php#27,confirmed,@api_automation_agent
+admin,EmploymentStatus,"id, name",mixed,No,name unique,routes.yaml#65,inferred,@ui_automation_agent
+admin,JobCategory,"id, name",mixed,No,name unique,routes.yaml#23,inferred,@ui_automation_agent
+admin,WorkShift,"id, name, hours_per_day, start_time, end_time",mixed,No,name unique,routes.yaml#200,inferred,@ui_automation_agent
+admin,Location,"id, name, country_code, province, city, zip_code",mixed,No,name unique,orangehrmAdminPlugin/entity/Location.php#32,confirmed,@ui_automation_agent
+admin,Organization,"id, name, tax_id, registration_number, email",mixed,No,Single record info,orangehrmAdminPlugin/entity/Organization.php#29,confirmed,@ui_automation_agent
+admin,Subunit,"id, name, unit_id, level, lft, rgt",mixed,No,name unique,orangehrmAdminPlugin/entity/Subunit.php#33,confirmed,@ui_automation_agent
+admin,Skill,"id, name, description",mixed,No,name unique,orangehrmAdminPlugin/entity/Skill.php#29,confirmed,@ui_automation_agent
+admin,Education,"id, name",mixed,No,name unique,orangehrmAdminPlugin/entity/Education.php#31,confirmed,@ui_automation_agent
+admin,License,"id, name",mixed,No,name unique,orangehrmAdminPlugin/entity/License.php#29,confirmed,@ui_automation_agent
+admin,Language,"id, name",mixed,No,name unique,orangehrmAdminPlugin/entity/Language.php#29,confirmed,@ui_automation_agent
+admin,Membership,"id, name",mixed,No,name unique,orangehrmAdminPlugin/entity/Membership.php#29,confirmed,@ui_automation_agent
+admin,Nationality,"id, name",mixed,No,name unique,routes.yaml#178,inferred,@ui_automation_agent

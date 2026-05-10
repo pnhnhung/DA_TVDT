@@ -1,0 +1,11 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-CLM-001,Admin,claim,GET/POST/PUT/DELETE Claim Events,yes,yes,all,,Api/ClaimEventAPI.php (inferred),inferred,medium
+PERM-CLM-002,Admin,claim,GET/POST/PUT/DELETE Expense Types,yes,yes,all,,Api/ExpenseTypeAPI.php (inferred),inferred,medium
+PERM-CLM-003,Admin,claim,View all claim requests,yes,yes,all,,Api/ClaimRequestAPI.php (inferred),inferred,medium
+PERM-CLM-004,Admin,claim,Approve/Reject claim requests,yes,yes,all,,Api/ClaimActionAPI.php (inferred),inferred,medium
+PERM-CLM-005,Employee (ESS),claim,Create own claim request,yes,yes,self only,Status must be INITIATED,Api/ClaimRequestAPI.php (inferred),inferred,medium
+PERM-CLM-006,Employee (ESS),claim,View own claim requests,yes,yes,self only,,Api/ClaimRequestAPI.php (inferred),inferred,medium
+PERM-CLM-007,Employee (ESS),claim,Submit own claim request,yes,yes,self only,Status must be INITIATED,Api/ClaimActionAPI.php (inferred),inferred,medium
+PERM-CLM-008,Employee (ESS),claim,Cancel own claim request,yes,yes,self only,Status must be INITIATED or SUBMITTED,Api/ClaimActionAPI.php (inferred),inferred,medium
+PERM-CLM-009,Employee (ESS),claim,Add/Edit claim expenses,yes,yes,self only,Claim status must be INITIATED,Api/ClaimExpenseAPI.php (inferred),inferred,medium
+PERM-CLM-010,Employee (ESS),claim,Upload claim attachment,yes,yes,self only,Claim status must be INITIATED,Api/ClaimAttachmentAPI.php (inferred),inferred,medium

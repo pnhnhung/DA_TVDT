@@ -1,0 +1,8 @@
+# Blocked Testcases — Customer Management
+> Workflow: 09 | Date: 2026-05-02
+
+| Blocked TC ID | Related Rule ID | Missing information | Question | Impact |
+|---|---|---|---|---|
+| IT-CUST-005-exact | BR_CUST_002 | Exact card limit number | Max cards = bao nhiêu? | Cao — test data không thể chuẩn bị đúng |
+| IT-CUST-008-exact | BR_CUST_005 | OTP throttle threshold | Số lần / khoảng thời gian throttle? | Cao — test data không thể chuẩn bị đúng |
+| IT-CUST-011-flow | BR_CUST_006 | Email change flow: OTP hay password confirm? | User cần xác thực gì khi đổi email? | Trung bình — steps không thể viết hoàn chỉnh |

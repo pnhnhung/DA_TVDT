@@ -1,0 +1,11 @@
+# Testcase Coverage Matrix — module_admin_configuration
+
+| Rule ID | Rule Statement | Test Level | Covered TC IDs | Coverage Status | Missing Cases | Notes |
+|---|---|---|---|---|---|---|
+| R_CFG_01 | Date Format system-wide | UT/IT | TC_UT_CFG_03, IT_CFG_02 | FULL | — | — |
+| R_CFG_02 | Locale/Language | UT | TC_UT_CFG_04 | PARTIAL | Full locale coverage missing | P2 |
+| R_CFG_03 | Module enable/disable | IT | TC_IT_CFG_01 | PARTIAL | Re-enable missing | GAP-CFG-03 |
+| R_CFG_04 | SMTP configuration | UT | TC_UT_CFG_01, 02 | PARTIAL | SMTP env required | External dependency |
+| PERM_CFG_01 | ESS no access | UT | TC_UT_CFG_05 | FULL | — | — |
+| BR_CFG_01 | Menu propagation after disable | IT | TC_IT_CFG_01 | FULL | — | — |
+| BR_CFG_02 | Race condition | IT | — | BLOCKED_BY_SPEC_GAP | — | SUGGESTED |

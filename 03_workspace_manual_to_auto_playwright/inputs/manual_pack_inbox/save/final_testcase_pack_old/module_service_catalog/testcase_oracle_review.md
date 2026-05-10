@@ -1,0 +1,10 @@
+# Testcase Oracle Review: Service Catalog
+
+| Testcase ID | Current oracle | Oracle quality | Issue | Required improvement | Status |
+|---|---|---|---|---|---|
+| IT-SERV-004 | Trạng thái chuyển INACTIVE. Token cũ không dùng được, API trả 403. | STRONG | None | None | PASS |
+| IT-SERV-005 | App nhận được payload JSON cấu hình `primaryColor` và `enableCouponSetting`. | STRONG | None | None | PASS |
+| IT-SERV-007 | Lỗi `validation.categoryId`, Menu không được tạo. | STRONG | None | None | PASS |
+| IT-SERV-009 | Danh sách Menu/Shop rỗng hoặc không chứa ID của Service khác. | STRONG | None | None | PASS |
+| IT-SERV-013 | Lỗi "Không thể xóa Hợp đồng đang liên kết với Sản phẩm Dự toán", Contract không bị xóa. | STRONG | None | None | PASS |
+| UC-SERV-001 | Feature flags được lưu và áp dụng toàn hệ thống. | ACCEPTABLE | Chi tiết ở IT. | None | PASS |

@@ -1,0 +1,11 @@
+# Testcase Coverage Matrix — module_attendance
+
+Rule ID,Rule Statement,Test Level,Covered TC IDs,Coverage Status,Missing Cases,Notes
+R_ATT_01,Punch In,UT,"TC_UT_ATT_01, 03",FULL,—,—
+R_ATT_02,Punch Out,UT,TC_UT_ATT_02,PARTIAL,Cross-day missing,BLOCKED
+R_ATT_03,Edit record,UT,TC_UT_ATT_04,FULL,—,—
+R_ATT_04,Delete record,UT,TC_UT_ATT_05,FULL,—,—
+R_ATT_05,Timezone DB logic,UT,TC_UT_ATT_07,FULL,—,GAP-ATT-02 resolved via DB oracle
+PERM_ATT_01,ESS restrict,UT,TC_UT_ATT_06,FULL,—,—
+BR_ATT_01,Integration with Leave,IT,TC_IT_ATT_01,FULL,—,—
+BR_ATT_02,Server timezone change,IT,—,BLOCKED_BY_SPEC_GAP,—,SUGGESTED

@@ -1,0 +1,4 @@
+# Blocked Testcases — module_admin_organization
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+BR_ORG_01_TEST,R_ORG_03,Delete restriction,Xóa location đang được xài thì hệ thống chặn cứng hay soft delete?,Medium

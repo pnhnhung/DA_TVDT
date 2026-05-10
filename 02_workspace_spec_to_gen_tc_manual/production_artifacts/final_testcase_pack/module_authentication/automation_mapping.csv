@@ -1,0 +1,10 @@
+testcase_id,module,automation_agent,automation_skill,target_spec_file
+TC_UT_AUTH_001,authentication,playwright_api,api_testing,login.spec.ts
+TC_UT_AUTH_002,authentication,playwright_api,api_testing,login.spec.ts
+TC_UT_AUTH_003,authentication,playwright_ui,ui_testing,login.spec.ts
+TC_UT_AUTH_004,authentication,playwright_ui,ui_testing,login.spec.ts
+TC_UT_AUTH_005,authentication,playwright_api,api_testing,password_strength.spec.ts
+TC_IT_AUTH_001,authentication,playwright_ui,ui_testing,login.spec.ts
+TC_IT_AUTH_002,authentication,playwright_api,api_testing,session_persistence.spec.ts
+UC_AUTH_001,authentication,playwright_ui,ui_testing,e2e_login.spec.ts
+UC_AUTH_002,authentication,playwright_ui,ui_testing,e2e_login.spec.ts

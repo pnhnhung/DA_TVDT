@@ -1,0 +1,28 @@
+# Automation Readiness Matrix — module_admin_qualification
+
+Testcase ID,Automation readiness,Blocker,Required data,Required locator/API/helper,Notes
+TC_UT_QUAL_SKILL_01,MANUAL_ONLY,None,None,`Page_Qualifications`,UT cơ bản P2
+TC_UT_QUAL_SKILL_02,READY,None,Existing Skill,`Page_Qualifications`,UT P1 (High risk)
+TC_UT_QUAL_SKILL_03,MANUAL_ONLY,None,None,`Page_Qualifications`,UT cơ bản P2
+TC_UT_QUAL_SKILL_05,MANUAL_ONLY,None,Existing Skill,`Page_Qualifications`,UT cơ bản P2
+TC_UT_QUAL_SKILL_06,READY,None,Existing Skill,`Page_Qualifications`,Đưa Delete vào auto
+TC_UT_QUAL_EDU_01,MANUAL_ONLY,None,None,`Page_Qualifications`,Tab Education
+TC_UT_QUAL_EDU_02,READY,None,Existing Edu,`Page_Qualifications`,UT P1
+TC_UT_QUAL_EDU_03,MANUAL_ONLY,None,None,`Page_Qualifications`,Tab Education
+TC_UT_QUAL_EDU_04,MANUAL_ONLY,None,Existing Edu,`Page_Qualifications`,Tab Education
+TC_UT_QUAL_EDU_05,READY,None,Existing Edu,`Page_Qualifications`,Đưa Delete vào auto
+TC_UT_QUAL_LIC_01,MANUAL_ONLY,None,None,`Page_Qualifications`,Tab Licenses
+TC_UT_QUAL_LIC_02,READY,None,Existing Lic,`Page_Qualifications`,UT P1
+TC_UT_QUAL_LIC_04,MANUAL_ONLY,None,Existing Lic,`Page_Qualifications`,Tab Licenses
+TC_UT_QUAL_LIC_05,READY,None,Existing Lic,`Page_Qualifications`,Đưa Delete vào auto
+TC_UT_QUAL_LAN_01,MANUAL_ONLY,None,None,`Page_Qualifications`,Tab Languages
+TC_UT_QUAL_LAN_02,READY,None,Existing Lang,`Page_Qualifications`,UT P1
+TC_UT_QUAL_LAN_03,MANUAL_ONLY,None,Existing Lang,`Page_Qualifications`,Tab Languages
+TC_UT_QUAL_LAN_04,READY,None,Existing Lang,`Page_Qualifications`,Đưa Delete vào auto
+TC_UT_QUAL_MEM_01,MANUAL_ONLY,None,None,`Page_Qualifications`,Tab Memberships
+TC_UT_QUAL_MEM_02,READY,None,Existing Mem,`Page_Qualifications`,UT P1
+TC_UT_QUAL_MEM_03,MANUAL_ONLY,None,Existing Mem,`Page_Qualifications`,Tab Memberships
+TC_UT_QUAL_MEM_04,READY,None,Existing Mem,`Page_Qualifications`,Đưa Delete vào auto
+TC_UT_QUAL_PERM_01,READY,None,ESS User,`Page_Qualifications`,UT P1 Security
+TC_IT_QUAL_01,READY,None,"Skill, Emp",`Page_PIM_Qualifications`,IT bắt buộc Auto
+TC_IT_QUAL_02,NEED_MULTI_SESSION,None,2 Admins,`MultiSessionContext`,IT bắt buộc Auto

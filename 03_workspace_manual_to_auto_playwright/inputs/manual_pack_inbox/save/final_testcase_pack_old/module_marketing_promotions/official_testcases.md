@@ -1,0 +1,35 @@
+# Official Testcases — Marketing & Promotions
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+## BR_MKT_001 — Coupon Settings Flag
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| UT-MKT-001 | `enableCouponSetting` OFF → UI ẩn menu | BR_MKT_001 | STRONG |
+| IT-MKT-001 | `enableCouponSetting` ON → Coupon menu visible | BR_MKT_001 | STRONG |
+| IT-MKT-002 | `enableCouponSetting` OFF → truy cập URL → 403 | BR_MKT_001 | STRONG |
+| IT-MKT-003 | Bật cờ → tạo Coupon hợp lệ | BR_MKT_001 | STRONG |
+| UC-MKT-001 | Full Coupon config journey | BR_MKT_001 | ACCEPTABLE |
+
+## BR_MKT_004 — Notification Settings Flag
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-MKT-008 | `enableNotificationSetting` OFF → menu Notification ẩn | BR_MKT_004 | STRONG |
+| IT-MKT-009 | Bật cờ → truy cập và quản lý Notification bình thường | BR_MKT_004 | STRONG |
+| UC-MKT-003 | Full Notification config journey | BR_MKT_004 | ACCEPTABLE |
+
+## BR_MKT_006 — Omise Template Linking
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| UT-MKT-002 | `enableOmiseLinked` OFF → Form ẩn field liên kết | BR_MKT_006 | STRONG |
+| IT-MKT-011 | Flag ON → lưu template kèm Omise URL | BR_MKT_006 | STRONG |
+| IT-MKT-012 | Flag OFF → Submit API kèm Omise URL → reject | BR_MKT_006 | STRONG |
+| UC-MKT-005 | Full Template Omise link journey | BR_MKT_006 | ACCEPTABLE |
+
+## Date Validation
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-MKT-015 | endDate < startDate → validation error inline | General | STRONG |

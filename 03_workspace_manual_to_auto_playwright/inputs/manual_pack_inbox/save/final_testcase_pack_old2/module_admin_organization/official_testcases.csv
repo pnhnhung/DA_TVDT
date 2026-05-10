@@ -1,0 +1,13 @@
+# Official Testcases — module_admin_organization
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_ORG_01,Lưu General Information thành công,UT,P2,R_ORG_01,STRONG,Toast saved; data persists,Admin logged in,"Tên công ty, Số lượng nhân viên"
+TC_UT_ORG_02,Lưu General Info thiếu trường bắt buộc,UT,P2,R_ORG_01,STRONG,"Error ""Required""",Admin logged in,Organization Name = rỗng
+TC_UT_ORG_03,Tạo Location thành công,UT,P1,R_ORG_02,STRONG,Toast saved; Location visible in list,Admin logged in,"Name=""Hanoi HQ"", Country=""Vietnam"""
+TC_UT_ORG_04,Tạo Location thiếu Country,UT,P2,R_ORG_02,STRONG,"Error ""Required""",Admin logged in,"Name=""Hanoi HQ"", Country=empty"
+TC_UT_ORG_05,Xóa Location thành công,UT,P2,R_ORG_03,STRONG,Toast deleted; row absent,"Admin logged in, Location exists",Delete Location
+TC_UT_ORG_06,Tạo Structure Unit,UT,P1,R_ORG_04,STRONG,Toast saved; Unit appears in tree,Admin logged in,"Unit ID=""IT"", Name=""IT Dept"""
+TC_UT_ORG_06B,Cập nhật (Edit) Structure Unit,UT,P2,R_ORG_04,STRONG,Toast saved,Admin logged in,"Edit ""IT Dept"""
+TC_UT_ORG_06C,Xóa Structure Unit,UT,P1,R_ORG_04,STRONG,Toast deleted; node absent,Admin logged in,"Delete ""IT Dept"""
+TC_UT_ORG_07,Kiểm tra quyền ESS,UT,P1,PERM_ORG_01,ACCEPTABLE,Menu absent OR Access Denied,ESS User logged in,N/A
+TC_IT_ORG_01,Location trong form tạo Employee,IT,P1,R_ORG_05,STRONG,Location xuất hiện trong dropdown Work Location ở PIM,Admin logged in,Navigate to PIM -> Add Emp

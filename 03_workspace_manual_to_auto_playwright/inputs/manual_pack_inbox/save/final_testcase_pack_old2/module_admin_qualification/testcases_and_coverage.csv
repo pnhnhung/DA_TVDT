@@ -1,0 +1,32 @@
+# Official Testcases — module_admin_qualification
+
+TC ID,Title,Level,Priority,Rule ID,Oracle,Precondition,Test Data,Steps,Expected Result
+TC_UT_QUAL_01,Tạo Skill thành công,UT,P1,R_QUAL_01,STRONG,"Admin logged in; ""Python"" chưa có","name=""Python""",Add Skill → fill → Save,Toast saved; row visible
+TC_UT_QUAL_02,Skill thiếu Name,UT,P1,R_QUAL_02,STRONG,Admin logged in,"name=""""",Add → empty → Save,"Error ""Required"""
+TC_UT_QUAL_03,Skill = 120 ký tự (max),UT,P1,R_QUAL_03,ACCEPTABLE,Admin logged in,name=120 chars,Add → fill 120 → Save,Toast saved
+TC_UT_QUAL_04,Skill = 121 ký tự (max+1),UT,P1,R_QUAL_03,ACCEPTABLE,Admin logged in,name=121 chars,Add → type 121,Length ≤ 120 OR error
+TC_UT_QUAL_05,Skill trùng tên,UT,P1,R_QUAL_04,STRONG,"""Python"" exists","name=""Python""",Add → duplicate → Save,"Error ""Already exists"""
+TC_UT_QUAL_06,Tạo Education thành công,UT,P2,R_QUAL_05,STRONG,Admin logged in,"name=""BSc CS""",Add Education → fill → Save,Toast + row
+TC_UT_QUAL_07,Tạo License thành công,UT,P2,R_QUAL_06,STRONG,Admin logged in,"name=""AWS Certified""",Add License → fill → Save,Toast + row
+TC_UT_QUAL_08,Tạo Language thành công,UT,P2,R_QUAL_07,STRONG,Admin logged in,"name=""English""",Add Language → fill → Save,Toast + row
+TC_UT_QUAL_09,Tạo Membership thành công,UT,P2,R_QUAL_08,STRONG,Admin logged in,"name=""IEEE""",Add Membership → fill → Save,Toast + row
+TC_UT_QUAL_10,Xóa Skill không gán Employee,UT,P1,R_QUAL_09,STRONG,"""ToDelete_Skill"" exists; not assigned",—,Delete → Confirm,Toast deleted; row absent
+TC_IT_QUAL_01,Xóa Skill đang gán Employee → FK chặn,IT,P1,BR_QUAL_01,ACCEPTABLE,"Skill ""Java"" gán cho EMP_01",—,"Delete ""Java""",Error OR record still present
+TC_IT_QUAL_02,Skill assign → PIM Qualifications tab,IT,P1,"BR_QUAL_02, R_QUAL_01",STRONG,"Skill ""Java"" exists; EMP_02 exists","skill=""Java""; emp=""EMP_02""","PIM → EMP_02 → Qualifications → add Skill ""Java""","""Java"" visible in PIM Qualifications tab"
+
+# Suggested Testcases — module_admin_qualification
+
+TC ID,Title,Lý do,Unblock condition
+TC_IT_QUAL_03,Race condition: xóa License lúc HR assign,Server behavior unconfirmed,Dev confirm
+
+# Testcase Coverage Matrix — module_admin_qualification
+
+Rule ID,Rule Statement,Level,TC IDs,Status,Notes
+R_QUAL_01,Skill Name required,UT,"TC_UT_QUAL_01, 02",FULL,—
+R_QUAL_02,Skill Name unique,UT,TC_UT_QUAL_05,FULL,—
+R_QUAL_03,Skill Name max-length,UT,"TC_UT_QUAL_03, 04",PARTIAL,Exact max confirm needed
+R_QUAL_04,Skill CRUD,UT,"TC_UT_QUAL_01, 10",FULL,—
+R_QUAL_05-08,Education/License/Language/Membership CRUD,UT,TC_UT_QUAL_06-09,PARTIAL,Only happy path; no boundary/duplicate per type
+R_QUAL_09,FK protect assigned Skill,IT,TC_IT_QUAL_01,FULL,—
+BR_QUAL_02,Propagation → PIM tab,IT,TC_IT_QUAL_02,FULL,—
+BR_QUAL_RACE,Race condition FK,IT,TC_IT_QUAL_03,BLOCKED_BY_SPEC_GAP,SUGGESTED

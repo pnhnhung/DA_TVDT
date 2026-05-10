@@ -1,0 +1,5 @@
+# Testcase Generation Gaps — module_admin_nationalities
+
+| ID | Issue | Impact | Recommend |
+|---|---|---|---|
+| GAP-NAT-01 | Độ dài tối đa của field `Name` chưa được confirm (đang assumed là 100 theo DB schema chung) | Boundary tests (TC_UT_NAT_03, 04) có Oracle là ACCEPTABLE. Nếu giá trị thực là 50, test sẽ fail sai. | Xác nhận lại từ DB Schema (`ohrm_nationality.name`) trong Workspace 1 |

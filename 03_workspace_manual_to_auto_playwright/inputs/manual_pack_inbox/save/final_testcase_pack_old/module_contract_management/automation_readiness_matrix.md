@@ -1,0 +1,27 @@
+# Automation Readiness Matrix — Contract Management
+> Workflow: 09 | Date: 2026-05-02
+
+| Testcase ID | Automation readiness | Blocker | Required data | Required locator/helper | Notes |
+|---|---|---|---|---|---|
+| UT-CONT-001 | READY | — | DB: Shop + unrelated Service | `ContractForm#shop-id`, `#service-id`, `.field-error` | — |
+| IT-CONT-002 | READY | — | DB: CT-2026-001 | Contract form → `.contract-number-error` | — |
+| IT-CONT-001 | NEED_LOCATOR | DOM: contract list row | DB: Shop 101 | `ContractListPage.assertRowVisible(contractNo)` | — |
+| IT-CONT-003 | NEED_LOCATOR | DOM: contract list | 2 shops seeder | Same | — |
+| IT-CONT-004 | NEED_LOCATOR | DOM: delete error popup | Contract 501 + Estimate | `ContractPage.clickDelete()`, `.error-popup` | — |
+| IT-CONT-005 | NEED_LOCATOR | DOM: row disappears | Contract 502 no estimate | Assert row absent after delete | — |
+| UT-CONT-002 | NEED_LOCATOR | DOM: membership fee list | Contract with 2 fees | `MembershipFeePage.deleteFee()`, `.addFee()` | — |
+| IT-CONT-006 | NEED_LOCATOR | DOM: fee list reload | Contract with fees | Assert fee count after reload | — |
+| IT-CONT-007 | NEED_LOCATOR | App fee display | 3-tier fee seeder | `AppCheckoutPage.assertFeePercent()` | SUGGESTED |
+| IT-CONT-008 | NEED_LOCATOR | App + Mock QRPF | Mock QRPF success | `AppPaymentPage.scanQR()`, `.submitPasscode()` | — |
+| IT-CONT-009 | NEED_LOCATOR | App + Mock QRPF | Wrong passcode | `AppPasscodePage.assertError()` | — |
+| IT-CONT-010 | NEED_LOCATOR | Mailhog | Mock QRPF + Mailhog | `MailhogHelper.assertReceived()` | Content blocked |
+| IT-CONT-012 | NEED_LOCATOR | App + Mock QRPF cancel | Mock QRPF cancel | `CMSTransactionPage.clickCancel()` | — |
+| IT-CONT-013 | NEED_LOCATOR | DOM: disabled button | DB: CANCELLED Tx | Assert cancel btn disabled | — |
+| IT-CONT-014 | NEED_LOCATOR | Mock QRPF fail | Mock QRPF 500 cancelEntry | CMS error msg, Tx status unchanged | — |
+| IT-CONT-015 | NEED_LOCATOR | Mock GMO | Mock GMO alterTran | `CMSECPage.updateSingle()`, Mock log | — |
+| IT-CONT-016 | NEED_LOCATOR | Queue + Mock GMO | 3 EC orders seeder | Toast + 3 status changes after queue | — |
+| IT-CONT-017 | NEED_LOCATOR | Mock QRPF | BTOKEN | `CMSContractPage.generateQR()`, assert img | — |
+| IT-CONT-018 | NEED_LOCATOR | Mock QRPF invalid | Invalid token | Assert error msg, no img | — |
+| IT-CONT-019 | NEED_LOCATOR | App + Mock QRPF | requireCC + no-card | App blocked screen before QR | — |
+| IT-CONT-020 | BLOCKED | Concurrency setup | 2 sessions | Race condition tooling | Partial |
+| IT-CONT-021 | BLOCKED | Concurrency setup | App double-tap | Idempotency tooling | Partial |

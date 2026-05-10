@@ -1,0 +1,10 @@
+testcase_id,module,level,priority,automation_candidate,automation_status,blocker_reason,recommended_tool
+TC_UT_AUTH_001,authentication,UT,P1,Yes,READY,,Playwright API
+TC_UT_AUTH_002,authentication,UT,P1,Yes,READY,,Playwright API
+TC_UT_AUTH_003,authentication,UT,P1,Yes,READY,,Playwright UI
+TC_UT_AUTH_004,authentication,UT,P1,Yes,READY,,Playwright UI
+TC_UT_AUTH_005,authentication,UT,P1,Yes,READY,,Playwright API
+TC_IT_AUTH_001,authentication,IT,P1,Yes,READY,,Playwright UI
+TC_IT_AUTH_002,authentication,IT,P1,Yes,READY,,Playwright API
+UC_AUTH_001,authentication,USERCASE,P1,Yes,READY,,Playwright UI
+UC_AUTH_002,authentication,USERCASE,P1,Yes,READY,,Playwright UI

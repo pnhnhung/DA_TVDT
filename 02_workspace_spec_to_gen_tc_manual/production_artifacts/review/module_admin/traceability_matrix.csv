@@ -1,0 +1,16 @@
+rule_id,testcase_id,module,status
+BR-001,TC_UT_ADM_001,admin,mapped
+BR-001,TC_UT_ADM_002,admin,mapped
+BR-002,TC_UT_ADM_003,admin,mapped
+BR-002,TC_UT_ADM_004,admin,mapped
+FR-ADM-001,TC_UT_ADM_005,admin,mapped
+BR-003,TC_UT_ADM_006,admin,mapped
+BR-003,TC_UT_ADM_007,admin,mapped
+BR-004,TC_UT_ADM_008,admin,mapped
+BR-005,TC_UT_ADM_009,admin,mapped
+FR-ADM-006,TC_UT_ADM_010,admin,mapped
+BR-002,TC_IT_ADM_001,admin,mapped
+FR-ADM-006,TC_IT_ADM_002,admin,mapped
+BR-002,TC_IT_ADM_003,admin,mapped
+F-ADM-JOB,UC_ADM_001,admin,mapped
+F-ADM-USER,UC_ADM_002,admin,mapped

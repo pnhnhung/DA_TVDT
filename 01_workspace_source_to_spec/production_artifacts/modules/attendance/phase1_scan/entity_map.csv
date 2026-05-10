@@ -1,0 +1,3 @@
+Module,Entity,Field,Type,Nullable,Constraint,Source Trace,Status,Automation Agent
+attendance,AttendanceRecord,"id, punchInUtcTime, punchInNote, punchOutUtcTime, punchOutNote, state",mixed,No,"state values: PUNCHED IN, PUNCHED OUT",AttendancePlugin/entity/AttendanceRecord.php#33,confirmed,@api_automation_agent
+attendance,AttendanceConfiguration,"canEmployeeEditAttendance, canEmployeeCreateAttendance, canEmployeeDeleteAttendance",boolean,No,Boolean flags,AttendancePlugin/Dto/AttendanceConfiguration.php#22,inferred,@api_automation_agent

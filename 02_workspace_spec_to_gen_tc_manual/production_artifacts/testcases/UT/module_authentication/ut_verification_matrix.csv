@@ -1,0 +1,6 @@
+rule_id,testcase_id,module,screen_or_endpoint,field_or_action,verification_type,value_partition,boundary_type,expected_result,trace,status,priority,gap_or_note
+BR-001,TC_UT_AUTH_001,authentication,/auth/validate,_token,validation,invalid,N/A,AuthenticationException::invalidCsrfToken(),BR-001,confirmed,P1,
+BR-001,TC_UT_AUTH_002,authentication,/auth/validate,_token,validation,empty,N/A,AuthenticationException::invalidCsrfToken(),FR-003,confirmed,P1,
+BR-001,TC_UT_AUTH_003,authentication,/auth/validate,password,validation,invalid,N/A,Redirect to login with error,BR-001,confirmed,P1,
+BR-001,TC_UT_AUTH_004,authentication,/auth/validate,action,happy_path,valid,N/A,Session created and redirect to HomePagePath,BR-001,confirmed,P1,
+BR-002,TC_UT_AUTH_005,authentication,/api/v2/auth/public/validation/password,password,business_rule,invalid_policy,N/A,Max strength score is BETTER,BR-002,confirmed,P1,

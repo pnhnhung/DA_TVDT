@@ -1,0 +1,2 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,dashboard,config,showOnlyAccessibleEmployeesOnLeaveToday,yes,boolean,,,,Api/EmployeeOnLeaveTodayConfigAPI.php#getValidationRuleForUpdate:125,confirmed,high

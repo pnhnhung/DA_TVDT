@@ -1,0 +1,35 @@
+# Handoff Summary — Marketing & Promotions
+> Workflow: 09 | Date: 2026-05-02
+
+## Decision
+
+**READY_FOR_AUTOMATION_PREP**
+
+## Counts
+
+| Type | Count |
+|---|---:|
+| Official testcase | 12 |
+| Suggested testcase | 4 |
+| Exploratory charter | 3 |
+| Blocked testcase | 0 |
+
+## Open gaps
+
+| Gap | Impact |
+|---|---|
+| useCoupon flow inferred (BR_MKT_003) | Trung bình — IT-MKT-004/014 ở SUGGESTED |
+| limitUsage update constraint chưa confirm | Trung bình — IT-MKT-013 ở SUGGESTED |
+| checkingBell trigger inferred | Thấp — IT-MKT-010 ở SUGGESTED |
+
+## Risks
+
+- **Inferred rules**: 3/6 cases là SUGGESTED vì rules chưa 100% confirm. Nếu confirm → nhanh chóng promote lên OFFICIAL.
+- **Không có Mock dependency**: Module này là module dễ implement nhất — Feature Flag cases READY ngay.
+
+## Recommended next action
+
+1. **Ngay**: Dev confirm 3 inferred rules → promote SUGGESTED → OFFICIAL.
+2. **Sprint 1 (ngay)**: IT-MKT-001~003 (Coupon flag), IT-MKT-008/009 (Notif flag), IT-MKT-011/012 (Omise template flag).
+3. **Sprint 1**: IT-MKT-015 (date validation) — inline, READY.
+4. **Sprint 2**: IT-MKT-004~006 (Coupon usage với seeder).

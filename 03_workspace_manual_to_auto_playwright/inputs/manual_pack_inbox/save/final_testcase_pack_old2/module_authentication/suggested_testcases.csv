@@ -1,0 +1,10 @@
+# Suggested Testcases — Authentication
+> Class: SUGGESTED | Workflow: 09 | Date: 2026-05-02
+> Tester phải review và confirm trước khi dùng chính thức.
+
+TC ID,Title,Lý do SUGGESTED,Rule,Risk
+IT-AUTH-019,Refresh token hợp lệ → new access token,Refresh token behavior chưa được spec detail,AUTH-RULE-04,Medium
+IT-AUTH-025,2 Admin login cùng lúc → session độc lập,Concurrency — inferred idempotency,AUTH-RULE-01,Low
+IT-AUTH-026,Double submit forgot password,Concurrency — inferred,AUTH-RULE-03,Low
+IT-AUTH-027,OTP gửi nhiều lần — chỉ OTP mới hợp lệ,Rate limit OTP hardcode chưa confirm,AUTH-RULE-04/05,Medium
+IT-AUTH-028,Concurrent login cùng account 2 device,Session isolation inferred,AUTH-RULE-04,Low

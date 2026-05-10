@@ -1,0 +1,27 @@
+ID,Title,Priority,Status,AutomationDecision,Reason
+TC_UT_JOB_TITLE_01,Tạo Job Title thành công,P1,Active,AUTO_READY,Core flow - oracle rõ
+TC_UT_JOB_TITLE_02,Tạo Job Title trùng tên,P1,Active,AUTO_READY,Negative validation
+TC_UT_JOB_TITLE_03,Tạo Job Title trống Name,P2,Active,AUTO_READY,Field validation
+TC_UT_JOB_TITLE_05,Edit Job Title,P2,Active,AUTO_READY,Update flow
+TC_UT_JOB_TITLE_06,Delete Job Title,P2,Active,AUTO_READY,Delete flow
+TC_UT_JOB_PAY_01,Tạo Pay Grade thành công,P1,Active,AUTO_READY,Core flow
+TC_UT_JOB_PAY_02,Tạo Pay Grade trùng tên,P1,Active,AUTO_READY,Negative validation
+TC_UT_JOB_PAY_03,Cập nhật Pay Grade Name,P2,Active,AUTO_READY,Update flow
+TC_UT_JOB_PAY_04,Xóa Pay Grade,P2,Active,AUTO_READY,Delete flow
+TC_UT_JOB_PAY_05,Gán Currency cho Pay Grade,P1,Active,AUTO_READY,Dependency flow
+TC_UT_JOB_PAY_06,Gán Currency Min > Max,P1,Active,AUTO_READY,Business rule validation
+TC_UT_JOB_PAY_07,Xóa Currency,P2,Active,AUTO_READY,Cleanup flow
+TC_UT_JOB_EMP_01,Tạo Emp Status thành công,P2,Active,AUTO_READY,Simple CRUD
+TC_UT_JOB_EMP_02,Tạo Emp Status trùng tên,P1,Active,AUTO_READY,Negative validation
+TC_UT_JOB_EMP_03,Cập nhật Emp Status,P2,Active,AUTO_READY,Update flow
+TC_UT_JOB_EMP_04,Xóa Emp Status,P2,Active,AUTO_READY,Delete flow
+TC_UT_JOB_CAT_01,Tạo Job Category thành công,P2,Active,AUTO_READY,Simple CRUD
+TC_UT_JOB_CAT_02,Tạo Job Category trùng tên,P1,Active,AUTO_READY,Negative validation
+TC_UT_JOB_CAT_03,Cập nhật Job Category,P2,Active,AUTO_READY,Update flow
+TC_UT_JOB_CAT_04,Xóa Job Category,P2,Active,AUTO_READY,Delete flow
+TC_UT_JOB_SHIFT_01,Tạo Work Shift thành công,P1,Active,AUTO_READY,Complex form flow
+TC_UT_JOB_SHIFT_02,Tạo Work Shift trùng tên,P1,Active,AUTO_READY,Negative validation
+TC_UT_JOB_SHIFT_03,Nhập ký tự vào Hours,P1,Active,AUTO_READY,Field validation
+TC_UT_JOB_SHIFT_04,Cập nhật Work Shift,P2,Active,AUTO_READY,Update flow
+TC_UT_JOB_SHIFT_05,Xóa Work Shift,P2,Active,AUTO_READY,Delete flow
+TC_UT_JOB_PERM_01,Kiểm tra quyền (Non-Admin),P1,Active,AUTO_READY,Security/Permission check

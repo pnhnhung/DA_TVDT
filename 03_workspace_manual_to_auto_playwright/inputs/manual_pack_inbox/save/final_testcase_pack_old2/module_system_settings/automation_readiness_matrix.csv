@@ -1,0 +1,10 @@
+# Automation Readiness Matrix — System Settings
+> Workflow: 09 | Date: 2026-05-02
+
+Testcase ID,Automation readiness,Blocker,Required data,Required locator/helper,Notes
+UT-SET-001,READY,—,—,`CMSExportPage.triggerExport()`,Queue worker must run
+IT-SET-001,READY,—,Export trigger,API Polling helper,Queue worker
+IT-SET-003,READY,—,URL từ Polling,HTTP GET assert 200,File download verify
+IT-SET-005b,NEED_TEST_DATA,Cách force Job fail,Job fail mock,Assert FAILED state,Confirm cách force job lỗi
+IT-SET-008,READY,—,2 Service data,API Export + `ServiceContextSwitcher`,Compare record count
+IT-SET-018,BLOCKED,Encoding confirm,Downloaded file,`CSVHelper.parseAndAssert()`,Chờ confirm encoding

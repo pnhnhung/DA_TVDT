@@ -1,0 +1,2 @@
+Feature ID,Module,Name,Description,Actors,API/Controller,Status,Primary Agent
+<FEAT-MOD-XXX>,<module_name>,<Feature Name>,<Description>,<Roles>,<path/API>,confirmed|inferred,<@agent_name>

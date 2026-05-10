@@ -1,0 +1,14 @@
+# Automation Readiness Matrix — Shop Management
+> Workflow: 09 | Date: 2026-05-02
+
+Testcase ID,Automation readiness,Blocker,Required data,Required locator/helper,Notes
+IT-SHOP-001,READY,—,DB: Shop + GROUP User,`ShopDetailPage.assertIPEditHidden()`,—
+IT-SHOP-002,READY,—,Same,API test hoặc UI DOM injection,—
+IT-SHOP-007,READY,—,DB: Shop + MASTER,`ShopDetailPage.assertECVisible()`,—
+IT-SHOP-008,READY,—,DB: Shop + GROUP,`ShopDetailPage.assertECHidden()`,—
+IT-SHOP-010,NEED_LOCATOR,CMS Create Shop DOM,"DB: Shop ""A"" in Service 1","`ShopCreatePage.submit()`, `.error-name`",—
+IT-SHOP-011,NEED_LOCATOR,Same,"DB: Shop ""A"" in Service 2","Same, expect success",—
+IT-SHOP-015,READY,—,Valid Lat,"`ShopCreatePage.fillLatOnly()`, `.error-lng`",—
+IT-SHOP-020,BLOCKED,CSV template,CSV file,`ShopImportPage.upload()`,Missing template
+IT-SHOP-024,NEED_LOCATOR,CMS Batch Update DOM,3 Shops,"`ShopListPage.selectMultiple()`, `.batchUpdate()`",—
+IT-SHOP-029,READY,—,Tag in Service B,"`ShopCreatePage.selectTag()`, `.error-tag`",—

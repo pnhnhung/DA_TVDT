@@ -1,0 +1,9 @@
+Module,Item,Status,Note,Readiness Level
+admin,User Management,READY,FR-001 to FR-005 confirmed,High
+admin,Job Titles,READY,FR-006 to FR-010 confirmed,High
+admin,Qualifications,READY,FR-012 to FR-017 confirmed,High
+admin,Organization,READY,FR-018 to FR-021 confirmed,High
+admin,Pay Grades,READY,FR-022 to FR-025 confirmed,High
+admin,Employment Status,PARTIAL_READY,GAP-ADMIN-002 exists,Low
+admin,Work Shifts,PARTIAL_READY,GAP-ADMIN-003 exists,Low
+admin,Nationalities,PARTIAL_READY,GAP-ADMIN-005 exists,Low

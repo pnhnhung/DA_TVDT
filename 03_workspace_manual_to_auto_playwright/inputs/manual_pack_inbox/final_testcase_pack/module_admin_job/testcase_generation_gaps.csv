@@ -1,0 +1,6 @@
+# Testcase Generation Gaps — module_admin_job
+
+ID,Issue,Impact,Recommend
+GAP-JOB-MAX,Job Title Name max-length unconfirmed (assumed 100),Boundary tests có oracle ACCEPTABLE,Confirm từ DB schema
+GAP-REV-JOB-01,Chưa rõ behavior của Min/Max salary,Block salary validation tests,Confirm từ PO
+GAP-JOB-01,Chưa rõ giới hạn giờ làm việc/tuần,Block working hours validation tests,Confirm max hours (e.g. 168)

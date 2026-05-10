@@ -1,0 +1,4 @@
+# Blocked Testcases — module_admin_nationalities
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+BR_NAT_01_TEST,BR_NAT_01,Behavior của system khi FK constraint bị vi phạm đồng thời,Hệ thống lock record hay trả về 500 error?,Medium (corner case)

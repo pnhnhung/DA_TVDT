@@ -1,0 +1,4 @@
+interaction_id,testcase_id,module_flow,source_module,target_module,roles,data_object,state_before,state_after,coverage_type,observable_oracle,trace,status,priority,gap_or_note
+IT_PIM_001,TC_IT_PIM_001,pim -> leave,pim,leave,Admin,Employee Profile,Not exists,Created,Cross-module event,Leave profile created,BR-001,confirmed,P1,
+IT_PIM_002,TC_IT_PIM_002,pim -> leave,pim,leave,Admin,Joined Date,Old Date,New Date,Cross-module event,Event dispatched,BR-005,confirmed,P2,
+IT_PIM_003,TC_IT_PIM_003,pim -> admin,pim,admin,Admin,Employee,Exists,Deleted,Cross-module event,System User disabled,BR-002,confirmed,P1,

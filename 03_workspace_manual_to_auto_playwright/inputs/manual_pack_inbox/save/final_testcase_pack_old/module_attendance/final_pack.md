@@ -1,0 +1,68 @@
+# Final Testcase Pack — module_attendance
+
+## Official Testcases
+
+| TC ID | Title | Level | P | Rule ID | Oracle | Expected Result |
+|---|---|---|---|---|---|---|
+| TC_UT_ATT_01 | Punch In thành công | UT | P1 | R_ATT_01 | STRONG | Punch Out button visible; In hidden; record created |
+| TC_UT_ATT_02 | Punch Out + Duration | UT | P1 | R_ATT_02 | STRONG | Duration non-empty numeric; Punch In button visible |
+| TC_UT_ATT_05 | Note = 255 ký tự (max) | UT | P2 | R_ATT_03 | ACCEPTABLE | Toast saved |
+| TC_UT_ATT_06 | Note = 256 ký tự (max+1) | UT | P2 | R_ATT_03 | ACCEPTABLE | Length ≤ 255 OR error |
+| TC_UT_ATT_07 | Duration exact: 9:00→17:30=8.5h | UT | P1 | R_ATT_04 | ACCEPTABLE | Duration = 8.5 (format TBD) |
+| TC_UT_ATT_08 | ESS tự xem My Records | UT | P1 | PERM_ATT_01 | STRONG | Only E1 rows visible |
+| TC_UT_ATT_09 | Admin xem Employee Records | UT | P2 | PERM_ATT_02 | STRONG | E1 rows visible in search |
+| TC_IT_ATT_01 | Terminate → history preserved | IT | P1 | BR_ATT_01 | ACCEPTABLE | Records still searchable after Terminate |
+
+## Suggested Testcases
+- TC_UT_ATT_03/04: Double submit Punch In/Out — stale state simulation (server behavior confirm needed)
+- TC_IT_ATT_02: Double submit race condition (MultiSession + page.request needed)
+- TC_IT_ATT_03: Terminate lúc Punch In (race condition — server behavior confirm needed)
+
+## Blocked Testcases
+| TC | Gap | Reason |
+|---|---|---|
+| TC_UT_ATT_ADMIN_EDIT | GAP-ATT-01 | Admin edit punch record behavior unconfirmed |
+| TC_UT_ATT_TIMEZONE | GAP-ATT-02 | Timezone handling unconfirmed |
+
+## Coverage Matrix Summary
+| Rule | TC IDs | Status |
+|---|---|---|
+| R_ATT_01 (Punch In) | ATT_01 | FULL |
+| R_ATT_02 (Punch Out) | ATT_02 | FULL |
+| R_ATT_03 (Note max) | ATT_05, 06 | PARTIAL (confirm 255?) |
+| R_ATT_04 (Duration) | ATT_07 | PARTIAL (exact format TBD) |
+| PERM_ATT_01-02 | ATT_08, 09 | FULL |
+| BR_ATT_01 (history) | IT_ATT_01 | PARTIAL (filter behavior) |
+| R_ATT_DOUBLE | ATT_03, 04 | BLOCKED_BY_SPEC_GAP → SUGGESTED |
+| GAP-ATT-01/02 | — | BLOCKED_BY_SPEC_GAP |
+
+## Oracle Review Summary
+- STRONG: 5 | ACCEPTABLE: 3 | WEAK: 0 | Missing: 0
+- **Oracle Gate: ✅ PASS**
+
+## Automation Readiness
+- Yes: 8 | Partial: 4 (ATT_03, ATT_04, IT_ATT_02, IT_ATT_03 — all MultiSession) | No: 0
+
+## Exploratory Charters
+1. **Midnight crossing**: Punch In 23:50 → Punch Out 00:10 next day → duration = 20min?
+2. **Punch In tanpa Punch Out — nhiều ngày**: E1 PUNCHED_IN rồi để 3 ngày → admin xử lý không?
+3. **Attendance admin view với filter**: Tìm theo date range; filter "Include Past Employees" với terminated employee.
+4. **Network timeout trong Punch**: Punch In → server timeout → retry → double record?
+
+---
+
+# Final Handoff Decision
+
+**Decision: READY_FOR_AUTOMATION_PREP** (với lưu ý)
+
+**Reason:** Oracle PASS; 8 `Yes` cases sẵn sàng; 4 `Partial` cần MultiSession.
+
+**Open gaps:** 
+- ATT_03/04 stale state confirm (→ nâng Suggested lên Partial khi Dev confirm)
+- GAP-ATT-01/02 (Admin edit, Timezone) — BLOCKED
+
+**Next action:**
+- Build `Page_Attendance` với state management (PUNCHED_IN/OUT cleanup)
+- Implement `ensure_attendance_state()` DB helper — quan trọng nhất module này
+- 4 Partial cases: implement sau `MultiSessionContext`
+- Confirm Duration display format ("8.50" vs "8:30") từ UI trước khi pin TC_UT_ATT_07

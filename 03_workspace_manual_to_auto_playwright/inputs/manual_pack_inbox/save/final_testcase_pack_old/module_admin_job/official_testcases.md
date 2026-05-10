@@ -1,0 +1,30 @@
+# Official Testcases — module_admin_job
+
+| TC ID | Title | Level | P | Related Rule ID | Oracle | Expected Result | Precondition | Test Data |
+|---|---|---|---|---|---|---|---|---|
+| TC_UT_JOB_TITLE_01 | Tạo Job Title thành công | UT | P1 | R_JOB_01 | STRONG | Toast saved; record appears | Admin logged in | Name="Dev" |
+| TC_UT_JOB_TITLE_02 | Tạo Job Title trùng tên | UT | P1 | R_JOB_01 | STRONG | Error "Already exists" | Admin logged in | Name="Dev" (Duplicate) |
+| TC_UT_JOB_TITLE_03 | Tạo Job Title trống Name | UT | P2 | R_JOB_01 | STRONG | Error "Required" | Admin logged in | Name="" |
+| TC_UT_JOB_TITLE_05 | Edit Job Title | UT | P2 | R_JOB_01 | STRONG | Toast saved | Admin logged in | Edit Dev |
+| TC_UT_JOB_TITLE_06 | Delete Job Title | UT | P2 | R_JOB_02 | STRONG | Toast deleted; row absent | Admin logged in | Delete Dev |
+| TC_UT_JOB_PAY_01 | Tạo Pay Grade thành công | UT | P1 | R_JOB_06 | STRONG | Toast saved | Admin logged in | Name="Grade 1" |
+| TC_UT_JOB_PAY_02 | Tạo Pay Grade trùng tên | UT | P1 | R_JOB_06 | STRONG | Error "Already exists" | Admin logged in | Name="Grade 1" |
+| TC_UT_JOB_PAY_03 | Cập nhật Pay Grade Name | UT | P2 | R_JOB_06 | STRONG | Toast saved | Admin logged in | Edit Grade 1 |
+| TC_UT_JOB_PAY_04 | Xóa Pay Grade | UT | P2 | R_JOB_06 | STRONG | Toast deleted | Admin logged in | Delete Grade 1 |
+| TC_UT_JOB_PAY_05 | Gán Currency cho Pay Grade | UT | P1 | R_JOB_07 | STRONG | Currency row appears | Admin logged in | USD, Min/Max |
+| TC_UT_JOB_PAY_06 | Gán Currency Min > Max | UT | P1 | R_JOB_08 | STRONG | Error min higher than max | Admin logged in | Min 100, Max 50 |
+| TC_UT_JOB_PAY_07 | Xóa Currency | UT | P2 | R_JOB_07 | STRONG | Currency row absent | Admin logged in | Delete USD |
+| TC_UT_JOB_EMP_01 | Tạo Emp Status thành công | UT | P2 | R_JOB_04 | STRONG | Toast saved | Admin logged in | Name="Full-time" |
+| TC_UT_JOB_EMP_02 | Tạo Emp Status trùng tên | UT | P1 | R_JOB_04 | STRONG | Error "Already exists" | Admin logged in | Duplicate name |
+| TC_UT_JOB_EMP_03 | Cập nhật Emp Status | UT | P2 | R_JOB_04 | STRONG | Toast saved | Admin logged in | Edit Status |
+| TC_UT_JOB_EMP_04 | Xóa Emp Status | UT | P2 | R_JOB_04 | STRONG | Toast deleted | Admin logged in | Delete Status |
+| TC_UT_JOB_CAT_01 | Tạo Job Category thành công | UT | P2 | R_JOB_05 | STRONG | Toast saved | Admin logged in | Name="IT" |
+| TC_UT_JOB_CAT_02 | Tạo Job Category trùng tên | UT | P1 | R_JOB_05 | STRONG | Error "Already exists" | Admin logged in | Duplicate name |
+| TC_UT_JOB_CAT_03 | Cập nhật Job Category | UT | P2 | R_JOB_05 | STRONG | Toast saved | Admin logged in | Edit Category |
+| TC_UT_JOB_CAT_04 | Xóa Job Category | UT | P2 | R_JOB_05 | STRONG | Toast deleted | Admin logged in | Delete Category |
+| TC_UT_JOB_SHIFT_01 | Tạo Work Shift thành công | UT | P1 | BR_JOB_06 | STRONG | Toast saved | Admin logged in | Name="Day" |
+| TC_UT_JOB_SHIFT_02 | Tạo Work Shift trùng tên | UT | P1 | BR_JOB_06 | STRONG | Error "Already exists" | Admin logged in | Duplicate name |
+| TC_UT_JOB_SHIFT_03 | Nhập ký tự vào Hours | UT | P1 | BR_JOB_06 | STRONG | Error Invalid | Admin logged in | Hours="abc" |
+| TC_UT_JOB_SHIFT_04 | Cập nhật Work Shift | UT | P2 | BR_JOB_06 | STRONG | Toast saved | Admin logged in | Edit Shift |
+| TC_UT_JOB_SHIFT_05 | Xóa Work Shift | UT | P2 | BR_JOB_06 | STRONG | Toast deleted | Admin logged in | Delete Shift |
+| TC_UT_JOB_PERM_01 | Kiểm tra quyền (Non-Admin) | UT | P1 | PERM_JOB_01 | ACCEPTABLE | Redirect / Error 403 | ESS User logged in | Mở URL admin |

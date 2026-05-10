@@ -1,0 +1,6 @@
+# Testcase Oracle Review
+
+Testcase ID,Current oracle,Oracle quality,Issue,Required improvement,Status
+IT-SET-008,CSV đúng 10 records Service A,STRONG,,,PASS
+IT-SET-009,CSV không chứa record Service B,STRONG,,,PASS
+UC-SET-001,Trạng thái Job: DONE,ACCEPTABLE,,,PASS

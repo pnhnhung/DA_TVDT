@@ -1,0 +1,10 @@
+rule_id,testcase_id,module,status
+BR-001,TC_UT_AUTH_001,authentication,mapped
+BR-001,TC_UT_AUTH_002,authentication,mapped
+BR-001,TC_UT_AUTH_003,authentication,mapped
+BR-001,TC_UT_AUTH_004,authentication,mapped
+BR-002,TC_UT_AUTH_005,authentication,mapped
+BR-001,TC_IT_AUTH_001,authentication,mapped
+BR-001,TC_IT_AUTH_002,authentication,mapped
+BR-001,UC_AUTH_001,authentication,mapped
+BR-001,UC_AUTH_002,authentication,mapped

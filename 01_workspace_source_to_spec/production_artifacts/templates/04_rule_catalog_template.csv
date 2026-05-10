@@ -1,0 +1,2 @@
+Rule ID,Module,Type,Statement,Status,Confidence,Evidence,Automation Agent,Automation Skill
+<RULE-MOD-XXX>,<module_name>,field|business|security,"<Rule Statement>",confirmed|inferred,high|medium|low,<path#symbol:line>,<@agent_name>,<skill_name>

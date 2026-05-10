@@ -1,0 +1,12 @@
+# Testcase Coverage Matrix — module_time
+
+Rule ID,Rule Statement,Test Level,Covered TC IDs,Coverage Status,Missing Cases,Notes
+R_TIM_01,Submit valid timesheet,UT,TC_UT_TIM_01,FULL,—,—
+R_TIM_02,Max 24h per day,UT,TC_UT_TIM_02,FULL,—,—
+R_TIM_03,Format validation,UT,TC_UT_TIM_03,FULL,—,—
+R_TIM_04,Approve/Reject workflow,UT,"TC_UT_TIM_04, 05",FULL,—,—
+R_TIM_05,Edit approved timesheet,UT,TC_UT_TIM_06,FULL,—,—
+R_TIM_06,Project CRUD,UT,TC_UT_TIM_07,PARTIAL,Edit/Delete missing,Low risk
+R_TIM_07,Project → Timesheet map,IT,TC_IT_TIM_01,FULL,—,—
+BR_TIM_01,Protect used project,IT,TC_IT_TIM_02,FULL,—,—
+BR_TIM_02,Race condition,IT,—,BLOCKED_BY_SPEC_GAP,—,SUGGESTED

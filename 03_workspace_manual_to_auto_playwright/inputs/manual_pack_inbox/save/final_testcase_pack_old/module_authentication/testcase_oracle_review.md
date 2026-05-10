@@ -1,0 +1,43 @@
+# Testcase Oracle Review — Authentication
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+| Oracle quality | Count |
+|---|---:|
+| STRONG | 18 |
+| ACCEPTABLE | 5 |
+| WEAK | 0 |
+| MISSING | 0 |
+
+## Review Matrix
+
+| Testcase ID | Related Rule ID | Current expected result | Oracle quality | Issue | Rewritten expected result | Status |
+|---|---|---|---|---|---|---|
+| IT-AUTH-001 | AUTH-RULE-01 | Login từ IP trong whitelist → 200 + Token | STRONG | — | API 200, `access_token` sinh ra, redirect đến Home CMS | PASS |
+| IT-AUTH-002 | AUTH-RULE-01 | Login từ IP ngoài whitelist → 403 | STRONG | — | API 403, message "IP không được phép", không có token | PASS |
+| IT-AUTH-003 | AUTH-RULE-01 | Whitelist rỗng → Tất cả IP được phép | STRONG | — | API 200, login thành công | PASS |
+| IT-AUTH-004 | AUTH-RULE-01 | Xóa IP khỏi whitelist → IP đó bị chặn ngay | STRONG | — | API 403 ngay sau khi xóa IP | PASS |
+| IT-AUTH-005 | AUTH-RULE-02 | Sai mật khẩu 5 lần → Tài khoản bị khóa | ACCEPTABLE | Threshold chưa confirm chính xác | Lần thứ N sai → API 4xx, message "Tài khoản bị khóa"; `blockedTo` được set. Exact N cần confirm. | PASS |
+| IT-AUTH-006 | AUTH-RULE-02 | Sai mật khẩu nhưng chưa đủ lần → Không khóa | STRONG | — | API 401, message "Sai mật khẩu", tài khoản vẫn active | PASS |
+| IT-AUTH-007 | AUTH-RULE-02 | Login tài khoản đang bị khóa → 403 | STRONG | — | API 403, message "Tài khoản bị tạm khóa", `blockedTo` còn hạn | PASS |
+| IT-AUTH-008 | AUTH-RULE-02 | Tài khoản tự mở khóa sau thời gian | ACCEPTABLE | Unlock timer chưa confirm | Sau khi `blockedTo` hết hạn → Login thành công. Exact timer cần confirm. | PASS |
+| IT-AUTH-010 | AUTH-RULE-03 | Quên mật khẩu → Email chứa password tạm | STRONG | — | API 200, Mailhog nhận email với password tạm, không có token | PASS |
+| IT-AUTH-011 | AUTH-RULE-03 | Login bằng password tạm → Bị force đổi mật khẩu | STRONG | — | API 200 nhưng response yêu cầu đổi mật khẩu, redirect ChangePassword screen | PASS |
+| IT-AUTH-012 | AUTH-RULE-03 | Password tạm hết hạn → Login thất bại | ACCEPTABLE | Expire time chưa confirm | API 401, message "Mật khẩu đã hết hạn". Exact TTL cần confirm. | PASS |
+| IT-AUTH-013 | AUTH-RULE-04 | Thiết bị lạ → OTP gửi email | STRONG | — | API 200 + status yêu cầu OTP; Mailhog nhận email OTP | PASS |
+| IT-AUTH-014 | AUTH-RULE-04 | OTP đúng → Access token | STRONG | — | API 200 + `access_token`, device được trust | PASS |
+| IT-AUTH-015 | AUTH-RULE-04 | OTP sai → Từ chối, không cấp token | STRONG | — | API 4xx, message "OTP không hợp lệ", không có token | PASS |
+| IT-AUTH-016 | AUTH-RULE-04 | Thiết bị đã trust → Không hỏi OTP | STRONG | — | API 200 + token ngay, không redirect OTP screen | PASS |
+| IT-AUTH-017 | AUTH-RULE-05 | OTP quá 6 ký tự → Validation lỗi | STRONG | — | API 422, field `code` lỗi max validation, không cấp token | PASS |
+| UT-AUTH-009 | AUTH-RULE-05 | OTP field bỏ trống → Lỗi required | STRONG | — | Field `code` required error, form không submit | PASS |
+| UC-AUTH-001 | AUTH-RULE-01 | Full journey IP whitelist | ACCEPTABLE | UC dùng nhiều rule | Observable: Login thành công/thất bại theo IP; không có mix behavior | PASS |
+| UC-AUTH-002 | AUTH-RULE-02 | Full journey lockout | ACCEPTABLE | UC dùng nhiều rule | Observable: N lần sai → lock → App forced logout | PASS |
+| UC-AUTH-003 | AUTH-RULE-04 | Full journey OTP trust | ACCEPTABLE | UC dùng nhiều rule | Observable: OTP email nhận, nhập đúng → Home, nhập sai → reject | PASS |
+| UC-AUTH-004 | AUTH-RULE-03 | Full journey reset password | STRONG | — | Observable: Email → password tạm → force change → login mới | PASS |
+| IT-AUTH-018 | AUTH-RULE-04 | Token expire → Re-authenticate | ACCEPTABLE | Token TTL chưa confirm | API 401 sau khi token hết hạn. Exact TTL cần confirm. | PASS |
+| IT-AUTH-019 | AUTH-RULE-04 | Refresh token hợp lệ | ACCEPTABLE | Refresh token behavior chưa detail | API 200 + new access token | PASS |
+
+## Testcases Requiring Fix
+
+Không có testcase nào cần fix. Tất cả oracle đều STRONG hoặc ACCEPTABLE với lý do hợp lệ (spec chưa confirm exact threshold/timer).

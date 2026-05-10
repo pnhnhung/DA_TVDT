@@ -1,0 +1,8 @@
+# Testcase Generation Gaps — Customer Management
+> Workflow: 09 | Date: 2026-05-02
+
+Gap ID,Testcase,Mô tả,Loại,Đề xuất
+G-CUST-01,IT-CUST-005-exact,Card limit chưa confirm,Thiếu thông tin,Dev confirm max card từ config/DB
+G-CUST-02,IT-CUST-008-exact,OTP throttle threshold chưa rõ,Thiếu thông tin,Dev confirm rate limit config
+G-CUST-03,IT-CUST-011-flow,Email change confirm method,Sơ sài,Confirm: OTP hay password?
+G-CUST-04,UC-CUST-007,Mid-flow lock behavior,Thiếu,Confirm expected behavior khi lock giữa 3DS2

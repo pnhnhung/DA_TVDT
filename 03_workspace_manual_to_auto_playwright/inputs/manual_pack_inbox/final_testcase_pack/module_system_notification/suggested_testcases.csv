@@ -1,0 +1,13 @@
+# Suggested Testcases — System Notification
+> Class: SUGGESTED | Workflow: 09 | Date: 2026-05-02
+
+TC ID,Title,Lý do SUGGESTED,Rule,Risk
+IT-SYS-011,Gửi Notification qua Shop filter,FilterAppNumberService logic đang inferred,BR_SYS_005,Medium
+IT-SYS-015,Double click send push,Concurrency inferred,BR_SYS_001,Low
+IT-SYS-016,Omise partial fail (3/5 success),Partial failure behavior inferred,BR_SYS_001,Medium
+
+# Testcase Generation Gaps — System Notification
+
+Gap ID,Testcase,Mô tả,Loại,Đề xuất
+G-SYS-01,IT-SYS-011,FilterAppNumberService logic,Sơ sài,Confirm filter flow khi chọn Shop cụ thể
+G-SYS-02,IT-SYS-016,Partial Omise failure,Inferred,Omise fail vài token thì batch job state là gì?

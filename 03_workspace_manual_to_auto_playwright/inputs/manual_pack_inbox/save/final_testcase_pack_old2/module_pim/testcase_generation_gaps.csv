@@ -1,0 +1,5 @@
+# Testcase Generation Gaps — module_pim
+
+ID,Issue,Impact,Recommend
+GAP_PIM_01,Image validation rules (size/format) chưa rõ ràng,Thiếu boundary test,Code analysis or PO confirm
+GAP_PIM_02,Tree behavior when assigning circular Supervisor,Circular loop logic missing,Manual exploratory first

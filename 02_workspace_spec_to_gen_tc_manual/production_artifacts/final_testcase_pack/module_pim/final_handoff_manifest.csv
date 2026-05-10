@@ -1,0 +1,5 @@
+artifact_type,file_path,status
+official_testcases,production_artifacts/final_testcase_pack/module_pim/official_testcases.csv,READY
+automation_readiness_matrix,production_artifacts/final_testcase_pack/module_pim/automation_readiness_matrix.csv,READY
+automation_mapping,production_artifacts/final_testcase_pack/module_pim/automation_mapping.csv,READY
+handoff_summary,production_artifacts/final_testcase_pack/module_pim/handoff_summary.md,READY

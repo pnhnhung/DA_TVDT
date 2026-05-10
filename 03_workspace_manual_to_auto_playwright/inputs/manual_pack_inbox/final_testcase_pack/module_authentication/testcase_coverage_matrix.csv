@@ -1,0 +1,25 @@
+# Testcase Coverage Matrix — Authentication
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+Coverage status,Count
+FULL,3
+PARTIAL,2
+NOT_COVERED,0
+BLOCKED_BY_SPEC_GAP,0
+
+## Matrix
+
+Rule ID,Rule Statement,Test level,Covered Testcase IDs,Coverage status,Missing cases,Recommendation
+AUTH-RULE-01,Kiểm tra IP Request theo `allowedIps`,"IT, UI","IT-AUTH-001, IT-AUTH-002, IT-AUTH-003, IT-AUTH-004, UC-AUTH-001",**FULL**,—,IP blocked → redirect observable
+AUTH-RULE-02,Khóa tài khoản nếu sai mật khẩu 5 lần,"IT, UI","IT-AUTH-005, IT-AUTH-006, IT-AUTH-007, IT-AUTH-008, UC-AUTH-002",**PARTIAL**,Boundary: chính xác ở lần thứ 4 (chưa bị khóa) + unlock after timer,Thêm boundary case thứ 4/5
+AUTH-RULE-03,Quên mật khẩu sinh password auto + expire,"IT, UI","IT-AUTH-010, IT-AUTH-011, IT-AUTH-012, UC-AUTH-004",**FULL**,—,Mailhog verify đầy đủ
+AUTH-RULE-04,Đăng nhập thiết bị lạ yêu cầu OTP,"IT, UI","IT-AUTH-013, IT-AUTH-014, IT-AUTH-015, IT-AUTH-016, UC-AUTH-003",**PARTIAL**,OTP expire case (IT-AUTH-015 coverage thiếu expired OTP path rõ ràng),Bổ sung expired OTP testcase
+AUTH-RULE-05,OTP field `code` max 6 ký tự,"UT, UI","UT-AUTH-009, IT-AUTH-017",**FULL**,—,Field validation đầy đủ
+
+## Critical Gaps
+
+Rule ID,Gap,Impact,Required action
+AUTH-RULE-02,Threshold số lần sai chưa confirm chính xác,Cao — test data threshold có thể sai,Confirm env config trước khi automate
+AUTH-RULE-04,OTP TTL (expire time) chưa rõ,Trung bình — expired case dùng placeholder,Confirm TTL từ hệ thống

@@ -1,0 +1,35 @@
+# Testcase Coverage Matrix — Contract Management
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+Coverage status,Count
+FULL,10
+PARTIAL,4
+NOT_COVERED,0
+BLOCKED_BY_SPEC_GAP,1
+
+## Matrix
+
+Rule ID,Rule Statement,Test level,Covered Testcase IDs,Coverage status,Missing cases,Recommendation
+BR_CONT_001,Hợp đồng phụ thuộc vào Shop và Service,"IT, UI","IT-CONT-001, IT-CONT-003, UC-CONT-001",**FULL**,—,Shop isolation observable
+BR_CONT_002,Số hợp đồng phải duy nhất trong phạm vi Shop,"IT, UI","IT-CONT-002, IT-CONT-003, UT-CONT-001",**FULL**,—,Unique per shop confirmed
+BR_CONT_003,Cặp lãi suất (membershipFee) Delete + Insert,"IT, UI","IT-CONT-006, UT-CONT-002, UC-CONT-002",**FULL**,—,Delete+Insert cycle observable
+BR_CONT_004,HĐ chỉ xóa khi không có EstimateProduct,"IT, UI","IT-CONT-004, IT-CONT-005, UC-CONT-001",**FULL**,—,Popup error + cascade check
+BR_CONT_005,Tạo QR hợp đồng phụ thuộc QRPF token,"IT, Mixed","IT-CONT-017, IT-CONT-018, UC-CONT-007",**FULL**,—,QR image visible / error
+BR_CONT_006,Hủy GD gồm 2 bước: cancelEntry + cancelSubmit,"IT, Mixed","IT-CONT-012, IT-CONT-013, IT-CONT-014, UC-CONT-005",**FULL**,—,2-step cancel chain observable
+BR_CONT_007,Map ReceiptStatus → TransactionStatus khi hủy,"IT, Mixed","IT-CONT-012, UT-CONT-004",**PARTIAL**,Thiếu test cho mỗi ReceiptStatus mapping riêng lẻ,Bổ sung case per status value
+BR_CONT_008,EC hàng loạt bất đồng bộ qua Job,"IT, Mixed","IT-CONT-016, UC-CONT-006",**PARTIAL**,Thiếu failure path async job,Bổ sung: Job fail → status ghi FAILED
+BR_CONT_009,EC 1 GD tương tác GMO,"IT, Mixed","IT-CONT-015, UC-CONT-006",**FULL**,—,GMO mock observable
+BR_CONT_010,Luồng MPM 4 bước tuần tự,"IT, Mixed","IT-CONT-008, IT-CONT-009, UT-CONT-003, UC-CONT-003",**FULL**,—,4-step flow + passcode
+BR_CONT_011,Fee priority Contract > Shop > Service,"IT, Mixed","IT-CONT-007, UC-CONT-002",**PARTIAL**,Thiếu case Service-level fallback khi Contract không có fee,Bổ sung fee fallback
+BR_CONT_012,payEntry nội bộ gọi payConfirm,"IT, Mixed","IT-CONT-008, UC-CONT-003",**PARTIAL**,Internal call chưa có UI verification riêng,Verify qua transaction status sau full flow
+BR_CONT_013,Kiểm tra passcode mỗi bước thanh toán,"IT, Mixed","IT-CONT-009, UT-CONT-003, UC-CONT-003",**FULL**,—,Passcode sai → error observable
+BR_CONT_014,Thẻ tín dụng bắt buộc nếu Service yêu cầu,"IT, Mixed","IT-CONT-019, UC-CONT-008",**FULL**,—,Blocked screen observable
+BR_CONT_015,Email xác nhận sau thanh toán thành công,"IT, Mixed","IT-CONT-010, UC-CONT-003",**BLOCKED_BY_SPEC_GAP**,Email template/subject chưa confirm,Confirm email format với Dev
+
+## Critical Gaps
+
+Rule ID,Gap,Impact,Required action
+BR_CONT_007,ReceiptStatus mapping values chưa được enumerate đầy đủ,Trung bình,Dev confirm mapping table
+BR_CONT_015,Email subject + template chưa confirm,Thấp,Confirm email format trước IT-CONT-010

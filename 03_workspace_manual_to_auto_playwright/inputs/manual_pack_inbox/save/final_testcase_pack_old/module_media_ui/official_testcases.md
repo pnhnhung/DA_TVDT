@@ -1,0 +1,31 @@
+# Official Testcases — Media & UI
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+## BR_MED_001 / BR_MED_002 — Gallery Upload
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-MED-001 | Upload ảnh hợp lệ, category hợp lệ → CMS/App visible | BR_MED_001 | STRONG |
+| IT-MED-004 | Upload category không hợp lệ (thuộc Service khác) → 403 | BR_MED_001 | STRONG |
+| UT-MED-001 | File hợp lệ → pass validation | BR_MED_002 | STRONG |
+| UC-MED-001 | Full Gallery CMS-App journey | BR_MED_001/002 | ACCEPTABLE |
+
+## BR_MED_003 / BR_MED_004 — Favorite (Like/Unlike)
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-MED-008 | Like Shop hợp lệ → count+1, icon red | BR_MED_003 | STRONG |
+| IT-MED-009 | Unlike Shop → count-1, icon outline | BR_MED_003 | STRONG |
+| IT-MED-010 | Like Coupon hợp lệ → count+1 | BR_MED_003 | STRONG |
+| IT-MED-011 | Thử Like entity thuộc Service khác → 403 | BR_MED_003 | STRONG |
+| UT-MED-005 | Invalid targetType → 422 rejected | BR_MED_003 | STRONG |
+| UC-MED-003 | Full Like/Unlike journey | BR_MED_003 | ACCEPTABLE |
+
+## BR_MED_005 — TopItem Management
+
+| TC ID | Title | Rule | Oracle |
+|---|---|---|---|
+| IT-MED-005 | Add TopItem vào category hợp lệ → visible | BR_MED_005 | STRONG |
+| IT-MED-006 | Add TopItem vào category của Service khác → rejected | BR_MED_005 | STRONG |
+| UT-MED-004 | Admin thao tác TopItem category → check quyền | BR_MED_005 | STRONG |
+| UC-MED-002 | Full TopCategory + TopItem journey | BR_MED_005 | ACCEPTABLE |

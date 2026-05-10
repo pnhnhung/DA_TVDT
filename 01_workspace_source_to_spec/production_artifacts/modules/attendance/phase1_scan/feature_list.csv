@@ -1,0 +1,9 @@
+Feature ID,Module,Name,Description,Actors,API/Controller,Status,Primary Agent
+F-ATT-001,attendance,Punch In,Start shift interaction,Employee,MyAttendanceRecordAPI::create,confirmed,@ui_automation_agent
+F-ATT-002,attendance,Punch Out,End shift interaction,Employee,MyAttendanceRecordAPI::update,confirmed,@ui_automation_agent
+F-ATT-003,attendance,View My Attendance,List self records,Employee,MyAttendanceRecordAPI::getAll,confirmed,@ui_automation_agent
+F-ATT-004,attendance,View Employee Attendance,List other records,Admin/Supervisor,EmployeeAttendanceRecordAPI::getAll,confirmed,@ui_automation_agent
+F-ATT-005,attendance,Edit Attendance Record,Update punch times,Admin/Supervisor,AttendanceRecordAPI::update,confirmed,@ui_automation_agent
+F-ATT-006,attendance,Delete Attendance Record,Remove records,Admin,EmployeeAttendanceRecordAPI::delete,confirmed,@ui_automation_agent
+F-ATT-007,attendance,Configure Attendance,Global settings,Admin,AttendanceConfigurationAPI,confirmed,@ui_automation_agent
+F-ATT-008,attendance,Overlap Check,Validate time collision,All,AttendancePunchInRecordOverlapAPI,confirmed,@api_automation_agent

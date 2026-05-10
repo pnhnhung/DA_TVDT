@@ -1,0 +1,4 @@
+# Blocked Testcases: Marketing & Promotions
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+BLK-MKT-01,N/A,Hoàn Coupon khi lỗi,Coupon có được cộng lại số lượt sử dụng khi Customer hủy giao dịch hoặc giao dịch gặp lỗi hệ thống không?,Có thể khiến khách hàng mất oan Coupon nếu hệ thống thỉnh thoảng lỗi. Automation Team không nên tự ý bù tiền/bù lượt.

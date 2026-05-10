@@ -1,0 +1,14 @@
+# Automation Readiness Matrix — module_admin_user_management
+
+Testcase ID,Automation readiness,Blocker,Required data,Required locator/API/helper,Notes
+TC_UT_USR_01,READY,None,Emp exist,`Page_UserManagement`,UT P1
+TC_UT_USR_02,READY,None,None,`Page_UserManagement`,UT P1
+TC_UT_USR_03,MANUAL_ONLY,None,Existing User,`Page_UserManagement`,UT cơ bản
+TC_UT_USR_04,MANUAL_ONLY,None,None,`Page_UserManagement`,UT cơ bản
+TC_UT_USR_05,READY,None,None,`Page_UserManagement`,UT P1
+TC_UT_USR_06,READY,None,Existing User,`Page_UserManagement`,UT P1
+TC_UT_USR_07,READY,None,Existing Admin,`Page_UserManagement`,UT P1
+TC_UT_USR_08,MANUAL_ONLY,None,ESS account,`LoginPage`,Giao diện UI
+TC_UT_USR_09,READY,None,ESS account,`LoginPage`,Security
+TC_IT_USR_01,READY,None,Disabled user,`LoginPage`,IT 100%
+TC_IT_USR_02,NEED_MULTI_SESSION,None,Admin + ESS,`MultiSessionContext`,Dùng 2 context

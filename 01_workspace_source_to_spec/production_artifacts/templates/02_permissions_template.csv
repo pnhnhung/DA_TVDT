@@ -1,0 +1,2 @@
+permission_id,role,module,action,allowed,data_scope,enforcement_type,source_trace,status,note,Automation Agent,Automation Skill
+<PERM-MOD-XXX>,<RoleName>,<module_name>,<Action>,yes/no,<all/own/specific>,policy/middleware/workflow,<path#symbol:line>,confirmed|inferred,,<@agent_name>,<skill_name>

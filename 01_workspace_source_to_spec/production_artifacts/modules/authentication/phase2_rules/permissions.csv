@@ -1,0 +1,8 @@
+permission_id,role,module,action,ui_visible,api_allowed,data_scope,condition,source_trace,status,confidence
+PERM-AUTH-001,Anonymous,authentication,POST /web/index.php/auth/login,no,yes,N/A,Credentials valid,Controller/LoginController.php,confirmed,high
+PERM-AUTH-002,Anonymous,authentication,POST /web/index.php/requestPasswordRequest (Forgot Password),no,yes,N/A,Email matches existing user,Controller/RequestPasswordController.php,confirmed,high
+PERM-AUTH-003,Anonymous,authentication,POST /web/index.php/resetPasswordRequest (Reset via code),no,yes,N/A,resetCode valid + not expired,Controller/ResetPasswordController.php,confirmed,high
+PERM-AUTH-004,Any authenticated user,authentication,POST logout,yes (button),yes,self only,,Controller/LogoutController.php,confirmed,high
+PERM-AUTH-005,Any authenticated user (first login with weak password),authentication,POST WeakPasswordReset,yes,yes,self only,Password marked as weak/enforce,Controller/WeakPasswordResetController.php,confirmed,high
+PERM-AUTH-006,Admin,authentication,Access Administrator section,yes,yes,N/A,Must be Admin role,Controller/AdministratorAccessController.php,confirmed,high
+PERM-AUTH-007,Public API (no auth),authentication,POST /api/v2/auth/public/validation/password-strength,no,yes,N/A,,PublicApi/PasswordStrengthValidationAPI.php,confirmed,high

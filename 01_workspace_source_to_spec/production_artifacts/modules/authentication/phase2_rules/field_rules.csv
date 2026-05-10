@@ -1,0 +1,5 @@
+Rule ID,Module,Entity,Field,Required,Type,Constraints,Defaults,Dependencies,Source Trace,Status,Confidence
+FR-001,authentication,login,username,yes,string,,,,,Controller/ValidateController.php#handle:85,confirmed,high
+FR-002,authentication,login,password,yes,string,,,,,Controller/ValidateController.php#handle:86,confirmed,high
+FR-003,authentication,login,_token,yes,string,"must be valid CSRF token for 'login'",,,,Controller/ValidateController.php#handle:95,confirmed,high
+FR-004,authentication,passwordValidation,password,yes,string,,,,,PublicApi/PasswordStrengthValidationAPI.php#getValidationRuleForCreate:124,confirmed,high

@@ -1,0 +1,4 @@
+# Testcase Generation Gaps — module_admin_qualification
+
+ID,Issue,Impact,Recommend
+GAP_QUAL_01,Max length bounds chưa confirm,Thiếu test case biên (boundary),Confirm từ DB Schema

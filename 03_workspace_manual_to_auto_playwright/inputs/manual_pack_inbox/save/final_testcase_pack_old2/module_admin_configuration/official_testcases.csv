@@ -1,0 +1,14 @@
+# Official Testcases — module_admin_configuration
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_CFG_01,Lưu SMTP Configuration thành công,UT,P1,BR_CFG_01,STRONG,Toast saved; Test OK,Admin logged in,"Host, Port, Mail Sent As"
+TC_UT_CFG_02,Lưu SMTP thiếu thông tin bắt buộc,UT,P1,BR_CFG_01,STRONG,"Error ""Required""",Admin logged in,Missing Mail Sent As
+TC_UT_CFG_03,Test Connection SMTP thất bại,UT,P1,BR_CFG_01,STRONG,"Error ""Failed""",Admin logged in,Wrong credentials
+TC_UT_CFG_04,Cập nhật Localization Date Format,UT,P2,BR_CFG_03,STRONG,Toast saved,Admin logged in,Date Format = DD-MM-YYYY
+TC_UT_CFG_04B,Cập nhật Localization Language,UT,P2,BR_CFG_03,STRONG,Toast saved,Admin logged in,Language = Vietnamese
+TC_UT_CFG_05,Thêm Subscriber thành công,UT,P2,BR_CFG_04,STRONG,Toast saved,Admin logged in,"Event = Leave Application, Name, Email"
+TC_UT_CFG_05B,Sửa Subscriber,UT,P2,BR_CFG_04,STRONG,Toast saved,Admin logged in,Edit Name
+TC_UT_CFG_05C,Xóa Subscriber,UT,P2,BR_CFG_04,STRONG,Toast deleted,Admin logged in,Delete Subscriber
+TC_UT_CFG_06,Truy cập màn hình Admin,UT,P1,PERM_CFG_01,STRONG,Load form success,Admin logged in,N/A
+TC_UT_CFG_07,Kiểm tra quyền (Non-Admin),UT,P1,PERM_CFG_01,ACCEPTABLE,Redirect / Error 403,ESS User logged in,Mở URL trực tiếp
+TC_IT_CFG_01,Nhận email theo SMTP,IT,P1,BR_CFG_01,STRONG,Nhận email,"SMTP OK, Fire notification",Email thực tế

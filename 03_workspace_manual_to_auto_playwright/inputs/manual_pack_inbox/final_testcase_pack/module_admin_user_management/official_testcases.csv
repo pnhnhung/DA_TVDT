@@ -1,0 +1,19 @@
+# Official Testcases — module_admin_user_management
+
+TC ID,Title,Level,P,Related Rule ID,Oracle,Expected Result,Precondition,Test Data
+TC_UT_USR_01,Tạo User thành công,UT,P2,R_USR_01,STRONG,Toast saved; user visible in list,"Admin logged in, Emp exists",Valid input
+TC_UT_USR_02,Tạo User thiếu trường,UT,P2,R_USR_01,STRONG,"Error ""Required""",Admin logged in,Username=empty
+TC_UT_USR_03,Tạo User trùng Username,UT,P1,R_USR_02,STRONG,"Error ""Already exists""","Admin logged in, User exists","Username=""admin"""
+TC_UT_USR_04,Password không đủ mạnh,UT,P1,R_USR_03,ACCEPTABLE,Validation error visible,Admin logged in,"Pwd=""123"""
+TC_UT_USR_05,Password confirm không khớp,UT,P1,R_USR_04,STRONG,"Error ""Passwords do not match""",Admin logged in,"Pwd=""123"", Confirm=""456"""
+TC_UT_USR_06,Disable Account,UT,P1,R_USR_06,STRONG,"Status badge = ""Disabled""","Admin logged in, User exists",Edit User -> Disable
+TC_UT_USR_07,Đổi Role thành ESS,UT,P1,R_USR_07,STRONG,"Role column shows ""ESS""","Admin logged in, Admin User exists",Edit User -> Change Role ESS
+TC_UT_USR_08,Kiểm tra quyền ESS,UT,P1,PERM_USR_01,ACCEPTABLE,Menu absent OR Access Denied,ESS User logged in,N/A
+TC_IT_USR_01,Login sau khi bị Disable,IT,P1,BR_USR_01,STRONG,Login rejected,User exists and is disabled,Try login
+TC_IT_USR_02,Session cập nhật sau khi đổi Role,IT,P1,R_USR_07,STRONG,Admin menu absent,User changed from Admin to ESS,Try login again
+TC_UT_USR_09,Xóa User account hợp lệ,UT,P1,BR_USR_03,STRONG,Toast deleted; tài khoản biến mất khỏi hệ thống,Admin đang đăng nhập,Chọn xóa User 'TestUser1'
+TC_UT_USR_10,Tìm kiếm User theo Username và Role,UT,P2,BR_USR_01,STRONG,Danh sách lọc ra đúng user cần tìm kiếm,Đã có danh sách User đa dạng,"Nhập Username='admin', Role='Admin'"
+TC_IT_USR_03,Chặn Admin tự xóa tài khoản đang đăng nhập (Self-Delete),IT,P1,BR_USR_03,STRONG,Nút Delete bị mờ đi hoặc hệ thống báo lỗi không thể tự xóa,Admin đang đăng nhập bằng tài khoản 'admin',Chọn checkbox của chính tài khoản 'admin' và bấm Delete
+TC_IT_USR_04,Liên kết User account với Employee Profile,IT,P1,BR_USR_04,STRONG,User account mới được link thành công; có thể dùng User đó đăng nhập vào ESS để xem đúng profile của Employee đó,Admin tạo User mới,Nhập 'Employee Name' có tồn tại bên PIM
+TC_IT_USR_05,Xóa Employee làm mất hiệu lực User account liên kết,IT,P1,BR_USR_04,STRONG,User account bị vô hiệu hóa hoặc bị xóa theo (Cascade); không thể đăng nhập ESS,Employee A đang có User account link cùng,"Sang PIM xóa Employee A, sau đó dùng User đăng nhập"
+UC-USR-001,Cấp tài khoản đăng nhập cho nhân sự mới onboarding,USERCASE,P1,BR_USR_01;BR_USR_04,STRONG,Tài khoản hoạt động trơn tru; nhân sự mới login vào đúng portal của mình,Đã tạo Employee bên PIM,"Tạo User, Link Employee, Set Password, Đăng nhập thử"

@@ -1,0 +1,13 @@
+# Testcase Coverage Matrix — module_admin_qualification
+
+Rule ID,Rule Statement,Test Level,Covered TC IDs,Coverage Status,Missing Cases,Notes
+R_QUAL_01,CRUD Skills,UT,"TC_UT_QUAL_SKILL_01, 03, 05, 06",FULL,—,—
+R_QUAL_02,Unique Skill Name,UT,TC_UT_QUAL_SKILL_02,FULL,—,—
+R_QUAL_03,CRUD Education,UT,"TC_UT_QUAL_EDU_01, 02, 03, 04, 05",FULL,—,—
+R_QUAL_04,CRUD License,UT,"TC_UT_QUAL_LIC_01, 02, 03, 04, 05",FULL,—,—
+R_QUAL_05,CRUD Language/Membership,UT,"TC_UT_QUAL_LAN_xx, MEM_xx",FULL,—,—
+R_QUAL_06,Delete validation,UT,TC_UT_QUAL_SKILL_06,FULL,—,—
+R_QUAL_07,Link to PIM,IT,TC_IT_QUAL_01,FULL,—,—
+R_QUAL_08,Max-length,UT,TC_UT_QUAL_SKILL_04,BLOCKED_BY_SPEC_GAP,GAP_QUAL_01,—
+PERM_QUAL_01,ESS no access,UT,TC_UT_QUAL_PERM_01,FULL,—,—
+BR_QUAL_01,Race condition,IT,—,BLOCKED_BY_SPEC_GAP,—,SUGGESTED

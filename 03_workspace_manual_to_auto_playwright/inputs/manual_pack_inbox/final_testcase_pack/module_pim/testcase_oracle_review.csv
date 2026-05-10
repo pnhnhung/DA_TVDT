@@ -1,0 +1,12 @@
+# Testcase Oracle Review — module_pim
+
+Testcase ID,Current Oracle,Oracle Quality,Issue,Required Improvement,Status
+TC_UT_PIM_01,Toast saved; Employee appears in list,STRONG,—,—,PASS
+TC_UT_PIM_02,"Error ""Required"" under First Name",STRONG,—,—,PASS
+TC_UT_PIM_03,Profile picture uploaded and displayed,STRONG,—,—,PASS
+TC_UT_PIM_04,Account created; Login success,STRONG,—,—,PASS
+TC_UT_PIM_05,Data saved; toast visible,STRONG,—,—,PASS
+TC_UT_PIM_06,My Info displays correct data; no edit rights on specific fields,STRONG,—,—,PASS
+TC_IT_PIM_01,"Login rejected with ""Account disabled""",STRONG,—,—,PASS
+TC_IT_PIM_02,Login successful after reactivate,STRONG,—,—,PASS
+TC_IT_PIM_03,Job History table shows new entry,STRONG,—,—,PASS

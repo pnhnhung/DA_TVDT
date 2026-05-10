@@ -1,0 +1,39 @@
+rule_id,module,screen,field,required,data_type,min,max,allowed_values,default_value,unique,error_message,source_trace,status,confidence
+FR-001,pim,add_employee,firstName,yes,string,,30,,,,,"Api/EmployeeAPI.php#getCommonBodyValidationRules:606",confirmed,high
+FR-002,pim,add_employee,middleName,no,string,,30,,,,,"Api/EmployeeAPI.php#getCommonBodyValidationRules:612",confirmed,high
+FR-003,pim,add_employee,lastName,yes,string,,30,,,,,"Api/EmployeeAPI.php#getCommonBodyValidationRules:620",confirmed,high
+FR-004,pim,add_employee,employeeId,no,string,,10,,yes,,,"Api/EmployeeAPI.php#getCommonBodyValidationRules:627",confirmed,high
+FR-005,pim,add_employee,empPicture,no,base64,,,jpeg/png/gif/bmp/webp (EmpPicture::ALLOWED_IMAGE_TYPES),,,,"Api/EmployeeAPI.php#getValidationRuleForCreate:588",confirmed,high
+FR-006,pim,personal_details,firstName,yes,string,,30,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:264",confirmed,high
+FR-007,pim,personal_details,middleName,no,string,,30,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:271",confirmed,high
+FR-008,pim,personal_details,lastName,yes,string,,30,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:279",confirmed,high
+FR-009,pim,personal_details,employeeId,no,string,,50,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:286",confirmed,high
+FR-010,pim,personal_details,otherId,no,string,,100,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:294",confirmed,high
+FR-011,pim,personal_details,drivingLicenseNo,no,string,,100,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:302",confirmed,high
+FR-012,pim,personal_details,drivingLicenseExpiredDate,no,date,,,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:310",confirmed,high
+FR-013,pim,personal_details,gender,no,integer,,,MALE / FEMALE,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:316",confirmed,high
+FR-014,pim,personal_details,maritalStatus,no,string,,20,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:322",confirmed,high
+FR-015,pim,personal_details,birthday,no,date,,,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:330",confirmed,high
+FR-016,pim,personal_details,nationalityId,no,integer,1,,,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:336",confirmed,high
+FR-017,pim,personal_details,nickname,no,string,,100,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:345",confirmed,high
+FR-018,pim,personal_details,smoker,no,boolean,,,,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:353",confirmed,high
+FR-019,pim,personal_details,militaryService,no,string,,100,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:360",confirmed,high
+FR-020,pim,personal_details,ssnNumber,no,string,,100,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:371",confirmed,high
+FR-021,pim,personal_details,sinNumber,no,string,,100,,,,,"Api/EmployeePersonalDetailAPI.php#getValidationRuleForUpdate:382",confirmed,high
+FR-022,pim,contact_details,street1,no,string,,100,,,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:271",confirmed,high
+FR-023,pim,contact_details,street2,no,string,,100,,,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:279",confirmed,high
+FR-024,pim,contact_details,city,no,string,,100,,,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:287",confirmed,high
+FR-025,pim,contact_details,province,no,string,,100,,,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:295",confirmed,high
+FR-026,pim,contact_details,zipCode,no,string,,20,,,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:303",confirmed,high
+FR-027,pim,contact_details,countryCode,no,string,,100,,,,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:311",confirmed,high
+FR-028,pim,contact_details,homeTelephone,no,string,,25,,,phone format,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:319",confirmed,high
+FR-029,pim,contact_details,workTelephone,no,string,,25,,,phone format,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:328",confirmed,high
+FR-030,pim,contact_details,mobile,no,string,,25,,,phone format,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:337",confirmed,high
+FR-031,pim,contact_details,workEmail,no,string,,255,,yes,email format,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:346",confirmed,high
+FR-032,pim,contact_details,otherEmail,no,string,,50,,yes,email format,,,"Api/EmployeeContactDetailsAPI.php#getValidationRuleForUpdate:356",confirmed,high
+FR-033,pim,job_details,joinedDate,no,date,,,,,,,"Api/EmployeeJobDetailAPI.php#getValidationRuleForUpdate:193",confirmed,high
+FR-034,pim,job_details,jobTitleId,no,integer,1,,,,,,,"Api/EmployeeJobDetailAPI.php#getValidationRuleForUpdate:199",confirmed,high
+FR-035,pim,job_details,empStatusId,no,integer,1,,,,,,,"Api/EmployeeJobDetailAPI.php#getValidationRuleForUpdate:205",confirmed,high
+FR-036,pim,job_details,jobCategoryId,no,integer,1,,,,,,,"Api/EmployeeJobDetailAPI.php#getValidationRuleForUpdate:211",confirmed,high
+FR-037,pim,job_details,subunitId,no,integer,1,,,,,,,"Api/EmployeeJobDetailAPI.php#getValidationRuleForUpdate:217",confirmed,high
+FR-038,pim,job_details,locationId,no,integer,1,,,,,,,"Api/EmployeeJobDetailAPI.php#getValidationRuleForUpdate:223",confirmed,high

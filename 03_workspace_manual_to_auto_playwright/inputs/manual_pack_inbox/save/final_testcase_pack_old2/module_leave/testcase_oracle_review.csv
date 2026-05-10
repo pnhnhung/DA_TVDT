@@ -1,0 +1,8 @@
+# Testcase Oracle Review — module_leave
+
+Testcase ID,Current Oracle,Oracle Quality,Issue,Required Improvement,Status
+TC_UT_LEV_TYPE_01,Toast saved; record appears,STRONG,—,—,PASS
+TC_UT_LEV_ENT_01,Balance increased,STRONG,—,—,PASS
+TC_UT_LEV_APP_01,Application PENDING,STRONG,—,—,PASS
+TC_UT_LEV_APP_05,Application APPROVED,STRONG,—,—,PASS
+TC_IT_LEV_04,Original state in DB,STRONG,Dùng DBHelper để query,—,PASS

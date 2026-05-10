@@ -1,0 +1,3 @@
+request_id,testcase_id,module,current_weak_oracle,missing_info,suggested_options,qa_response,resolution
+REQ-ADM-001,TC_UT_ADM_003,admin,"Request is rejected with unique validation error.",Cần biết exact message khi trùng username,"Option A: Already exists, Option B: Username is taken","Already exists",Cập nhật Expected Result thành: "Request is rejected with message 'Already exists'."
+REQ-ADM-002,TC_IT_ADM_003,admin,"Login is rejected with an account disabled message.",Cần biết exact message khi tài khoản bị disable,"Option A: Account disabled, Option B: Your account is disabled","Account disabled",Cập nhật Expected Result thành: "Login is rejected with message 'Account disabled'."

@@ -1,0 +1,73 @@
+# Official Testcases — Contract Management
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+## BR_CONT_001 / BR_CONT_002 — Contract CRUD & Unique
+
+TC ID,Title,Rule,Oracle
+UT-CONT-001,Shop/Service không khớp → error inline,BR_CONT_001,STRONG
+IT-CONT-001,Tạo HĐ hợp lệ → xuất hiện trong danh sách,BR_CONT_001,STRONG
+IT-CONT-002,contractNumber trùng cùng Shop → unique error,BR_CONT_002,STRONG
+IT-CONT-003,contractNumber trùng khác Shop → thành công,BR_CONT_002,STRONG
+UC-CONT-001,Full flow Contract CRUD,BR_CONT_001/002,ACCEPTABLE
+
+## BR_CONT_003 — Membership Fee
+
+TC ID,Title,Rule,Oracle
+UT-CONT-002,"Xóa fee cũ, thêm fee mới → reload chỉ còn fee mới",BR_CONT_003,STRONG
+IT-CONT-006,Update fee → Delete+Insert cycle → reload đúng,BR_CONT_003,STRONG
+UC-CONT-002,Full flow fee update,BR_CONT_003/011,ACCEPTABLE
+
+## BR_CONT_004 — Contract Delete Guard
+
+TC ID,Title,Rule,Oracle
+IT-CONT-004,Xóa HĐ có EstimateProduct → popup error,BR_CONT_004,STRONG
+IT-CONT-005,Xóa HĐ không liên kết → xóa thành công,BR_CONT_004,STRONG
+
+## BR_CONT_005 — QR Generation
+
+TC ID,Title,Rule,Oracle
+IT-CONT-017,Tạo QR token hợp lệ → ảnh QR hiển thị CMS,BR_CONT_005,STRONG
+IT-CONT-018,"Token không hợp lệ → error, không có QR",BR_CONT_005,STRONG
+UC-CONT-007,Full flow QR generation,BR_CONT_005,ACCEPTABLE
+
+## BR_CONT_006 / BR_CONT_007 — Cancel Transaction
+
+TC ID,Title,Rule,Oracle
+UT-CONT-004,Admin cancel SUCCESS → status CANCELLED,BR_CONT_006/007,STRONG
+IT-CONT-012,Hủy 2 bước (cancelEntry+cancelSubmit) → CANCELLED,BR_CONT_006,STRONG
+IT-CONT-013,Hủy GD đã hủy → nút disabled/error,BR_CONT_006,STRONG
+IT-CONT-014,"cancelEntry fail → cancelSubmit không gọi, Tx vẫn SUCCESS",BR_CONT_006,STRONG
+UC-CONT-005,Full flow cancel,BR_CONT_006/007,ACCEPTABLE
+
+## BR_CONT_008 / BR_CONT_009 — EC Transaction
+
+TC ID,Title,Rule,Oracle
+IT-CONT-015,EC đơn lẻ → Mock GMO nhận alterTran + CMS cập nhật,BR_CONT_009,STRONG
+IT-CONT-016,EC batch async → toast → 3 Tx đổi status,BR_CONT_008,STRONG
+UC-CONT-006,Full flow EC,BR_CONT_008/009,ACCEPTABLE
+
+## BR_CONT_010 / BR_CONT_012 / BR_CONT_013 — MPM Payment
+
+TC ID,Title,Rule,Oracle
+UT-CONT-003,App quét QR → confirm screen đúng tên + số tiền,BR_CONT_010,STRONG
+IT-CONT-008,"MPM 4 bước → App ""Thanh toán thành công""",BR_CONT_010/012,STRONG
+IT-CONT-009,"Passcode sai → lỗi, không tạo Tx",BR_CONT_013,STRONG
+UC-CONT-003,Full flow MPM,BR_CONT_010/012/013,ACCEPTABLE
+
+## BR_CONT_011 — Fee Priority (CPM)
+
+TC ID,Title,Rule,Oracle
+IT-CONT-007,Fee priority Contract>Shop>Service observable App,BR_CONT_011,ACCEPTABLE
+IT-CONT-011,"CPM: Customer tạo QR, Shop scan → thành công",BR_CONT_010,STRONG
+UC-CONT-004,Full flow CPM,BR_CONT_010,ACCEPTABLE
+
+## BR_CONT_014 — Credit Card Gate
+
+TC ID,Title,Rule,Oracle
+IT-CONT-019,Service requireCC + no-card Customer → bị chặn,BR_CONT_014,STRONG
+UC-CONT-008,Full flow credit card gate,BR_CONT_014,ACCEPTABLE
+
+## BR_CONT_015 — Email Confirmation
+
+TC ID,Title,Rule,Oracle
+IT-CONT-010,Thanh toán thành công → Mailhog nhận email,BR_CONT_015,ACCEPTABLE

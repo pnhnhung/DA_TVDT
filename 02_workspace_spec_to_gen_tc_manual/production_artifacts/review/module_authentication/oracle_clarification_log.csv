@@ -1,0 +1,2 @@
+request_id,testcase_id,module,current_weak_oracle,missing_info,suggested_options,qa_response,resolution
+REQ-AUTH-001,TC_UT_AUTH_003,authentication,"System redirects back to login page with error message.",Cần biết chính xác nội dung error message hiển thị trên UI khi sai password,"Option A: Invalid credentials, Option B: Mật khẩu không đúng","Invalid credentials",Cập nhật Expected Result thành: "System redirects back to login page with error message 'Invalid credentials'."

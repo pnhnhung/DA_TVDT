@@ -1,0 +1,20 @@
+rule_id,module,screen,field,required,data_type,min,max,allowed_values,default_value,unique,error_message,source_trace,status,confidence
+FR-001,leave,leave_type,name,yes,string,,50,,,yes,,"Api/LeaveTypeAPI.php#getCommonBodyParamRuleCollection:245",confirmed,high
+FR-002,leave,leave_type,situational,yes,boolean,,,,,,,,"Api/LeaveTypeAPI.php#getCommonBodyParamRuleCollection:248",confirmed,high
+FR-003,leave,holiday,name,yes,string,,200,,,,,"Api/HolidayAPI.php#getCommonBodyParamRuleCollection:266",confirmed,high
+FR-004,leave,holiday,date,yes,date,,,,,,,,"Api/HolidayAPI.php#getCommonBodyParamRuleCollection:272",confirmed,high
+FR-005,leave,holiday,recurring,yes,boolean,,,,,,,,"Api/HolidayAPI.php#getCommonBodyParamRuleCollection:276",confirmed,high
+FR-006,leave,holiday,length,yes,integer,,,0 (working/full day) / 4 (half day),,,,"Api/HolidayAPI.php#getCommonBodyParamRuleCollection:280",confirmed,high
+FR-007,leave,leave_entitlement,empNumber,no,integer,,,,,,,,"Api/LeaveEntitlementAPI.php#getEmpNumberParamRule:518",confirmed,high
+FR-008,leave,leave_entitlement,entitlement,yes,number,,,>= 0,,,,"Api/LeaveEntitlementAPI.php#getEntitlementParamRule:538",confirmed,high
+FR-009,leave,leave_entitlement,fromDate,yes,date,,,,,< toDate,,,"Api/LeaveEntitlementAPI.php#getFromToDatesRules:497",confirmed,high
+FR-010,leave,leave_entitlement,toDate,yes,date,,,,,,,,"Api/LeaveEntitlementAPI.php#getFromToDatesRules:510",confirmed,high
+FR-011,leave,leave_entitlement,leaveTypeId,yes,integer,,,,,,,,"Api/LeaveEntitlementAPI.php#getLeaveTypeIdParamRule:526",confirmed,high
+FR-012,leave,leave_entitlement,bulkAssign,no,boolean,,,,,,,,"Api/LeaveEntitlementAPI.php#getValidationRuleForCreate:462",confirmed,high
+FR-013,leave,leave_request,empNumber,yes,integer,,,,,,,,"Api/EmployeeLeaveRequestAPI.php#getValidationRuleForCreate:519",confirmed,high
+FR-014,leave,leave_request,leaveTypeId,yes,integer,,,,,,,,"Api/EmployeeLeaveRequestAPI.php#getCommonFilterParamRuleCollection:364",confirmed,high
+FR-015,leave,leave_request,fromDate,yes,date,,,,,,,,"Api/EmployeeLeaveRequestAPI.php#getCommonFilterParamRuleCollection:388",confirmed,high
+FR-016,leave,leave_request,toDate,yes,date,,,,,,,,"Api/EmployeeLeaveRequestAPI.php#getCommonFilterParamRuleCollection:401",confirmed,high
+FR-017,leave,leave_request,comment,no,string,,,,,,,,"Api/MyLeaveRequestAPI.php#create:224",confirmed,high
+FR-018,leave,leave_request,duration,yes,object,,,full_day/half_day_morning/half_day_afternoon/specify_time,,,,"Api/EmployeeLeaveRequestAPI.php#create:455",confirmed,high
+FR-019,leave,leave_request,action,yes,string,,,APPROVE/REJECT/CANCEL,,,,"Api/EmployeeLeaveRequestAPI.php#update:556",confirmed,high

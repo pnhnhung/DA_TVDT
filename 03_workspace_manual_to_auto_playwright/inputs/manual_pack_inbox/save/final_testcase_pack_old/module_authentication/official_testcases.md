@@ -1,0 +1,61 @@
+# Official Testcases — Authentication
+> Class: OFFICIAL | Workflow: 09 | Date: 2026-05-02
+
+Tất cả testcase dưới đây đáp ứng: có Rule ID, oracle STRONG/ACCEPTABLE, precondition & test data rõ ràng.
+
+---
+
+## AUTH-RULE-01 — IP Allowlist
+
+| TC ID | Title | Related Rule | Oracle |
+|---|---|---|---|
+| IT-AUTH-001 | Login từ IP trong whitelist → 200 + Token | AUTH-RULE-01 | STRONG |
+| IT-AUTH-002 | Login từ IP ngoài whitelist → 403 | AUTH-RULE-01 | STRONG |
+| IT-AUTH-003 | Whitelist rỗng → mọi IP được phép login | AUTH-RULE-01 | STRONG |
+| IT-AUTH-004 | Xóa IP khỏi whitelist → bị chặn ngay lần sau | AUTH-RULE-01 | STRONG |
+| UC-AUTH-001 | Full journey IP Whitelist: valid / blocked | AUTH-RULE-01 | ACCEPTABLE |
+
+---
+
+## AUTH-RULE-02 — Lockout
+
+| TC ID | Title | Related Rule | Oracle |
+|---|---|---|---|
+| IT-AUTH-005 | Sai mật khẩu đủ lần → tài khoản bị khóa | AUTH-RULE-02 | ACCEPTABLE |
+| IT-AUTH-006 | Sai mật khẩu chưa đủ lần → không bị khóa | AUTH-RULE-02 | STRONG |
+| IT-AUTH-007 | Login khi tài khoản đang bị khóa → 403 | AUTH-RULE-02 | STRONG |
+| IT-AUTH-008 | Tài khoản tự mở khóa sau `blockedTo` | AUTH-RULE-02 | ACCEPTABLE |
+| UC-AUTH-002 | Full journey lockout + App forced logout | AUTH-RULE-02 | ACCEPTABLE |
+
+---
+
+## AUTH-RULE-03 — Forgot Password
+
+| TC ID | Title | Related Rule | Oracle |
+|---|---|---|---|
+| IT-AUTH-010 | Quên mật khẩu → Mailhog nhận email + password tạm | AUTH-RULE-03 | STRONG |
+| IT-AUTH-011 | Login bằng password tạm → force đổi mật khẩu | AUTH-RULE-03 | STRONG |
+| IT-AUTH-012 | Password tạm hết hạn → Login thất bại | AUTH-RULE-03 | ACCEPTABLE |
+| UC-AUTH-004 | Full journey reset password | AUTH-RULE-03 | STRONG |
+
+---
+
+## AUTH-RULE-04 — Device Trust OTP
+
+| TC ID | Title | Related Rule | Oracle |
+|---|---|---|---|
+| IT-AUTH-013 | Thiết bị lạ → OTP gửi email | AUTH-RULE-04 | STRONG |
+| IT-AUTH-014 | OTP đúng → access token + device trusted | AUTH-RULE-04 | STRONG |
+| IT-AUTH-015 | OTP sai → từ chối, không cấp token | AUTH-RULE-04 | STRONG |
+| IT-AUTH-016 | Thiết bị đã trust → không hỏi OTP | AUTH-RULE-04 | STRONG |
+| IT-AUTH-018 | Token expire → 401, re-authenticate | AUTH-RULE-04 | ACCEPTABLE |
+| UC-AUTH-003 | Full journey OTP + trust device | AUTH-RULE-04 | ACCEPTABLE |
+
+---
+
+## AUTH-RULE-05 — OTP Field Validation
+
+| TC ID | Title | Related Rule | Oracle |
+|---|---|---|---|
+| UT-AUTH-009 | OTP field bỏ trống → required error | AUTH-RULE-05 | STRONG |
+| IT-AUTH-017 | OTP quá 6 ký tự → max validation 422 | AUTH-RULE-05 | STRONG |

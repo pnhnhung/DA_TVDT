@@ -1,0 +1,28 @@
+# Official Testcases — module_admin_qualification
+
+| TC ID | Title | Level | P | Related Rule ID | Oracle | Expected Result | Precondition | Test Data |
+|---|---|---|---|---|---|---|---|---|
+| TC_UT_QUAL_SKILL_01 | Tạo mới Skill thành công | UT | P2 | R_QUAL_01 | STRONG | Toast saved; bản ghi xuất hiện | Admin logged in | Name="Python" |
+| TC_UT_QUAL_SKILL_02 | Tạo Skill bị trùng tên | UT | P1 | R_QUAL_02 | STRONG | Error "Already exists" | Admin logged in | Name="Java" (có sẵn) |
+| TC_UT_QUAL_SKILL_03 | Tạo Skill thiếu Name | UT | P2 | R_QUAL_01 | STRONG | Error "Required" | Admin logged in | Name rỗng |
+| TC_UT_QUAL_SKILL_05 | Cập nhật (Edit) Skill | UT | P2 | R_QUAL_01 | STRONG | Toast saved | Admin logged in | Edit Skill |
+| TC_UT_QUAL_SKILL_06 | Xóa Skill | UT | P2 | R_QUAL_06 | STRONG | Toast deleted; row absent | Admin logged in | Delete Skill |
+| TC_UT_QUAL_EDU_01 | Tạo mới Education thành công | UT | P2 | R_QUAL_03 | STRONG | Toast saved; bản ghi xuất hiện | Admin logged in | Level="BSc" |
+| TC_UT_QUAL_EDU_02 | Tạo Education bị trùng | UT | P1 | R_QUAL_03 | STRONG | Error "Already exists" | Admin logged in | Duplicate Level |
+| TC_UT_QUAL_EDU_03 | Tạo Education thiếu Name | UT | P2 | R_QUAL_03 | STRONG | Error "Required" | Admin logged in | Level rỗng |
+| TC_UT_QUAL_EDU_04 | Cập nhật (Edit) Education | UT | P2 | R_QUAL_03 | STRONG | Toast saved | Admin logged in | Edit Level |
+| TC_UT_QUAL_EDU_05 | Xóa Education | UT | P2 | R_QUAL_03 | STRONG | Toast deleted; row absent | Admin logged in | Delete Education |
+| TC_UT_QUAL_LIC_01 | Tạo mới License thành công | UT | P2 | R_QUAL_04 | STRONG | Toast saved | Admin logged in | Name="PMP" |
+| TC_UT_QUAL_LIC_02 | Tạo License bị trùng | UT | P1 | R_QUAL_04 | STRONG | Error "Already exists" | Admin logged in | Duplicate Name |
+| TC_UT_QUAL_LIC_04 | Cập nhật (Edit) License | UT | P2 | R_QUAL_04 | STRONG | Toast saved | Admin logged in | Edit Name |
+| TC_UT_QUAL_LIC_05 | Xóa License | UT | P2 | R_QUAL_04 | STRONG | Toast deleted | Admin logged in | Delete License |
+| TC_UT_QUAL_LAN_01 | Tạo mới Language thành công | UT | P2 | R_QUAL_05 | STRONG | Toast saved | Admin logged in | Name="English" |
+| TC_UT_QUAL_LAN_02 | Tạo Language bị trùng | UT | P1 | R_QUAL_05 | STRONG | Error "Already exists" | Admin logged in | Duplicate Name |
+| TC_UT_QUAL_LAN_03 | Cập nhật (Edit) Language | UT | P2 | R_QUAL_05 | STRONG | Toast saved | Admin logged in | Edit Name |
+| TC_UT_QUAL_LAN_04 | Xóa Language | UT | P2 | R_QUAL_05 | STRONG | Toast deleted | Admin logged in | Delete Language |
+| TC_UT_QUAL_MEM_01 | Tạo mới Membership thành công | UT | P2 | R_QUAL_05 | STRONG | Toast saved | Admin logged in | Name="IEEE" |
+| TC_UT_QUAL_MEM_02 | Tạo Membership bị trùng | UT | P1 | R_QUAL_05 | STRONG | Error "Already exists" | Admin logged in | Duplicate Name |
+| TC_UT_QUAL_MEM_03 | Cập nhật (Edit) Membership | UT | P2 | R_QUAL_05 | STRONG | Toast saved | Admin logged in | Edit Name |
+| TC_UT_QUAL_MEM_04 | Xóa Membership | UT | P2 | R_QUAL_05 | STRONG | Toast deleted | Admin logged in | Delete Membership |
+| TC_UT_QUAL_PERM_01 | Kiểm tra quyền (Non-Admin) | UT | P1 | PERM_QUAL_01 | ACCEPTABLE | Lỗi 403 hoặc Redirect | ESS User logged in | Mở URL trực tiếp |
+| TC_IT_QUAL_01 | Gán Skill cho Employee | IT | P1 | R_QUAL_07 | STRONG | Hiển thị dropdown PIM | "Python" tồn tại | PIM -> Qual |

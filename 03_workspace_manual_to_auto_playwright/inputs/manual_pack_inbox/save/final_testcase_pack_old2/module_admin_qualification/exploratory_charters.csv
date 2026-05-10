@@ -1,0 +1,5 @@
+# Exploratory Charters — module_admin_qualification
+
+1. **Mass Delete:** Thử chọn xóa cùng lúc 50 Skills (cả loại đang được gán và loại chưa gán) xem hệ thống rollback thế nào.
+"2. **Case Sensitivity:** Tạo Skill ""JAVA"" khi đã có ""Java"" xem DB báo lỗi không."
+"3. **Empty Data:** Xóa toàn bộ Qualifications trong Admin, sau đó vào PIM xem dropdown hiển thị thế nào."

@@ -1,0 +1,7 @@
+# Manual Gap Report: System Notification
+
+Gap ID,Testcase / UC Ref,Mô tả vấn đề,Mức độ,Đề xuất xử lý
+GAP-SYS-01,"IT-SYS-001, IT-SYS-003, UC-SYS-001",Cần Mock Server cho endpoint Push của Omise SDK.,High,Thiết lập Mock Gateway trả về success khi nhận JSON payload chứa mảng app IDs.
+GAP-SYS-02,UC-SYS-004,"Logic filter ""Customer có giao dịch tại Shop thì mới thấy Static Notification"" được implement như thế nào? (Filter bằng join table Transactions khi GET list Notification hay push thẳng record?).",Medium,Dev cần clarify cơ chế hoạt động thực tế để QA call API check response.
+GAP-SYS-03,UC-SYS-003,Scheduler cho scheduled push chạy cron job mỗi bao nhiêu phút?,Low,Xác nhận cron config để thiết kế script chạy `artisan schedule:run`.
+GAP-SYS-04,UC-SYS-001,Omise fail partial (gửi được cho 1 phần Customer) thì status Job là gì?,Low,Cần trace source logic handle lỗi partial của Omise (nếu có).

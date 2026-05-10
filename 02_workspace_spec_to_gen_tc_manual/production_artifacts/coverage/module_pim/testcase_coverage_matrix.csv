@@ -1,0 +1,6 @@
+rule_id,module,feature_or_field,required_coverage,actual_coverage,coverage_status,missing_paths,priority,gap_or_note
+BR-001,pim,employee.add,FULL,FULL,FULL,None,P1,
+BR-002,pim,employee.delete,FULL,FULL,FULL,None,P1,
+BR-003,pim,employee.personal_details,PARTIAL,PARTIAL,PARTIAL,Thiếu test các trường deprecate,P2,Sẽ cover trong automation list nếu cần
+BR-004,pim,employee.contact_details,FULL,FULL,FULL,None,P1,
+BR-005,pim,employee.job_details,FULL,FULL,FULL,None,P1,

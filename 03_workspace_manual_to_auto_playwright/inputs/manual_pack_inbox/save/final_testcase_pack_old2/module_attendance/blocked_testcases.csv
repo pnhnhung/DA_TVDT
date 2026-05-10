@@ -1,0 +1,4 @@
+# Blocked Testcases — module_attendance
+
+Blocked TC ID,Related Rule ID,Missing information,Question,Impact
+GAP_ATT_01_TEST,R_ATT_02,Cross-day shift logic,Nhân viên làm ca đêm xuyên ngày thì record tính cho ngày nào?,High

@@ -1,0 +1,5 @@
+ID,From Module,To Module,Contract,Logic,Source Trace,Status
+INT-ATT-001,Attendance,PIM,Employee validation,Validate empNumber against PIM Employee entity,Api/EmployeeAttendanceRecordAPI.php#234,confirmed
+INT-ATT-002,Attendance,PIM,Supervisor scope,Check Supervisor-Subordinate hierarchy from PIM,AttendanceRecordPermissionTrait.php#45,confirmed
+INT-ATT-003,Attendance,Admin (Workflow),Attendance configuration update,Update workflow state machine for attendance toggles,Api/AttendanceConfigurationAPI.php#127,confirmed
+INT-ATT-004,Attendance,Time,Time at Work widget,Aggregate punch records for dashboard summary,Api/EmployeeAttendanceSummaryAPI.php,confirmed

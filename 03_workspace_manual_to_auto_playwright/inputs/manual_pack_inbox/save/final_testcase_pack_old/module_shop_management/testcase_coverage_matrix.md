@@ -1,0 +1,34 @@
+# Testcase Coverage Matrix — Shop Management
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+| Coverage status | Count |
+|---|---:|
+| FULL | 7 |
+| PARTIAL | 3 |
+| NOT_COVERED | 0 |
+| BLOCKED_BY_SPEC_GAP | 1 |
+
+## Matrix
+
+| Rule ID | Rule Statement | Test level | Covered Testcase IDs | Coverage status | Missing cases | Recommendation |
+|---|---|---|---|---|---|---|
+| BR_SHOP_001 | Tên cửa hàng duy nhất trong Service | IT, UI | IT-SHOP-010, IT-SHOP-011, UT-SHOP-001 | **FULL** | — | Same-service unique + cross-service allowed |
+| BR_SHOP_002 | shopCode duy nhất trong Service | IT, UI | IT-SHOP-012, IT-SHOP-013, UT-SHOP-002 | **FULL** | — | Full coverage |
+| BR_SHOP_003 | Cài đặt thanh toán nâng cao có điều kiện | IT, UI | IT-SHOP-005, IT-SHOP-006, UT-SHOP-003/004, UC-SHOP-003 | **PARTIAL** | salesType enum values chưa enumerate đầy đủ | Confirm enum list với Dev |
+| BR_SHOP_004 | EC Setting chỉ dành cho MASTER/CLIENT | IT, UI | IT-SHOP-007, IT-SHOP-008, IT-SHOP-009 | **FULL** | — | Role permission full coverage |
+| BR_SHOP_005 | GROUP không được sửa IP Whitelist | IT, UI | IT-SHOP-001, IT-SHOP-002, IT-SHOP-003, IT-SHOP-004 | **FULL** | — | Role permission full coverage |
+| BR_SHOP_006 | Cập nhật Công ty theo Role | IT, UI | IT-SHOP-014, UT-SHOP-005 | **FULL** | — | Role check observable |
+| BR_SHOP_007 | Vĩ độ và Kinh độ phụ thuộc nhau | IT, UI | IT-SHOP-015, IT-SHOP-016, IT-SHOP-017 | **FULL** | — | Cross-field validation |
+| BR_SHOP_008 | Batch Update OpenFlag/ShowApp | IT, Mixed | IT-SHOP-024, IT-SHOP-025, UC-SHOP-005 | **PARTIAL** | Thiếu case: partial failure trong batch | Bổ sung partial batch failure path |
+| BR_SHOP_009 | Import CSV bất đồng bộ (Async) | IT, Mixed | IT-SHOP-020, IT-SHOP-021, IT-SHOP-022, IT-SHOP-023, UC-SHOP-004 | **BLOCKED_BY_SPEC_GAP** | CSV template (header) chưa có → không thể sinh test data chính xác | Cần CSV template từ Dev |
+| BR_SHOP_010 | Tag phải tồn tại trong Service | IT, UI | IT-SHOP-029, IT-SHOP-030, UC-SHOP-007 | **FULL** | — | Orphan tag blocked |
+| BR_SHOP_011 | ShopPaymentSound mặc định | IT, UI | IT-SHOP-031, UT-SHOP-006 | **PARTIAL** | Thiếu: sửa sound sau khi đã set, reset về default | Bổ sung update + reset path |
+
+## Critical Gaps
+
+| Rule ID | Gap | Impact | Required action |
+|---|---|---|---|
+| BR_SHOP_003 | salesType enum không rõ | Trung bình | Dev confirm valid enum values |
+| BR_SHOP_009 | CSV header template chưa có | Cao — không test được | Cần template CSV từ Dev trước IT-SHOP-020~023 |

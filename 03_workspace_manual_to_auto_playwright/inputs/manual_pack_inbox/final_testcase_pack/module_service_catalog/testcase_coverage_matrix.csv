@@ -1,0 +1,29 @@
+# Testcase Coverage Matrix — Service Catalog
+**Workflow**: 08 | **Date**: 2026-05-02
+
+## Summary
+
+Coverage status,Count
+FULL,7
+PARTIAL,2
+NOT_COVERED,0
+BLOCKED_BY_SPEC_GAP,0
+
+## Matrix
+
+Rule ID,Rule Statement,Test level,Covered Testcase IDs,Coverage status,Missing cases,Recommendation
+BR_SERV_001,Phân quyền dựa trên Subdomain,"IT, UI","IT-SERV-001, UT-SERV-001, UC-SERV-006",**FULL**,—,Cross-subdomain 403 confirmed
+BR_SERV_002,Dữ liệu theo Role (MASTER vs Khác),"IT, UI","IT-SERV-003, IT-SERV-014, IT-SERV-015, UC-SERV-001",**FULL**,—,"MASTER-only flags, CLIENT permission"
+BR_SERV_003,Toggle Service Status,"IT, UI","IT-SERV-004, UC-SERV-002",**FULL**,—,INACTIVE → all blocked observable
+BR_SERV_004,Phân quyền tính năng Menu,"IT, UI","IT-SERV-008, UT-SERV-003, UC-SERV-004",**FULL**,—,Feature flag OFF → 403
+BR_SERV_005,Menu phải thuộc Category hợp lệ,"IT, UI","IT-SERV-006, IT-SERV-007, UT-SERV-002, IT-SERV-009",**FULL**,—,Valid/invalid categoryId
+BR_SERV_006,Quyền tính năng Estimate,"IT, UI","IT-SERV-013, UT-SERV-005, UC-SERV-005",**FULL**,—,Feature flag OFF → 403
+BR_SERV_007,Estimate bắt buộc liên kết HĐ,"IT, UI","IT-SERV-010, IT-SERV-011, IT-SERV-012, UT-SERV-004",**FULL**,—,Valid/invalid contractId + delete blocked
+BR_SERV_008,Lấy thiết lập Service theo subdomain,"IT, Mixed","IT-SERV-005, UC-SERV-003",**PARTIAL**,Thiếu: invalid subdomain path và INACTIVE path riêng,Bổ sung: invalid + INACTIVE path
+BR_SERV_009,Lấy Menu/SP từ Shop,"IT, Mixed","IT-SERV-009, UC-SERV-007",**PARTIAL**,Thiếu: Shop không có menu → empty state verification,Bổ sung empty state App check
+
+## Critical Gaps
+
+Rule ID,Gap,Impact,Required action
+BR_SERV_008,Subdomain invalid + INACTIVE path chưa có testcase riêng,Thấp,Bổ sung 2 testcase
+BR_SERV_009,Empty menu state chưa verified,Thấp,Bổ sung App empty state check

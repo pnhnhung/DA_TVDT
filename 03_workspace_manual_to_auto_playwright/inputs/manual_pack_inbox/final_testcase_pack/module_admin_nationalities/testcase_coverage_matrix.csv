@@ -1,0 +1,11 @@
+# Testcase Coverage Matrix — module_admin_nationalities
+
+Rule ID,Rule Statement,Test Level,Covered TC IDs,Coverage Status,Missing Cases,Notes
+R_NAT_01,Name là required field,UT,TC_UT_NAT_02,FULL,—,—
+R_NAT_02,Name là unique,UT,TC_UT_NAT_05,FULL,—,—
+R_NAT_03,Name max-length (100?),UT,"TC_UT_NAT_03, TC_UT_NAT_04",PARTIAL,Exact max-length value unconfirmed,GAP-NAT-01
+R_NAT_04,CRUD thành công + Delete,UT,"TC_UT_NAT_01, TC_UT_NAT_06",FULL,—,—
+R_NAT_05,FK protect on delete,IT,TC_IT_NAT_02,PARTIAL,Exact error message unconfirmed,Oracle = ACCEPTABLE
+R_NAT_06,Propagate → PIM Personal tab,IT,TC_IT_NAT_01,FULL,—,—
+PERM_NAT_01,ESS no access,UT,TC_UT_NAT_07,FULL,—,—
+BR_NAT_01,Race condition FK,IT,—,BLOCKED_BY_SPEC_GAP,No spec evidence,SUGGESTED only

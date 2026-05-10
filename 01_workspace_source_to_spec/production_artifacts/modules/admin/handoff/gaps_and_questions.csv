@@ -1,0 +1,7 @@
+Module,ID,Topic,Description,Clarification,Status,Blocker Level
+admin,GAP-ADMIN-001,Pay Grades,Missing field rules for CRUD and Currencies,Resolved via deep dive audit,RESOLVED,Low
+admin,GAP-ADMIN-002,Employment Status,Missing field rules and business rules,Need to check EmploymentStatusAPI.php,OPEN,Medium
+admin,GAP-ADMIN-003,Work Shifts,Missing field rules and business rules,Need to check WorkShiftAPI.php,OPEN,Medium
+admin,GAP-ADMIN-004,Qualifications,Missing field rules for Skills Edu etc.,Resolved via deep dive audit,RESOLVED,Low
+admin,GAP-ADMIN-005,Nationalities,Missing field rules and business rules,Need to check NationalityAPI.php,OPEN,Medium
+admin,GAP-ADMIN-006,Organization,Missing field rules for Structure/Location,Resolved via deep dive audit,RESOLVED,Low
