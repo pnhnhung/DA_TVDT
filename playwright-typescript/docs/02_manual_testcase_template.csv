@@ -1,0 +1,3 @@
+Module,TC_ID,Title,Priority,Type,Preconditions,Steps,Expected Result,Data Ref,Locator Ref,Tags,automationStatus
+Recruitment,TC_REC_001,Tạo mới Vacancy thành công,P0,Positive,Đã login quyền Admin,"1. Click Add
+2. Nhập tên",Hiển thị thông báo Success,VACANCY_DATA_01,"saveBtn, nameInput","@smoke, @regression",AUTO_READY
