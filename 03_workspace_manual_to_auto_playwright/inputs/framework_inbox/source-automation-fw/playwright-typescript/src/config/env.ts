@@ -82,6 +82,14 @@ export const env = {
     }
   },
 
+  // E-Library runs in a separate eOffice app; keep its URL and credentials
+  // separate from the sample OrangeHRM accounts used by existing tests.
+  elibrary: {
+    baseUrl: readOptionalEnv('ELIBRARY_BASE_URL', 'https://cowork.thuvienthongminh.vn'),
+    username: readOptionalEnv('ELIBRARY_USERNAME'),
+    password: readOptionalEnv('ELIBRARY_PASSWORD')
+  },
+
   db: {
     enabled: dbEnabled,
     client: readOptionalEnv('DB_CLIENT', 'mysql') as DbClient,

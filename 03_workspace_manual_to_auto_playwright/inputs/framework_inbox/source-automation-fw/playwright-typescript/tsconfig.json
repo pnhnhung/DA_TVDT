@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "lib": ["ES2022", "DOM"],
     "strict": true,
+    "types": ["node"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -12,19 +13,14 @@
     "exactOptionalPropertyTypes": false,
     "noUncheckedIndexedAccess": false,
     "noImplicitOverride": true,
-    "types": [
-      "node",
-      "@playwright/test"
-    ],
-    "baseUrl": ".",
     "paths": {
-      "@config/*": ["src/config/*"],
-      "@core/*":   ["src/core/*"],
-      "@fixtures/*": ["src/fixtures/*"],
-      "@locators/*": ["src/locators/*"],
-      "@pages/*":  ["src/pages/*"],
-      "@data/*":   ["src/data/*"],
-      "@types/*":  ["src/types/*"]
+      "@config/*": ["./src/config/*"],
+      "@core/*":   ["./src/core/*"],
+      "@fixtures/*": ["./src/fixtures/*"],
+      "@locators/*": ["./src/locators/*"],
+      "@pages/*":  ["./src/pages/*"],
+      "@data/*":   ["./src/data/*"],
+      "@types/*":  ["./src/types/*"]
     }
   },
   "include": [
