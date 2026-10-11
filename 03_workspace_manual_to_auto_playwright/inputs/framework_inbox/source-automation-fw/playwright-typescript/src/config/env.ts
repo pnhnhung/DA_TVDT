@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 export type TestEnvironment = 'dev' | 'stg' | 'uat' | 'prod' | string;
 export type AccountProfile = 'admin' | 'recruiter' | 'viewer' | string;
 export type DbClient = 'mysql' | 'mariadb' | 'postgres';
+export type ElibraryRole = 'admin' | 'employee' | 'warehouse';
 
 const rootDir = process.cwd();
 
@@ -87,7 +88,21 @@ export const env = {
   elibrary: {
     baseUrl: readOptionalEnv('ELIBRARY_BASE_URL', 'https://cowork.thuvienthongminh.vn'),
     username: readOptionalEnv('ELIBRARY_USERNAME'),
-    password: readOptionalEnv('ELIBRARY_PASSWORD')
+    password: readOptionalEnv('ELIBRARY_PASSWORD'),
+    accounts: {
+      admin: {
+        username: readOptionalEnv('ELIBRARY_ADMIN_USERNAME'),
+        password: readOptionalEnv('ELIBRARY_ADMIN_PASSWORD')
+      },
+      employee: {
+        username: readOptionalEnv('ELIBRARY_EMPLOYEE_USERNAME'),
+        password: readOptionalEnv('ELIBRARY_EMPLOYEE_PASSWORD')
+      },
+      warehouse: {
+        username: readOptionalEnv('ELIBRARY_WAREHOUSE_USERNAME'),
+        password: readOptionalEnv('ELIBRARY_WAREHOUSE_PASSWORD')
+      }
+    }
   },
 
   db: {

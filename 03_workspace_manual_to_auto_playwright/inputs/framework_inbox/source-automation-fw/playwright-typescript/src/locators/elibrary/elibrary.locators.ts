@@ -27,7 +27,7 @@ export const elibraryLocators = {
   } satisfies LocatorSpec,
   searchInput: {
     strategy: 'css',
-    selector: '[role="search"] input[type="search"]',
+    selector: '[role="search"] input[type="search"][placeholder^="Tìm kiếm tên, mã tài liệu"]',
     description: 'E-Library search input'
   } satisfies LocatorSpec,
   searchButton: {

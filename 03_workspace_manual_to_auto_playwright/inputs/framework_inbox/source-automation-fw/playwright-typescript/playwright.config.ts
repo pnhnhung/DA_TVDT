@@ -2,6 +2,10 @@ import { defineConfig, devices } from '@playwright/test';
 import { env } from './src/config/env';
 
 const isCi = Boolean(process.env.CI);
+const desktopChrome = {
+  ...devices['Desktop Chrome'],
+  deviceScaleFactor: undefined
+};
 
 export default defineConfig({
   testDir: './tests',
@@ -49,8 +53,10 @@ export default defineConfig({
     {
       name: 'chromium',
       use: {
-        ...devices['Desktop Chrome'],
-        viewport: { width: 1920, height: 1080 }
+        ...desktopChrome,
+        // Let headed Chromium use the available screen size so it stays visible on smaller displays.
+        viewport: null,
+        launchOptions: { args: ['--start-maximized'] }
       }
     },
     {

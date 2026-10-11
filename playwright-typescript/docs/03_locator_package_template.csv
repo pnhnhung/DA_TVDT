@@ -1,3 +1,0 @@
-Module,Screen,Key,Strategy,Role,Name,Label,Selector,Exact,Confidence,Evidence,Status
-Recruitment,Vacancy,saveBtn,role,button,Save,,,,true,high,codegen,VERIFIED
-Recruitment,Vacancy,nameInput,label,,Job Title,,,,true,medium,manual,DRAFT
